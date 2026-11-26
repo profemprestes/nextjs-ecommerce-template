@@ -1,5 +1,4 @@
 "use client";
-import "../css/euclid-circular-a-font.css";
 import "../css/style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -25,6 +24,18 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       suppressHydrationWarning={true}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Saira+Condensed:wght@700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body suppressHydrationWarning={true}>
         <ReduxProvider>
           <CartModalProvider>

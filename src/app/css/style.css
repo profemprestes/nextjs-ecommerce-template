@@ -1,88 +1,90 @@
+/* Hallmark · shape: Photographic · genre: editorial · theme: Sport (deal 1/3, seed uruguayan-football-jersey-store-8bfe·da9ccb30·2026-11-26·r0) · redesign: full
+ * hero: Ledge · nav: edge-aligned · footer: colophon block · imagery: photographs · signature: La Celeste 2026 framed full-scale above condensed display type with tabular UYU floor price
+ * axes: light/display-condensed/chromatic-volt · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 · weakest: R, swapped Sport's duotone filter for true-colour jersey photography so buyers see real club colours */
 @import 'tailwindcss';
+@import url('./tokens.css');
+@import url('./base.css');
 
 @custom-variant dark (&:is(.dark *));
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 1rem;
-  @media (width >= theme(--breakpoint-sm)) {
-    padding-inline: 2rem;
-  }
-  @media (width >= theme(--breakpoint-xl)) {
-    padding-inline: 0;
-  }
+  padding-inline: var(--gutter);
 }
 
 @theme {
   --font-*: initial;
-  --font-euclid-circular-a: Euclid Circular A;
+  --font-euclid-circular-a: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-outlier);
 
   --color-*: initial;
   --color-current: currentColor;
   --color-transparent: transparent;
-  --color-white: #ffffff;
-  --color-body: #6c6f93;
+  --color-white: oklch(98% 0.005 250);
+  --color-body: oklch(34% 0.030 255);
 
-  --color-meta-2: #495270;
-  --color-meta-3: #606882;
-  --color-meta-4: #8d93a5;
-  --color-meta-5: #bbbec9;
-  --color-meta: #f7f9fc;
+  --color-meta-2: oklch(22% 0.060 258);
+  --color-meta-3: oklch(34% 0.030 255);
+  --color-meta-4: oklch(50% 0.020 250);
+  --color-meta-5: oklch(78% 0.008 250);
+  --color-meta: oklch(95% 0.006 250);
 
-  --color-dark-2: #495270;
-  --color-dark-3: #606882;
-  --color-dark-4: #8d93a5;
-  --color-dark-5: #bbbec9;
-  --color-dark: #1c274c;
+  --color-dark-2: oklch(22% 0.060 258);
+  --color-dark-3: oklch(34% 0.030 255);
+  --color-dark-4: oklch(50% 0.020 250);
+  --color-dark-5: oklch(68% 0.015 250);
+  --color-dark: oklch(16% 0.080 260);
 
-  --color-gray-1: #f9fafb;
-  --color-gray-2: #f3f4f6;
-  --color-gray-3: #e5e7eb;
-  --color-gray-4: #d1d5db;
-  --color-gray-5: #9ca3af;
-  --color-gray-6: #6b7280;
-  --color-gray-7: #374151;
-  --color-gray: #f3f5f6;
+  --color-gray-1: oklch(96.5% 0.005 250);
+  --color-gray-2: oklch(95% 0.006 250);
+  --color-gray-3: oklch(78% 0.008 250);
+  --color-gray-4: oklch(68% 0.012 250);
+  --color-gray-5: oklch(50% 0.020 250);
+  --color-gray-6: oklch(36% 0.030 255);
+  --color-gray-7: oklch(22% 0.060 258);
+  --color-gray: oklch(95% 0.006 250);
 
-  --color-blue: #3c50e0;
-  --color-blue-dark: #1c3fb7;
-  --color-blue-light: #5475e5;
-  --color-blue-light-2: #8099ec;
-  --color-blue-light-3: #adbcf2;
-  --color-blue-light-4: #c3cef6;
-  --color-blue-light-5: #e1e8ff;
+  --color-blue: oklch(16% 0.080 260);
+  --color-blue-dark: oklch(22% 0.060 258);
+  --color-blue-light: oklch(36% 0.060 255);
+  --color-blue-light-2: oklch(50% 0.040 255);
+  --color-blue-light-3: oklch(78% 0.008 250);
+  --color-blue-light-4: oklch(91.5% 0.007 250);
+  --color-blue-light-5: oklch(93% 0.050 120);
 
-  --color-red: #f23030;
-  --color-red-dark: #e10e0e;
-  --color-red-light: #f56060;
-  --color-red-light-2: #f89090;
-  --color-red-light-3: #fbc0c0;
-  --color-red-light-4: #fdd8d8;
-  --color-red-light-5: #feebeb;
-  --color-red-light-6: #fef3f3;
+  --color-red: oklch(52% 0.19 27);
+  --color-red-dark: oklch(44% 0.19 27);
+  --color-red-light: oklch(62% 0.16 27);
+  --color-red-light-2: oklch(72% 0.12 27);
+  --color-red-light-3: oklch(82% 0.08 27);
+  --color-red-light-4: oklch(90% 0.05 27);
+  --color-red-light-5: oklch(94% 0.03 27);
+  --color-red-light-6: oklch(96% 0.02 27);
 
-  --color-green: #22ad5c;
-  --color-green-dark: #1a8245;
-  --color-green-light: #2cd673;
-  --color-green-light-2: #57de8f;
-  --color-green-light-3: #82e6ac;
-  --color-green-light-4: #acefc8;
-  --color-green-light-5: #c2f3d6;
-  --color-green-light-6: #daf8e6;
+  --color-green: oklch(50% 0.12 150);
+  --color-green-dark: oklch(40% 0.12 150);
+  --color-green-light: oklch(60% 0.12 150);
+  --color-green-light-2: oklch(70% 0.10 150);
+  --color-green-light-3: oklch(80% 0.08 150);
+  --color-green-light-4: oklch(88% 0.06 150);
+  --color-green-light-5: oklch(92% 0.04 150);
+  --color-green-light-6: oklch(94% 0.05 125);
 
-  --color-yellow: #fbbf24;
-  --color-yellow-dark: #f59e0b;
-  --color-yellow-dark-2: #d97706;
-  --color-yellow-light: #fcd34d;
-  --color-yellow-light-1: #fde68a;
-  --color-yellow-light-2: #fef3c7;
-  --color-yellow-light-4: #fffbeb;
+  --color-yellow: oklch(88% 0.200 120);
+  --color-yellow-dark: oklch(58% 0.145 125);
+  --color-yellow-dark-2: oklch(48% 0.145 125);
+  --color-yellow-light: oklch(92% 0.140 120);
+  --color-yellow-light-1: oklch(94% 0.100 120);
+  --color-yellow-light-2: oklch(96% 0.060 120);
+  --color-yellow-light-4: oklch(97% 0.030 120);
 
-  --color-teal: #02aaa4;
-  --color-teal-dark: #06a09b;
+  --color-teal: oklch(58% 0.145 125);
+  --color-teal-dark: oklch(48% 0.145 125);
 
-  --color-orange: #f27430;
-  --color-orange-dark: #e1580e;
+  --color-orange: oklch(58% 0.145 125);
+  --color-orange-dark: oklch(48% 0.145 125);
 
   --breakpoint-*: initial;
   --breakpoint-xsm: 375px;
@@ -94,274 +96,152 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
-  --text-2xs: 10px;
-  --text-2xs--line-height: 17px;
-  --text-heading-1: 60px;
-  --text-heading-1--line-height: 72px;
-  --text-heading-2: 48px;
-  --text-heading-2--line-height: 64px;
-  --text-heading-3: 40px;
-  --text-heading-3--line-height: 48px;
-  --text-heading-4: 30px;
-  --text-heading-4--line-height: 38px;
-  --text-heading-5: 28px;
-  --text-heading-5--line-height: 40px;
-  --text-heading-6: 24px;
-  --text-heading-6--line-height: 30px;
-  --text-custom-xl: 20px;
-  --text-custom-xl--line-height: 24px;
-  --text-custom-lg: 18px;
-  --text-custom-lg--line-height: 24px;
-  --text-custom-sm: 14px;
-  --text-custom-sm--line-height: 22px;
-  --text-custom-xs: 12px;
-  --text-custom-xs--line-height: 20px;
-  --text-custom-2xl: 24px;
-  --text-custom-2xl--line-height: 34px;
-  --text-custom-4xl: 36px;
-  --text-custom-4xl--line-height: 48px;
-  --text-custom-1: 22px;
-  --text-custom-1--line-height: 30px;
-  --text-custom-2: 32px;
-  --text-custom-2--line-height: 38px;
-  --text-custom-3: 35px;
-  --text-custom-3--line-height: 45px;
+  --text-2xs: 0.75rem;
+  --text-2xs--line-height: 1.25;
+  --text-heading-1: 3.75rem;
+  --text-heading-1--line-height: 1.05;
+  --text-heading-2: 3rem;
+  --text-heading-2--line-height: 1.08;
+  --text-heading-3: 2.5rem;
+  --text-heading-3--line-height: 1.1;
+  --text-heading-4: 1.875rem;
+  --text-heading-4--line-height: 1.15;
+  --text-heading-5: 1.75rem;
+  --text-heading-5--line-height: 1.2;
+  --text-heading-6: 1.5rem;
+  --text-heading-6--line-height: 1.25;
+  --text-custom-xl: 1.25rem;
+  --text-custom-xl--line-height: 1.3;
+  --text-custom-lg: 1.125rem;
+  --text-custom-lg--line-height: 1.4;
+  --text-custom-sm: 0.875rem;
+  --text-custom-sm--line-height: 1.5;
+  --text-custom-xs: 0.8125rem;
+  --text-custom-xs--line-height: 1.45;
+  --text-custom-2xl: 1.5rem;
+  --text-custom-2xl--line-height: 1.3;
+  --text-custom-4xl: 2.25rem;
+  --text-custom-4xl--line-height: 1.15;
+  --text-custom-1: 1.375rem;
+  --text-custom-1--line-height: 1.3;
+  --text-custom-2: 2rem;
+  --text-custom-2--line-height: 1.15;
+  --text-custom-3: 2.1875rem;
+  --text-custom-3--line-height: 1.15;
 
-  --container-30: 7.5rem;
-  --container-40: 10rem;
-  --container-50: 12.5rem;
-
-  --z-index-1: 1;
-  --z-index-99: 99;
-  --z-index-999: 999;
-  --z-index-9999: 9999;
-  --z-index-99999: 99999;
-  --z-index-999999: 999999;
-
-  --shadow-1: 0px 1px 2px 0px rgba(166, 175, 195, 0.25);
-  --shadow-2:
-    0px 6px 24px 0px rgba(235, 238, 251, 0.4),
-    0px 2px 4px 0px rgba(148, 163, 184, 0.05);
-  --shadow-3: 0px 2px 16px 0px rgba(13, 10, 44, 0.12);
-  --shadow-testimonial:
-    0px 0px 4px 0px rgba(148, 163, 184, 0.1),
-    0px 6px 12px 0px rgba(224, 227, 238, 0.45);
-  --shadow-breadcrumb: 0px 1px 0px 0px #e5e7eb, 0px -1px 0px 0px #e5e7eb;
-  --shadow-range:
-    0px 0px 1px 0px rgba(33, 37, 41, 0.08),
-    0px 2px 2px 0px rgba(33, 37, 41, 0.06);
-  --shadow-filter: 0px 1px 0px 0px #e5e7eb;
-  --shadow-list: 1px 0px 0px 0px #e5e7eb;
-  --shadow-input: inset 0 0 0 2px #3c50e0;
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-3: none;
+  --shadow-testimonial: none;
+  --shadow-breadcrumb: 0px 1px 0px 0px var(--color-rule), 0px -1px 0px 0px var(--color-rule);
+  --shadow-range: none;
+  --shadow-filter: 0px 1px 0px 0px var(--color-rule);
+  --shadow-list: 1px 0px 0px 0px var(--color-rule);
+  --shadow-input: inset 0 0 0 2px var(--color-focus);
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-rule);
   }
 }
 
+.sport-display {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1.02;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.sport-mono {
+  font-family: var(--font-outlier);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.sport-rule-bar {
+  border-top: var(--rule-bar) solid var(--color-rule-2);
+}
+
+.sport-rule-hair {
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
+
+.sport-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border: var(--rule-bar) solid var(--color-accent);
+  border-radius: var(--radius-card);
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: var(--text-md);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+}
+
+.sport-btn-primary:hover {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-accent);
+}
+
+.sport-btn-primary:active,
+.sport-btn-secondary:active {
+  transform: translateY(1px);
+}
+
+.sport-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-lg);
+  background: transparent;
+  color: var(--color-ink);
+  border: var(--rule-bar) solid var(--color-ink);
+  border-radius: var(--radius-card);
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  font-size: var(--text-md);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+}
+
+.sport-btn-secondary:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.sport-photo {
+  border-radius: var(--radius-card);
+  outline: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent);
+  outline-offset: -1px;
+}
+
 @utility dropdown {
-  @apply flex-col gap-0 min-w-max xl:w-[193px] mt-2 lg:mt-0 bg-white shadow-2 ease-in duration-200 py-2.5 rounded-md border border-gray-3 left-0 hidden
-    xl:translate-y-10 xl:opacity-0 xl:invisible xl:absolute xl:flex
+  @apply flex-col gap-0 min-w-max xl:w-[210px] mt-2 lg:mt-0 bg-white py-2.5 rounded-[4px] border border-gray-3 left-0 hidden
+    xl:translate-y-4 xl:opacity-0 xl:invisible xl:absolute xl:flex
     xl:group-hover:opacity-100 xl:group-hover:visible;
 }
 
 @utility no-scrollbar {
-  /* Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-@layer base {
-  html {
-    @apply scroll-smooth;
-  }
-
-  body {
-    @apply font-euclid-circular-a font-normal text-base text-dark-3 relative z-1;
-  }
-}
-
-/* third-party libraries CSS */
-
-/* clears the ‘X’ from Internet Explorer */
-input[type='search']::-ms-clear {
-  display: none;
-  width: 0;
-  height: 0;
-}
-input[type='search']::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
-}
-/* clears the ‘X’ from Chrome */
-input[type='search']::-webkit-search-decoration,
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button,
-input[type='search']::-webkit-search-results-decoration {
-  display: none;
-}
-.custom-search {
-  -webkit-border-radius: 0;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-}
-
-/* The container must be positioned relative: */
-.custom-select select {
-  display: none; /*hide original SELECT element: */
-}
-
-.select-selected {
-  @apply bg-gray-1 rounded-l-[5px] border border-gray-3 border-r-0! cursor-pointer text-dark text-custom-sm py-[11px] pl-3.5 pr-8 relative;
-}
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.00005 5.54998C4.88755 5.54998 4.7938 5.51248 4.70005 5.43748L0.387549 1.19998C0.218799 1.03123 0.218799 0.768726 0.387549 0.599976C0.556299 0.431226 0.818799 0.431226 0.987549 0.599976L5.00005 4.51873L9.01255 0.562476C9.1813 0.393726 9.4438 0.393726 9.61255 0.562476C9.7813 0.731226 9.7813 0.993726 9.61255 1.16248L5.30005 5.39998C5.2063 5.49373 5.11255 5.54998 5.00005 5.54998Z' fill='%231C274C'/%3E%3C/svg%3E%0A");
-  @apply absolute top-1/2 -translate-y-1/2 right-4.5 ease-out duration-200;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  @apply rotate-180 mt-0.5;
-}
-
-/* style the items (options), including the selected item: */
-.select-items div {
-  @apply cursor-pointer text-dark-3 text-custom-sm py-[7px] px-4.5;
-}
-
-/* Style items (options): */
-.select-items {
-  @apply absolute top-full left-0 right-0 z-99 shadow-2 border border-gray-3 bg-white rounded-md py-2.5 mt-1.5;
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-  @apply bg-gray-1 text-dark;
-}
-
-.custom-select-2 .select-selected {
-  @apply bg-white rounded-md border-r! text-dark-4 py-1.5 pl-3 pr-9;
-}
-.custom-select-2 .select-selected:after {
-  content: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41444 1.03563L1.41443 1.03565L1.41725 1.0384L6.76725 6.2634L7.00126 6.49194L7.23418 6.26229L12.5842 0.987287L12.5842 0.987293L12.5858 0.985629C12.6807 0.890804 12.8196 0.890804 12.9144 0.985629C13.009 1.08018 13.0093 1.21861 12.9153 1.31341C12.915 1.31368 12.9147 1.31395 12.9144 1.31422L7.16652 6.96217L7.16651 6.96216L7.16444 6.96422C7.06814 7.06053 7.02327 7.06659 7.00015 7.06659C6.94122 7.06659 6.89018 7.05216 6.8204 6.99902L1.08502 1.36339C0.991024 1.26859 0.991301 1.13018 1.08585 1.03563C1.18067 0.940804 1.31962 0.940804 1.41444 1.03563Z' fill='%238D93A5' stroke='%238D93A5' stroke-width='0.666667'/%3E%3C/svg%3E%0A");
-  @apply right-3.5;
-}
-
-.custom-select-common .select-selected {
-  @apply bg-gray-1 rounded-md border-r! text-dark-4 py-3 pl-5 pr-9 duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20;
-}
-.custom-select-common .select-selected:after {
-  content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.41469 5.03569L2.41467 5.03571L2.41749 5.03846L7.76749 10.2635L8.0015 10.492L8.23442 10.2623L13.5844 4.98735L13.5844 4.98735L13.5861 4.98569C13.6809 4.89086 13.8199 4.89087 13.9147 4.98569C14.0092 5.08024 14.0095 5.21864 13.9155 5.31345C13.9152 5.31373 13.915 5.31401 13.9147 5.31429L8.16676 10.9622L8.16676 10.9622L8.16469 10.9643C8.06838 11.0606 8.02352 11.0667 8.00039 11.0667C7.94147 11.0667 7.89042 11.0522 7.82064 10.9991L2.08526 5.36345C1.99127 5.26865 1.99154 5.13024 2.08609 5.03569C2.18092 4.94086 2.31986 4.94086 2.41469 5.03569Z' fill='%238D93A5' stroke='%238D93A5' stroke-width='0.666667'/%3E%3C/svg%3E%0A");
-  @apply right-4 block mt-1;
-}
-.custom-select-common .select-selected.select-arrow-active:after {
-  @apply -mt-0.5;
-}
-
-
-.hero-carousel .swiper-pagination-bullet {
-  @apply h-1 w-4 rounded-[11px] bg-[#DDD];
-}
-
-.hero-carousel .swiper-pagination-bullet-active {
-  @apply w-5.5 bg-blue;
-}
-
-.hero-carousel .swiper-pagination {
-  @apply xl:bottom-5!;
-}
-
-.common-carousel .swiper-button-next:after,
-.common-carousel .swiper-button-prev:after {
-  @apply hidden;
-}
-
-.common-carousel .swiper-button-next,
-.common-carousel .swiper-button-prev {
-  @apply static! h-9 w-9 rounded-lg bg-white text-dark border border-gray-3 m-0 ease-out duration-200 hover:bg-blue hover:text-white hover:border-blue;
-}
-
-.common-carousel .swiper-button-next svg,
-.common-carousel .swiper-button-prev svg {
-  @apply w-auto h-auto;
-}
-
-.img-zoom-container img {
-  transition: 0.8s;
-}
-.img-zoom-container img:hover {
-  transform: scale(2) rotate(0deg);
-  transition: 0.8s;
-}
-
-.priceSlide .noUi-target {
-  @apply mb-5 mt-9 border-none bg-transparent shadow-none;
-}
-.priceSlide .noUi-connects {
-  @apply h-1 rounded-full bg-gray-3;
-}
-.priceSlide .noUi-connect {
-  @apply h-1 rounded-full bg-blue;
-}
-.priceSlide .noUi-horizontal .noUi-handle {
-  @apply -top-3 h-7 w-7 rounded-full border border-gray-4 bg-white shadow-range before:block before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-4 before:h-4 before:rounded-full before:bg-blue;
-}
-.priceSlide .noUi-tooltip {
-  @apply border-none p-0 bg-transparent text-custom-sm text-dark-4;
-}
-.noUi-horizontal .noUi-handle:after,
-.noUi-horizontal .noUi-handle:before {
-  @apply hidden;
-}
-
-
-.range-slider {
- @apply w-full h-[4px]! rounded-md bg-blue relative mb-3;
-}
-
-.slider .thumb {
-  @apply w-6 h-6 bg-blue-dark rounded-full absolute -top-2 border-[5px] border-blue-light-4;
-}
-
-.range-slider__thumb {
-  @apply bg-white! border border-blue-light-4 flex justify-center items-center w-7! h-7!;
-}
-
-.range-slider__thumb::after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  display: block;
-  border-radius: 100%;
-  position: absolute;
-  @apply bg-blue;
-}
-
-.range-slider__range {
-  @apply bg-blue!;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
