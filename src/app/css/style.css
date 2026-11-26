@@ -2,9 +2,9 @@
  * hero: Ledge · nav: edge-aligned · footer: colophon block · imagery: photographs · signature: La Celeste 2026 framed full-scale above condensed display type with tabular UYU floor price
  * axes: light/display-condensed/chromatic-volt · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 · weakest: R, swapped Sport's duotone filter for true-colour jersey photography so buyers see real club colours */
+@import './tokens.css';
+@import './base.css';
 @import 'tailwindcss';
-@import url('./tokens.css');
-@import url('./base.css');
 
 @custom-variant dark (&:is(.dark *));
 
