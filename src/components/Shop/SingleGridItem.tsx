@@ -5,22 +5,21 @@ import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { updateQuickView } from "@/redux/features/quickView-slice";
 import { addItemToCart } from "@/redux/features/cart-slice";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
+import { updateproductDetails } from "@/redux/features/product-details";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import Link from "next/link";
 import Image from "next/image";
+import { formatProductPrice } from "./shopData";
 
 const SingleGridItem = ({ item }: { item: Product }) => {
   const { openModal } = useModalContext();
-
   const dispatch = useDispatch<AppDispatch>();
 
-  // update the QuickView state
   const handleQuickViewUpdate = () => {
     dispatch(updateQuickView({ ...item }));
   };
 
-  // add to cart
   const handleAddToCart = () => {
     dispatch(
       addItemToCart({
@@ -40,10 +39,32 @@ const SingleGridItem = ({ item }: { item: Product }) => {
     );
   };
 
+  const handleProductDetails = () => {
+    dispatch(updateproductDetails({ ...item }));
+  };
+
   return (
     <div className="group">
-      <div className="relative overflow-hidden flex items-center justify-center rounded-lg bg-white shadow-1 min-h-[270px] mb-4">
-        <Image src={item.imgs.previews[0]} alt="" width={250} height={250} />
+      <div className="relative overflow-hidden flex items-center justify-center rounded-lg bg-white shadow-1 h-[270px] mb-4">
+        <Link
+          href="/shop-details"
+          onClick={handleProductDetails}
+          className="relative w-full h-full block"
+        >
+          <Image
+            src={item.imgs.previews[0]}
+            alt={item.title}
+            fill
+            sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </Link>
+
+        {item.modalidad === "entrega_inmediata" && (
+          <span className="absolute top-3 left-3 text-custom-xs font-medium bg-green-light-6 text-green-dark px-2.5 py-0.5 rounded">
+            Entrega inmediata
+          </span>
+        )}
 
         <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
           <button
@@ -51,8 +72,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
               openModal();
               handleQuickViewUpdate();
             }}
-            id="newOne"
-            aria-label="button for quick view"
+            aria-label="Vista rápida"
             className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-blue"
           >
             <svg
@@ -79,16 +99,15 @@ const SingleGridItem = ({ item }: { item: Product }) => {
           </button>
 
           <button
-            onClick={() => handleAddToCart()}
-            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] bg-blue text-white ease-out duration-200 hover:bg-blue-dark"
+            onClick={handleAddToCart}
+            className="inline-flex font-medium text-custom-sm py-[7px] px-4 rounded-[5px] bg-blue text-white ease-out duration-200 hover:bg-blue-dark"
           >
-            Add to cart
+            Sumar a consulta
           </button>
 
           <button
-            onClick={() => handleItemToWishList()}
-            aria-label="button for favorite select"
-            id="favOne"
+            onClick={handleItemToWishList}
+            aria-label="Agregar a favoritos"
             className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-blue"
           >
             <svg
@@ -110,50 +129,25 @@ const SingleGridItem = ({ item }: { item: Product }) => {
         </div>
       </div>
 
-      <div className="flex items-center gap-2.5 mb-2">
-        <div className="flex items-center gap-1">
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={15}
-            height={15}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={15}
-            height={15}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={15}
-            height={15}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={15}
-            height={15}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={15}
-            height={15}
-          />
-        </div>
+      <span className="inline-block text-custom-xs font-medium text-blue bg-blue-light-5 px-2.5 py-0.5 rounded mb-2">
+        {item.version === "Retro"
+          ? "Edición Retro"
+          : item.version === "A confirmar"
+          ? "Versión a confirmar"
+          : `Versión ${item.version}`}
+      </span>
 
-        <p className="text-custom-sm">({item.reviews})</p>
-      </div>
-
-      <h3 className="font-medium text-dark ease-out duration-200 hover:text-blue mb-1.5">
-        <Link href="/shop-details"> {item.title} </Link>
+      <h3
+        className="font-medium text-dark ease-out duration-200 hover:text-blue mb-1.5"
+        onClick={handleProductDetails}
+      >
+        <Link href="/shop-details">{item.title}</Link>
       </h3>
 
       <span className="flex items-center gap-2 font-medium text-lg">
-        <span className="text-dark">${item.discountedPrice}</span>
-        <span className="text-dark-4 line-through">${item.price}</span>
+        <span className="text-dark">
+          {formatProductPrice(item.discountedPrice)}
+        </span>
       </span>
     </div>
   );

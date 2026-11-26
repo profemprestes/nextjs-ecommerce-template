@@ -77,13 +77,16 @@ const HeroCarousel = () => {
             </div>
 
             <div className="p-4 sm:pr-8 lg:pr-10 shrink-0">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                width={320}
-                height={340}
-                className="w-[260px] sm:w-[300px] h-[280px] sm:h-[330px] object-cover rounded-lg shadow-1"
-              />
+              <div className="relative w-[260px] sm:w-[300px] h-[280px] sm:h-[330px] overflow-hidden rounded-lg shadow-1">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  sizes="(min-width: 640px) 300px, 260px"
+                  loading="eager"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </SwiperSlide>

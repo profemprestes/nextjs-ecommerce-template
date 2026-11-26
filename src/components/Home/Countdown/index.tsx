@@ -57,13 +57,13 @@ const CounDown = () => {
             </Link>
           </div>
 
-          <div className="shrink-0">
+          <div className="shrink-0 relative w-[280px] sm:w-[320px] h-[320px] sm:h-[360px] overflow-hidden rounded-lg shadow-2">
             <Image
               src="/camisetas/uruguay-away-2026-nike-jugador.jpeg"
               alt="Camiseta Uruguay 2026 Nike Versión Jugador"
-              className="rounded-lg shadow-2 object-cover w-[280px] sm:w-[320px] h-[320px] sm:h-[360px]"
-              width={320}
-              height={360}
+              fill
+              sizes="(min-width: 640px) 320px, 280px"
+              className="object-cover"
             />
           </div>
         </div>

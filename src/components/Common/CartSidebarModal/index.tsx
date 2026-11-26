@@ -96,7 +96,9 @@ const CartSidebarModal = () => {
               <p className="font-medium text-xl text-dark">Referencia:</p>
 
               <p className="font-medium text-xl text-dark">
-                $ {Number(totalPrice).toLocaleString("es-UY")}
+                {Number(totalPrice) > 0
+                  ? `$ ${Number(totalPrice).toLocaleString("es-UY")}`
+                  : "A confirmar"}
               </p>
             </div>
             <p className="text-custom-xs text-body mb-5">

@@ -9,6 +9,7 @@ import { addItemToCart } from "@/redux/features/cart-slice";
 import Image from "next/image";
 import Link from "next/link";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
+import { formatProductPrice } from "@/components/Shop/shopData";
 
 const SingleItem = ({ item }: { item: Product }) => {
   const { openModal } = useModalContext();
@@ -57,24 +58,21 @@ const SingleItem = ({ item }: { item: Product }) => {
 
           <span className="flex items-center justify-center gap-2 font-medium text-lg">
             <span className="text-dark">
-              Desde $ {item.discountedPrice.toLocaleString("es-UY")}
+              {formatProductPrice(item.discountedPrice)}
             </span>
-            {item.price > item.discountedPrice && (
-              <span className="text-dark-4 line-through">
-                $ {item.price.toLocaleString("es-UY")}
-              </span>
-            )}
           </span>
         </div>
 
-        <div className="flex justify-center items-center px-6 pb-6">
-          <Image
-            src={item.imgs.previews[0]}
-            alt={item.title}
-            width={280}
-            height={280}
-            className="w-full h-[240px] object-cover rounded-md"
-          />
+        <div className="px-6 pb-6">
+          <div className="relative w-full h-[240px] overflow-hidden rounded-md">
+            <Image
+              src={item.imgs.previews[0]}
+              alt={item.title}
+              fill
+              sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="absolute right-0 bottom-0 translate-x-full u-w-full flex flex-col gap-2 p-5.5 ease-linear duration-300 group-hover:translate-x-0">

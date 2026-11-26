@@ -1,146 +1,114 @@
-import { Product } from "@/types/product";
+import catalogoRaw from "../../../docs/catalogo.json";
+import {
+  Product,
+  ProductCategory,
+  ProductModalidad,
+  ProductVersion,
+} from "@/types/product";
 
-const shopData: Product[] = [
-  {
-    title: "Uruguay Alternativa 2026 — Nike (Versión Jugador)",
-    reviews: 0,
-    price: 1990,
-    discountedPrice: 1990,
-    id: 1,
-    category: "uruguay",
-    version: "Jugador",
-    imgs: {
-      thumbnails: [
-        "/camisetas/uruguay-away-2026-nike-jugador.jpeg",
-        "/camisetas/uruguay-away-2026-nike-jugador.jpeg",
-      ],
-      previews: [
-        "/camisetas/uruguay-away-2026-nike-jugador.jpeg",
-        "/camisetas/uruguay-away-2026-nike-jugador.jpeg",
-      ],
-    },
-  },
-  {
-    title: "Noruega 2026 Haaland #9 — Nike (Versión Jugador)",
-    reviews: 0,
-    price: 1990,
-    discountedPrice: 1990,
-    id: 2,
-    category: "actuales",
-    version: "Jugador",
-    imgs: {
-      thumbnails: ["/camisetas/noruega.jpeg", "/camisetas/noruega.jpeg"],
-      previews: ["/camisetas/noruega.jpeg", "/camisetas/noruega.jpeg"],
-    },
-  },
-  {
-    title: "Manchester United Retro 1996 Cantona #7 — Umbro",
-    reviews: 0,
-    price: 1890,
-    discountedPrice: 1890,
-    id: 3,
-    category: "retros",
-    version: "Retro",
-    imgs: {
-      thumbnails: [
-        "/camisetas/manchest3er_united.jpeg",
-        "/camisetas/manchest3er_united.jpeg",
-      ],
-      previews: [
-        "/camisetas/manchest3er_united.jpeg",
-        "/camisetas/manchest3er_united.jpeg",
-      ],
-    },
-  },
-  {
-    title: "Nacional 2026 Titular Blanca — Umbro",
-    reviews: 0,
-    price: 1690,
-    discountedPrice: 1690,
-    id: 4,
-    category: "uruguay",
-    version: "Fan",
-    imgs: {
-      thumbnails: [
-        "/camisetas/nacional-home-2026-umbro-blanca.jpeg",
-        "/camisetas/nacional-home-2026-umbro-blanca.jpeg",
-      ],
-      previews: [
-        "/camisetas/nacional-home-2026-umbro-blanca.jpeg",
-        "/camisetas/nacional-home-2026-umbro-blanca.jpeg",
-      ],
-    },
-  },
-  {
-    title: "Manchester United Retro 1993–95 Negra Cantona #7",
-    reviews: 0,
-    price: 1890,
-    discountedPrice: 1890,
-    id: 5,
-    category: "retros",
-    version: "Retro",
-    imgs: {
-      thumbnails: [
-        "/camisetas/manchester-united-away-1993-1995-umbro.jpeg",
-        "/camisetas/manchester-united-away-1993-1995-umbro.jpeg",
-      ],
-      previews: [
-        "/camisetas/manchester-united-away-1993-1995-umbro.jpeg",
-        "/camisetas/manchester-united-away-1993-1995-umbro.jpeg",
-      ],
-    },
-  },
-  {
-    title: "Como 1907 Azul 2026 Revolut — Adidas",
-    reviews: 0,
-    price: 1690,
-    discountedPrice: 1690,
-    id: 6,
-    category: "clubes",
-    version: "Fan",
-    imgs: {
-      thumbnails: ["/camisetas/como.jpeg", "/camisetas/como.jpeg"],
-      previews: ["/camisetas/como.jpeg", "/camisetas/como.jpeg"],
-    },
-  },
-  {
-    title: "Nacional Golero 2026 Bordó — Umbro",
-    reviews: 0,
-    price: 1690,
-    discountedPrice: 1690,
-    id: 7,
-    category: "uruguay",
-    version: "Fan",
-    imgs: {
-      thumbnails: [
-        "/camisetas/nacional-golero-2026-umbro-bordo.jpeg",
-        "/camisetas/nacional-golero-2026-umbro-bordo.jpeg",
-      ],
-      previews: [
-        "/camisetas/nacional-golero-2026-umbro-bordo.jpeg",
-        "/camisetas/nacional-golero-2026-umbro-bordo.jpeg",
-      ],
-    },
-  },
-  {
-    title: "Boca Juniors Titular 2026–27 — Adidas",
-    reviews: 0,
-    price: 1690,
-    discountedPrice: 1690,
-    id: 8,
-    category: "clubes",
-    version: "Fan",
-    imgs: {
-      thumbnails: [
-        "/camisetas/boca-juniors-home-2026-2027-adidas.jpeg",
-        "/camisetas/boca-juniors-home-2026-2027-adidas.jpeg",
-      ],
-      previews: [
-        "/camisetas/boca-juniors-home-2026-2027-adidas.jpeg",
-        "/camisetas/boca-juniors-home-2026-2027-adidas.jpeg",
-      ],
-    },
-  },
-];
+type RawCatalogoItem = {
+  id_origen: string | null;
+  slug_normalizado: string;
+  titulo: string;
+  equipo_o_seleccion: string | null;
+  temporada_o_anio: string | null;
+  dorsal: string | null;
+  categoria: string | null;
+  deporte: string | null;
+  version: string | null;
+  modalidad: string | null;
+  precio_uyu: number | null;
+  imagenes_ordenadas: string[];
+  fuente: string;
+};
+
+function hashSlugToId(slug: string): number {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i += 1) {
+    hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+  }
+  return (hash % 900000) + 100000;
+}
+
+function getReferencePrice(
+  precioUyu: number | null,
+  version: ProductVersion
+): number {
+  if (typeof precioUyu === "number" && precioUyu > 0) {
+    return precioUyu;
+  }
+  switch (version) {
+    case "Jugador":
+      return 1990;
+    case "Retro":
+      return 1890;
+    case "Fan":
+      return 1690;
+    default:
+      return 0;
+  }
+}
+
+function normalizeVersion(raw: string | null): ProductVersion {
+  if (raw === "Jugador" || raw === "Fan" || raw === "Retro") {
+    return raw;
+  }
+  return "A confirmar";
+}
+
+function normalizeCategory(raw: string | null): ProductCategory {
+  if (
+    raw === "actuales" ||
+    raw === "retros" ||
+    raw === "uruguay" ||
+    raw === "clubes"
+  ) {
+    return raw;
+  }
+  return "clubes";
+}
+
+function normalizeModalidad(raw: string | null): ProductModalidad {
+  if (raw === "entrega_inmediata") {
+    return "entrega_inmediata";
+  }
+  return "PENDIENTE_VERIFICACION";
+}
+
+const rawItems = (catalogoRaw as { productos: RawCatalogoItem[] }).productos;
+
+const shopData: Product[] = rawItems
+  .filter((item) => !item.slug_normalizado.startsWith("sin-descripcion"))
+  .map((item) => {
+    const version = normalizeVersion(item.version);
+    const refPrice = getReferencePrice(item.precio_uyu, version);
+    const imgs = item.imagenes_ordenadas.map((file) => `/catalogo/${file}`);
+
+    return {
+      id: hashSlugToId(item.slug_normalizado),
+      slug: item.slug_normalizado,
+      title: item.titulo,
+      team: item.equipo_o_seleccion ?? "Fútbol en la Piel",
+      season: item.temporada_o_anio,
+      dorsal: item.dorsal,
+      category: normalizeCategory(item.categoria),
+      version,
+      modalidad: normalizeModalidad(item.modalidad),
+      reviews: 0,
+      price: refPrice,
+      discountedPrice: refPrice,
+      imgs: {
+        thumbnails: imgs,
+        previews: imgs,
+      },
+    };
+  });
+
+export function formatProductPrice(price: number): string {
+  if (!price || price <= 0) {
+    return "Consultar precio";
+  }
+  return `Desde $ ${price.toLocaleString("es-UY")}`;
+}
 
 export default shopData;

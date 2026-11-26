@@ -10,9 +10,9 @@ const Newsletter = () => {
           <Image
             src="/images/shapes/newsletter-bg.jpg"
             alt="Fondo decorativo"
-            className="absolute -z-1 w-full h-full left-0 top-0 rounded-xl object-cover"
-            width={1170}
-            height={200}
+            className="-z-1 rounded-xl object-cover"
+            fill
+            sizes="(min-width: 1280px) 1170px, 100vw"
           />
           <div className="absolute -z-1 max-w-[523px] max-h-[243px] w-full h-full right-0 top-0 bg-gradient-1"></div>
 

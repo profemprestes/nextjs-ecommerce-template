@@ -10,6 +10,7 @@ import { updateproductDetails } from "@/redux/features/product-details";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import Link from "next/link";
+import { formatProductPrice } from "@/components/Shop/shopData";
 
 const ProductItem = ({ item }: { item: Product }) => {
   const { openModal } = useModalContext();
@@ -51,9 +52,9 @@ const ProductItem = ({ item }: { item: Product }) => {
         <Image
           src={item.imgs.previews[0]}
           alt={item.title}
-          width={270}
-          height={270}
-          className="w-full h-full object-cover"
+          fill
+          sizes="(min-width: 1280px) 270px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover"
         />
 
         <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
@@ -136,13 +137,8 @@ const ProductItem = ({ item }: { item: Product }) => {
 
       <span className="flex items-center gap-2 font-medium text-lg">
         <span className="text-dark">
-          Desde $ {item.discountedPrice.toLocaleString("es-UY")}
+          {formatProductPrice(item.discountedPrice)}
         </span>
-        {item.price > item.discountedPrice && (
-          <span className="text-dark-4 line-through">
-            $ {item.price.toLocaleString("es-UY")}
-          </span>
-        )}
       </span>
     </div>
   );

@@ -273,10 +273,11 @@ const Checkout = () => {
                                 {item.title} × {item.quantity}
                               </span>
                               <span className="shrink-0 font-medium">
-                                Desde ${" "}
-                                {(
-                                  item.discountedPrice * item.quantity
-                                ).toLocaleString("es-UY")}
+                                {item.discountedPrice > 0
+                                  ? `Desde $ ${(
+                                      item.discountedPrice * item.quantity
+                                    ).toLocaleString("es-UY")}`
+                                  : "Consultar precio"}
                               </span>
                             </li>
                           ))}

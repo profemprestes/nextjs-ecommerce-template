@@ -14,9 +14,10 @@ const Hero = () => {
               <Image
                 src="/images/hero/hero-bg.png"
                 alt="Fondo decorativo"
-                className="absolute right-0 bottom-0 -z-1"
+                className="absolute right-0 bottom-0 -z-1 w-auto h-auto"
                 width={534}
                 height={520}
+                loading="eager"
               />
 
               <HeroCarousel />
@@ -44,13 +45,13 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <div className="shrink-0">
+                  <div className="shrink-0 relative w-[112px] h-[140px] overflow-hidden rounded-md">
                     <Image
                       src="/camisetas/noruega.jpeg"
                       alt="Camiseta Noruega 2026 Haaland #9"
-                      width={120}
-                      height={145}
-                      className="w-[112px] h-[140px] object-cover rounded-md"
+                      fill
+                      sizes="112px"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -75,13 +76,13 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <div className="shrink-0">
+                  <div className="shrink-0 relative w-[112px] h-[140px] overflow-hidden rounded-md">
                     <Image
                       src="/camisetas/nacional-home-2026-umbro-blanca.jpeg"
                       alt="Camiseta Nacional 2026 Titular Blanca"
-                      width={120}
-                      height={145}
-                      className="w-[112px] h-[140px] object-cover rounded-md"
+                      fill
+                      sizes="112px"
+                      className="object-cover"
                     />
                   </div>
                 </div>
