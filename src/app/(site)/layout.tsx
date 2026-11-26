@@ -2,6 +2,12 @@
 import "../css/style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import {
+  Barlow_Condensed,
+  Archivo_Black,
+  Geist,
+  JetBrains_Mono,
+} from "next/font/google";
 
 import { ModalProvider } from "../context/QuickViewModalContext";
 import { CartModalProvider } from "../context/CartSidebarModalContext";
@@ -10,8 +16,35 @@ import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";
 import { PreviewSliderProvider } from "../context/PreviewSliderContext";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
-
 import ScrollToTop from "@/components/Common/ScrollToTop";
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-barlow-condensed",
+  display: "swap",
+});
+
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-archivo-black",
+  display: "swap",
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -23,19 +56,8 @@ export default function RootLayout({
       lang="es-UY"
       data-scroll-behavior="smooth"
       suppressHydrationWarning={true}
+      className={`${barlowCondensed.variable} ${archivoBlack.variable} ${geist.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Saira+Condensed:wght@700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body suppressHydrationWarning={true}>
         <ReduxProvider>
           <CartModalProvider>
