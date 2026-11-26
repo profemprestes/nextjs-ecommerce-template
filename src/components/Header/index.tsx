@@ -37,14 +37,11 @@ const Header = () => {
   });
 
   const options = [
-    { label: "All Categories", value: "0" },
-    { label: "Desktop", value: "1" },
-    { label: "Laptop", value: "2" },
-    { label: "Monitor", value: "3" },
-    { label: "Phone", value: "4" },
-    { label: "Watch", value: "5" },
-    { label: "Mouse", value: "6" },
-    { label: "Tablet", value: "7" },
+    { label: "Todas", value: "0" },
+    { label: "Actuales y Mundial", value: "1" },
+    { label: "Retros (1988–2018)", value: "2" },
+    { label: "La Celeste y Uruguay", value: "3" },
+    { label: "Clubes y Basket", value: "4" },
   ];
 
   return (
@@ -64,15 +61,16 @@ const Header = () => {
           <div className="xl:w-auto flex-col sm:flex-row w-full flex sm:justify-between sm:items-center gap-5 sm:gap-10">
             <Link className="shrink-0" href="/">
               <Image
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={219}
-                height={36}
+                src="/logos/futbolenlapiel_horizontal_transparente.png"
+                alt="Fútbol en la Piel"
+                width={185}
+                height={42}
+                className="h-10 w-auto object-contain"
               />
             </Link>
 
             <div className="max-w-[475px] w-full">
-              <form>
+              <form action="/shop-with-sidebar">
                 <div className="flex items-center">
                   <CustomSelect options={options} />
 
@@ -85,14 +83,14 @@ const Header = () => {
                       type="search"
                       name="search"
                       id="search"
-                      placeholder="I am shopping for..."
+                      placeholder="Buscá tu camiseta, club o selección..."
                       autoComplete="off"
                       className="custom-search w-full rounded-r-[5px] bg-gray-1 border-l-0! border border-gray-3 py-2.5 pl-4 pr-10 outline-hidden ease-in duration-200"
                     />
 
                     <button
                       id="search-btn"
-                      aria-label="Search"
+                      aria-label="Buscar"
                       className="flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 ease-in duration-200 hover:text-blue"
                     >
                       <svg
@@ -145,11 +143,16 @@ const Header = () => {
 
               <div>
                 <span className="block text-2xs text-dark-4 uppercase">
-                  24/7 SUPPORT
+                  WhatsApp
                 </span>
-                <p className="font-medium text-custom-sm text-dark">
-                  (+965) 7492-3477
-                </p>
+                <a
+                  href="https://wa.me/59899760998"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-custom-sm text-dark hover:text-blue"
+                >
+                  +598 99 760 998
+                </a>
               </div>
             </div>
 
@@ -182,10 +185,10 @@ const Header = () => {
 
                   <div>
                     <span className="block text-2xs text-dark-4 uppercase">
-                      account
+                      cuenta
                     </span>
                     <p className="font-medium text-custom-sm text-dark">
-                      Sign In
+                      Ingresar
                     </p>
                   </div>
                 </Link>
@@ -233,10 +236,10 @@ const Header = () => {
 
                   <div>
                     <span className="block text-2xs text-dark-4 uppercase">
-                      cart
+                      consulta
                     </span>
                     <p className="font-medium text-custom-sm text-dark">
-                      ${totalPrice}
+                      $ {Number(totalPrice).toLocaleString("es-UY")}
                     </p>
                   </div>
                 </button>
@@ -335,29 +338,12 @@ const Header = () => {
             <div className="hidden xl:block">
               <ul className="flex items-center gap-5.5">
                 <li className="py-4">
-                  <a
-                    href="#"
+                  <Link
+                    href="/shop-with-sidebar"
                     className="flex items-center gap-1.5 font-medium text-custom-sm text-dark hover:text-blue"
                   >
-                    <svg
-                      className="fill-current"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.45313 7.55556H1.70313V7.55556L2.45313 7.55556ZM2.45313 8.66667L1.92488 9.19908C2.21729 9.4892 2.68896 9.4892 2.98137 9.19908L2.45313 8.66667ZM4.10124 8.08797C4.39528 7.79623 4.39715 7.32135 4.10541 7.02731C3.81367 6.73327 3.3388 6.73141 3.04476 7.02315L4.10124 8.08797ZM1.86149 7.02315C1.56745 6.73141 1.09258 6.73327 0.800843 7.02731C0.509102 7.32135 0.510968 7.79623 0.805009 8.08797L1.86149 7.02315ZM12.1973 5.05946C12.4143 5.41232 12.8762 5.52252 13.229 5.30558C13.5819 5.08865 13.6921 4.62674 13.4752 4.27388L12.1973 5.05946ZM8.0525 1.25C4.5514 1.25 1.70313 4.06755 1.70313 7.55556H3.20313C3.20313 4.90706 5.3687 2.75 8.0525 2.75V1.25ZM1.70313 7.55556L1.70313 8.66667L3.20313 8.66667L3.20313 7.55556L1.70313 7.55556ZM2.98137 9.19908L4.10124 8.08797L3.04476 7.02315L1.92488 8.13426L2.98137 9.19908ZM2.98137 8.13426L1.86149 7.02315L0.805009 8.08797L1.92488 9.19908L2.98137 8.13426ZM13.4752 4.27388C12.3603 2.46049 10.3479 1.25 8.0525 1.25V2.75C9.80904 2.75 11.346 3.67466 12.1973 5.05946L13.4752 4.27388Z"
-                        fill=""
-                      />
-                      <path
-                        d="M13.5427 7.33337L14.0699 6.79996C13.7777 6.51118 13.3076 6.51118 13.0155 6.79996L13.5427 7.33337ZM11.8913 7.91107C11.5967 8.20225 11.5939 8.67711 11.8851 8.97171C12.1763 9.26631 12.6512 9.26908 12.9458 8.9779L11.8913 7.91107ZM14.1396 8.9779C14.4342 9.26908 14.9091 9.26631 15.2003 8.97171C15.4914 8.67711 15.4887 8.20225 15.1941 7.91107L14.1396 8.9779ZM3.75812 10.9395C3.54059 10.587 3.07849 10.4776 2.72599 10.6951C2.3735 10.9127 2.26409 11.3748 2.48163 11.7273L3.75812 10.9395ZM7.9219 14.75C11.4321 14.75 14.2927 11.9352 14.2927 8.44449H12.7927C12.7927 11.0903 10.6202 13.25 7.9219 13.25V14.75ZM14.2927 8.44449V7.33337H12.7927V8.44449H14.2927ZM13.0155 6.79996L11.8913 7.91107L12.9458 8.9779L14.0699 7.86679L13.0155 6.79996ZM13.0155 7.86679L14.1396 8.9779L15.1941 7.91107L14.0699 6.79996L13.0155 7.86679ZM2.48163 11.7273C3.60082 13.5408 5.62007 14.75 7.9219 14.75V13.25C6.15627 13.25 4.61261 12.3241 3.75812 10.9395L2.48163 11.7273Z"
-                        fill=""
-                      />
-                    </svg>
-                    Recently Viewed
-                  </a>
+                    Catálogo
+                  </Link>
                 </li>
 
                 <li className="py-4">
@@ -378,7 +364,7 @@ const Header = () => {
                         fill=""
                       />
                     </svg>
-                    Wishlist
+                    Favoritos
                   </Link>
                 </li>
               </ul>

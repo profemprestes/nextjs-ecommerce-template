@@ -2,6 +2,7 @@ import React from "react";
 import HeroCarousel from "./HeroCarousel";
 import HeroFeature from "./HeroFeature";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -10,10 +11,9 @@ const Hero = () => {
         <div className="flex flex-wrap gap-5">
           <div className="xl:max-w-[757px] w-full">
             <div className="relative z-1 rounded-[10px] bg-white overflow-hidden">
-              {/* <!-- bg shapes --> */}
               <Image
                 src="/images/hero/hero-bg.png"
-                alt="hero bg shapes"
+                alt="Fondo decorativo"
                 className="absolute right-0 bottom-0 -z-1"
                 width={534}
                 height={520}
@@ -26,71 +26,66 @@ const Hero = () => {
           <div className="xl:max-w-[393px] w-full">
             <div className="flex flex-col sm:flex-row xl:flex-col gap-5">
               <div className="w-full relative rounded-[10px] bg-white p-4 sm:p-7.5">
-                <div className="flex items-center gap-14">
+                <div className="flex items-center justify-between gap-6">
                   <div>
-                    <h2 className="max-w-[153px] font-semibold text-dark text-xl mb-20">
-                      <a href="#"> iPhone 14 Plus & 14 Pro Max </a>
+                    <h2 className="max-w-[175px] font-semibold text-dark text-lg mb-8 leading-snug">
+                      <Link href="/shop-with-sidebar" className="hover:text-blue">
+                        Noruega 2026 Haaland #9
+                      </Link>
                     </h2>
 
                     <div>
-                      <p className="font-medium text-dark-4 text-custom-sm mb-1.5">
-                        limited time offer
+                      <p className="font-medium text-dark-4 text-custom-xs mb-1">
+                        Versión Jugador
                       </p>
-                      <span className="flex items-center gap-3">
-                        <span className="font-medium text-heading-5 text-red">
-                          $699
-                        </span>
-                        <span className="font-medium text-2xl text-dark-4 line-through">
-                          $999
-                        </span>
+                      <span className="font-semibold text-xl text-blue">
+                        Desde $ 1.990
                       </span>
                     </div>
                   </div>
 
-                  <div>
+                  <div className="shrink-0">
                     <Image
-                      src="/images/hero/hero-02.png"
-                      alt="mobile image"
-                      width={123}
-                      height={161}
+                      src="/camisetas/noruega.jpeg"
+                      alt="Camiseta Noruega 2026 Haaland #9"
+                      width={120}
+                      height={145}
+                      className="w-[112px] h-[140px] object-cover rounded-md"
                     />
                   </div>
                 </div>
               </div>
+
               <div className="w-full relative rounded-[10px] bg-white p-4 sm:p-7.5">
-                <div className="flex items-center gap-14">
+                <div className="flex items-center justify-between gap-6">
                   <div>
-                    <h2 className="max-w-[153px] font-semibold text-dark text-xl mb-20">
-                      <a href="#"> Wireless Headphone </a>
+                    <h2 className="max-w-[175px] font-semibold text-dark text-lg mb-8 leading-snug">
+                      <Link href="/shop-with-sidebar" className="hover:text-blue">
+                        Nacional 2026 Titular Blanca
+                      </Link>
                     </h2>
 
                     <div>
-                      <p className="font-medium text-dark-4 text-custom-sm mb-1.5">
-                        limited time offer
+                      <p className="font-medium text-dark-4 text-custom-xs mb-1">
+                        Versión Fan
                       </p>
-                      <span className="flex items-center gap-3">
-                        <span className="font-medium text-heading-5 text-red">
-                          $699
-                        </span>
-                        <span className="font-medium text-2xl text-dark-4 line-through">
-                          $999
-                        </span>
+                      <span className="font-semibold text-xl text-blue">
+                        Desde $ 1.690
                       </span>
                     </div>
                   </div>
 
-                  <div>
+                  <div className="shrink-0">
                     <Image
-                      src="/images/hero/hero-01.png"
-                      alt="mobile image"
-                      width={123}
-                      height={161}
+                      src="/camisetas/nacional-home-2026-umbro-blanca.jpeg"
+                      alt="Camiseta Nacional 2026 Titular Blanca"
+                      width={120}
+                      height={145}
+                      className="w-[112px] h-[140px] object-cover rounded-md"
                     />
                   </div>
                 </div>
               </div>
-
-              
             </div>
           </div>
         </div>

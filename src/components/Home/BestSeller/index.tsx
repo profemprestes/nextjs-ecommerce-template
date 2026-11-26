@@ -18,17 +18,17 @@ const BestSeller = () => {
                 width={17}
                 height={17}
               />
-              This Month
+              Selección destacada
             </span>
             <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
-              Best Sellers
+              Modelos insignia
             </h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7.5">
           {/* <!-- Best Sellers item --> */}
-          {shopData.slice(1, 7).map((item, key) => (
+          {shopData.slice(0, 6).map((item, key) => (
             <SingleItem item={item} key={key} />
           ))}
         </div>
@@ -38,7 +38,7 @@ const BestSeller = () => {
             href="/shop-without-sidebar"
             className="inline-flex font-medium text-custom-sm py-3 px-7 sm:px-12.5 rounded-md border-gray-3 border bg-gray-1 text-dark ease-out duration-200 hover:bg-dark hover:text-white hover:border-transparent"
           >
-            View All
+            Ver todo el catálogo
           </Link>
         </div>
       </div>

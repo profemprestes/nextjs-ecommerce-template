@@ -2,8 +2,9 @@ import Home from "@/components/Home";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NextCommerce | Nextjs E-commerce template",
-  description: "This is Home for NextCommerce Template",
+  title: "Fútbol en la Piel | Camisetas de Fútbol y Básquetbol en Uruguay",
+  description:
+    "La pasión se lleva puesta. Camisetas actuales, Mundial 2026, ediciones retro y clubes en Uruguay. Entrega inmediata y por encargo con envíos a los 19 departamentos.",
   // other metadata
 };
 

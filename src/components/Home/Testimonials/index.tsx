@@ -1,113 +1,114 @@
-"use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useCallback, useRef } from "react";
-import testimonialsData from "./testimonialsData";
-import Image from "next/image";
+import React from "react";
 
-// Import Swiper styles
-import "swiper/css/navigation";
-import "swiper/css";
-import SingleItem from "./SingleItem";
+const steps = [
+  {
+    number: "01",
+    title: "Elegí modelo, versión y talle",
+    description:
+      "Explorá el catálogo en stock inmediato (talles S a XL) o consultanos por modelos y talles por encargo.",
+  },
+  {
+    number: "02",
+    title: "Enviá tu consulta FEP-XXXX",
+    description:
+      "Armá tu selección y mandá el mensaje prearmado por WhatsApp. Confirmamos disponibilidad y precio final antes de cualquier pago.",
+  },
+  {
+    number: "03",
+    title: "Coordiná pago y entrega",
+    description:
+      "Pagás por transferencia bancaria, Mercado Pago o efectivo. Entregamos en Montevideo y despachamos por DAC, Mirtrans o Correo Uruguayo a los 19 departamentos.",
+  },
+];
+
+const sizeGuide = [
+  { size: "S", width: "48–50 cm", length: "70–72 cm", height: "1.65–1.73 m" },
+  { size: "M", width: "51–53 cm", length: "72–74 cm", height: "1.73–1.80 m" },
+  { size: "L", width: "54–56 cm", length: "75–77 cm", height: "1.80–1.86 m" },
+  { size: "XL", width: "57–59 cm", length: "77–79 cm", height: "1.86+ m" },
+];
 
 const Testimonials = () => {
-  const sliderRef = useRef(null);
-
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
-
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
-
   return (
-    <section className="overflow-hidden pb-16.5">
+    <section id="guia-compra" className="overflow-hidden pb-16.5 pt-4">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
-        <div className="">
-          <div className="swiper testimonial-carousel common-carousel p-5">
-            {/* <!-- section title --> */}
-            <div className="mb-10 flex items-center justify-between">
-              <div>
-                <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5">
-                  <Image
-                    src="/images/icons/icon-08.svg"
-                    alt="icon"
-                    width={17}
-                    height={17}
-                  />
-                  Testimonials
-                </span>
-                <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
-                  User Feedbacks
-                </h2>
-              </div>
+        {/* Cómo pedir en 3 pasos */}
+        <div className="mb-10">
+          <span className="block font-medium text-blue mb-1.5">
+            Sin cobro automático en la web
+          </span>
+          <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
+            Cómo pedir tu camiseta en 3 pasos
+          </h2>
+        </div>
 
-              <div className="flex items-center gap-3">
-                <div onClick={handlePrev} className="swiper-button-prev">
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M15.4881 4.43057C15.8026 4.70014 15.839 5.17361 15.5694 5.48811L9.98781 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5695C15.1736 19.839 14.7001 19.8026 14.4306 19.4881L8.43056 12.4881C8.18981 12.2072 8.18981 11.7928 8.43056 11.5119L14.4306 4.51192C14.7001 4.19743 15.1736 4.161 15.4881 4.43057Z"
-                      fill=""
-                    />
-                  </svg>
-                </div>
-
-                <div onClick={handleNext} className="swiper-button-next">
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M8.51192 4.43057C8.82641 4.161 9.29989 4.19743 9.56946 4.51192L15.5695 11.5119C15.8102 11.7928 15.8102 12.2072 15.5695 12.4881L9.56946 19.4881C9.29989 19.8026 8.82641 19.839 8.51192 19.5695C8.19743 19.2999 8.161 18.8264 8.43057 18.5119L14.0122 12L8.43057 5.48811C8.161 5.17361 8.19743 4.70014 8.51192 4.43057Z"
-                      fill=""
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <Swiper
-              ref={sliderRef}
-              slidesPerView={3}
-              spaceBetween={20}
-              breakpoints={{
-                // when window width is >= 640px
-                0: {
-                  slidesPerView: 1,
-                },
-                1000: {
-                  slidesPerView: 2,
-                  // spaceBetween: 4,
-                },
-                // when window width is >= 768px
-                1200: {
-                  slidesPerView: 3,
-                },
-              }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7.5 mb-15">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="bg-white rounded-[10px] border border-gray-3 p-6 sm:p-7.5 shadow-1"
             >
-              {testimonialsData.map((item, key) => (
-                <SwiperSlide key={key}>
-                  <SingleItem testimonial={item} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              <span className="inline-block font-semibold text-sm text-blue bg-blue-light-5 px-3 py-1 rounded mb-4">
+                Paso {step.number}
+              </span>
+              <h3 className="font-semibold text-lg text-dark mb-2.5">
+                {step.title}
+              </h3>
+              <p className="text-custom-sm text-body leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Guía de talles S a XL */}
+        <div
+          id="talles"
+          className="bg-meta rounded-[10px] border border-gray-3 p-6 sm:p-8.5"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 className="font-semibold text-xl text-dark mb-1">
+                Guía de talles orientativa (medidas en plano)
+              </h3>
+              <p className="text-custom-sm text-body">
+                En Versión Jugador (corte entallado), si dudás entre dos talles,
+                pedí un talle más. Por encargo conseguimos todos los talles.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/59899760998?text=Hola%20F%C3%BAtbol%20en%20la%20Piel!%20Necesito%20ayuda%20para%20elegir%20mi%20talle."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex font-medium text-custom-sm text-white bg-dark py-2.5 px-6 rounded-md hover:bg-blue ease-out duration-200"
+            >
+              Consultar medidas exactas
+            </a>
+          </div>
+
+          <div className="overflow-x-auto bg-white rounded-md border border-gray-3">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-gray-3 bg-gray-1 text-dark text-custom-sm font-medium">
+                  <th className="py-3.5 px-5">Talle</th>
+                  <th className="py-3.5 px-5">Ancho (axila a axila)</th>
+                  <th className="py-3.5 px-5">Largo aproximado</th>
+                  <th className="py-3.5 px-5">Altura orientativa</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-3 text-custom-sm">
+                {sizeGuide.map((row) => (
+                  <tr key={row.size}>
+                    <td className="py-3 px-5 font-semibold text-dark">
+                      {row.size}
+                    </td>
+                    <td className="py-3 px-5">{row.width}</td>
+                    <td className="py-3 px-5">{row.length}</td>
+                    <td className="py-3 px-5">{row.height}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

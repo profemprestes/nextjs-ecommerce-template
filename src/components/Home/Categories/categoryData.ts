@@ -1,43 +1,33 @@
 const data = [
   {
-    title: "Televisions",
+    title: "Actuales y Mundial 2026",
     id: 1,
-    img: "/images/categories/categories-01.png",
+    img: "/camisetas/noruega.jpeg",
   },
   {
-    title: "Laptop & PC",
+    title: "Retros (1988–2018)",
     id: 2,
-    img: "/images/categories/categories-02.png",
+    img: "/camisetas/manchest3er_united.jpeg",
   },
   {
-    title: "Mobile & Tablets",
+    title: "La Celeste y Uruguay",
     id: 3,
-    img: "/images/categories/categories-03.png",
+    img: "/camisetas/uruguay-away-2026-nike-jugador.jpeg",
   },
   {
-    title: "Games & Videos",
+    title: "Clubes y Basket",
     id: 4,
-    img: "/images/categories/categories-04.png",
+    img: "/camisetas/boca-juniors-home-2026-2027-adidas.jpeg",
   },
   {
-    title: "Home Appliances",
+    title: "Nacional 2026",
     id: 5,
-    img: "/images/categories/categories-05.png",
+    img: "/camisetas/nacional-home-2026-umbro-blanca.jpeg",
   },
   {
-    title: "Health & Sports",
+    title: "Clásicos Europeos",
     id: 6,
-    img: "/images/categories/categories-06.png",
-  },
-  {
-    title: "Watches",
-    id: 7,
-    img: "/images/categories/categories-07.png",
-  },
-  {
-    title: "Televisions",
-    id: 8,
-    img: "/images/categories/categories-04.png",
+    img: "/camisetas/manchester-united-away-1993-1995-umbro.jpeg",
   },
 ];
 
