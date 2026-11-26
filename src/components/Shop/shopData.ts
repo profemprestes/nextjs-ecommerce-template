@@ -1,4 +1,5 @@
 import catalogoRaw from "../../../docs/catalogo.json";
+import { NUEVAS_WEBP } from "./nuevasFiles";
 import {
   Product,
   ProductCategory,
@@ -82,7 +83,16 @@ const shopData: Product[] = rawItems
   .map((item) => {
     const version = normalizeVersion(item.version);
     const refPrice = getReferencePrice(item.precio_uyu, version);
-    const imgs = item.imagenes_ordenadas.map((file) => `/catalogo/${file}`);
+    const mappedImgs = item.imagenes_ordenadas.map((file) => {
+      const webpName = file.replace(/\.jpg$/i, ".webp");
+      return NUEVAS_WEBP.has(webpName)
+        ? `/nuevas/${webpName}`
+        : `/catalogo/${file}`;
+    });
+    const imgs = [
+      ...mappedImgs.filter((p) => p.startsWith("/nuevas/")),
+      ...mappedImgs.filter((p) => !p.startsWith("/nuevas/")),
+    ];
 
     return {
       id: hashSlugToId(item.slug_normalizado),
