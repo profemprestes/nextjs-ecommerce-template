@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "catalog:sync": "tsx scripts/sync-catalog.ts",
+    "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.15.0",
