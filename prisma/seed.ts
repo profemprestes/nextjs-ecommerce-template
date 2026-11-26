@@ -9,7 +9,7 @@ import {
   ProductModalidad,
   ProductType,
   ProductVersion,
-} from "@prisma/client";
+} from "../src/generated/prisma/client";
 
 type CatalogoEntry = {
   id_origen: string | null;
@@ -158,8 +158,8 @@ async function main() {
       });
     }
 
-    console.log(
-      `[db:seed] Sincronizados ${upsertedProducts} productos/anuncios y ${totalImages} imágenes en PostgreSQL.`
+    process.stdout.write(
+      `[db:seed] Sincronizados ${upsertedProducts} productos/anuncios y ${totalImages} imágenes en PostgreSQL.\n`
     );
   } finally {
     await prisma.$disconnect();

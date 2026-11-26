@@ -49,8 +49,8 @@ function main() {
   const nuevasFiles = fs.readdirSync(NUEVAS_DIR);
   const pngFiles = nuevasFiles.filter((f) => f.toLowerCase().endsWith(".png"));
 
-  console.log(
-    `[sync-catalog] Modo: ${isDryRun ? "DRY-RUN" : "EJECUCIÓN"} | PNGs pendientes: ${pngFiles.length}`
+  process.stdout.write(
+    `[sync-catalog] Modo: ${isDryRun ? "DRY-RUN" : "EJECUCIÓN"} | PNGs pendientes: ${pngFiles.length}\n`
   );
 
   let converted = 0;
@@ -62,7 +62,7 @@ function main() {
     const tmpPath = path.join(NUEVAS_DIR, `${base}.tmp.webp`);
 
     if (isDryRun) {
-      console.log(`  [dry-run] ${file} -> ${targetName}`);
+      process.stdout.write(`  [dry-run] ${file} -> ${targetName}\n`);
       converted += 1;
       continue;
     }
@@ -157,8 +157,8 @@ function main() {
     fs.renameSync(tmpJson, CATALOGO_JSON);
   }
 
-  console.log(
-    `[sync-catalog] Listo. Convertidos: ${converted} | Entradas: ${updated.length} | WebP: ${webpCount} | JPG: ${jpgCount} | Faltantes: ${missingCount}`
+  process.stdout.write(
+    `[sync-catalog] Listo. Convertidos: ${converted} | Entradas: ${updated.length} | WebP: ${webpCount} | JPG: ${jpgCount} | Faltantes: ${missingCount}\n`
   );
 }
 
