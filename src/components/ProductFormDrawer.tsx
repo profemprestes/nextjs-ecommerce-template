@@ -39,6 +39,7 @@ import {
   validateWebpImageUrl,
 } from '@/lib/catalog-schema';
 import { ProductImage } from './ProductImage';
+import { ProductAiAssistantPanel } from './ProductAiAssistantPanel';
 
 interface ProductFormDrawerProps {
   open: boolean;
@@ -595,6 +596,18 @@ export function ProductFormDrawer({
                   className={`${inputClass} resize-y leading-relaxed`}
                 />
               </div>
+
+              <ProductAiAssistantPanel
+                key={`${mode}-${initialProduct.uid}-${open}`}
+                form={form}
+                existingSlugs={existingProducts
+                  .filter((p) => p.uid !== initialProduct.uid)
+                  .map((p) => p.slug ?? '')
+                  .filter(Boolean)}
+                onApplyFields={(patch) =>
+                  setForm((prev) => ({ ...prev, ...patch }))
+                }
+              />
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
                 <div>
