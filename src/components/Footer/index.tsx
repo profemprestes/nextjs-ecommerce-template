@@ -1,80 +1,73 @@
 import React from "react";
 import Link from "next/link";
 
+const linkClass =
+  "text-noche/80 hover:text-noche underline-offset-4 hover:underline transition-colors";
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#F5F5F7] text-[#1D1D1F] border-t border-black/10">
-      <div className="container py-12 lg:py-16">
+    <footer className="bg-tiza text-noche border-t border-[var(--border)]">
+      <div className="container py-14 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-          <div className="md:col-span-5">
-            <Link
-              href="/"
-              className="inline-block mb-3 font-brand text-sm tracking-[0.02em] text-[#1D1D1F]"
-            >
-              FUTBOL EN LA PIEL
+          <div className="md:col-span-6">
+            <Link href="/" className="inline-block mb-4 text-noche">
+              <span className="fep-display text-[clamp(2.25rem,4vw,3.25rem)]">
+                Fútbol en la Piel
+              </span>
             </Link>
-            <p className="text-sm text-[#6E6E73] max-w-[44ch] mb-4 leading-relaxed">
-              Camisetas de fútbol actuales, Mundial 2026 y ediciones retro en
-              Uruguay, con entrega inmediata y envíos a los 19 departamentos por
-              DAC, Mirtrans y Correo Uruguayo.
+            <p className="text-sm text-grada max-w-[44ch] mb-3 leading-relaxed">
+              Camisetas de fútbol actuales, del Mundial 2026 y retros, en
+              Uruguay. Entrega inmediata o por encargo, con envíos a los 19
+              departamentos por DAC, Mirtrans y Correo Uruguayo.
             </p>
-            <p className="text-xs font-mono-cl text-[#6E6E73] uppercase">
-              Transferencia bancaria · Mercado Pago · Efectivo
+            <p className="text-sm text-grada">
+              Pagás por transferencia bancaria, Mercado Pago o en efectivo.
             </p>
           </div>
 
-          <div className="md:col-span-4">
-            <h2 className="font-mono-cl text-xs uppercase text-[#6E6E73] mb-4">
-              Catálogo y consulta
+          <div className="md:col-span-3">
+            <h2 className="text-sm font-semibold text-noche mb-4 [font-family:var(--font-body)] tracking-normal">
+              Catálogo
             </h2>
-            <ul className="flex flex-col gap-2.5 text-sm font-medium">
+            <ul className="flex flex-col gap-3 text-sm">
               <li>
-                <Link
-                  href="/shop-with-sidebar"
-                  className="text-[#0066CC] hover:underline"
-                >
+                <Link href="/shop-with-sidebar" className={linkClass}>
                   Catálogo con filtros
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/shop-without-sidebar"
-                  className="text-[#0066CC] hover:underline"
-                >
-                  Catálogo completo
+                <Link href="/shop-without-sidebar" className={linkClass}>
+                  Ver todas las camisetas
                 </Link>
               </li>
               <li>
-                <Link href="/cart" className="text-[#0066CC] hover:underline">
-                  Mi selección
+                <Link href="/#talles" className={linkClass}>
+                  Guía de talles
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/checkout"
-                  className="text-[#0066CC] hover:underline"
-                >
-                  Consultar por WhatsApp
+                <Link href="/cart" className={linkClass}>
+                  Mi consulta
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="md:col-span-3">
-            <h2 className="font-mono-cl text-xs uppercase text-[#6E6E73] mb-4">
-              Canales directos
+            <h2 className="text-sm font-semibold text-noche mb-4 [font-family:var(--font-body)] tracking-normal">
+              Hablemos
             </h2>
-            <ul className="flex flex-col gap-2.5 text-sm font-medium">
+            <ul className="flex flex-col gap-3 text-sm">
               <li>
                 <a
                   href="https://wa.me/59899760998"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono-cl text-[#0066CC] hover:underline"
+                  className={`${linkClass} tabular-nums`}
                 >
-                  +598 99 760 998
+                  WhatsApp +598 99 760 998
                 </a>
               </li>
               <li>
@@ -82,16 +75,13 @@ const Footer = () => {
                   href="https://www.instagram.com/futbolenlapieluy1/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0066CC] hover:underline"
+                  className={linkClass}
                 >
-                  @futbolenlapieluy1
+                  Instagram @futbolenlapieluy1
                 </a>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="text-[#0066CC] hover:underline"
-                >
+                <Link href="/contact" className={linkClass}>
                   Contacto
                 </Link>
               </li>
@@ -99,9 +89,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-black/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-[#6E6E73] font-mono-cl">
-          <span>© {year} Fútbol en la Piel · Uruguay</span>
-          <span>@futbolenlapieluy1</span>
+        <div className="mt-12 pt-6 border-t border-[var(--border)] text-[0.8125rem] text-grada">
+          © {year} Fútbol en la Piel, Uruguay.
         </div>
       </div>
     </footer>

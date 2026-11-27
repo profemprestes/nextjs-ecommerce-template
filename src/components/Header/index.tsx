@@ -1,28 +1,55 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { menuData } from "./menuData";
+import { usePathname } from "next/navigation";
 import { useAppSelector } from "@/redux/store";
 import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
 
+const NAV = [
+  { title: "Catálogo", path: "/shop-with-sidebar" },
+  { title: "Guía de talles", path: "/#talles" },
+  { title: "Cómo comprar", path: "/#guia-compra" },
+  { title: "Contacto", path: "/contact" },
+];
+
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const progressRef = useRef<HTMLSpanElement>(null);
+  const pathname = usePathname();
   const { openCartModal } = useCartModalContext();
-  const cartItems = useAppSelector((state) => state.cartReducer.items);
+  const cartCount = useAppSelector((state) => state.cartReducer.items.length);
 
+  // Bump the counter only when the count changes after mount
+  const prevCount = useRef(cartCount);
+  const [bumpKey, setBumpKey] = useState(0);
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
+    if (cartCount !== prevCount.current) {
+      prevCount.current = cartCount;
+      setBumpKey((k) => k + 1);
+    }
+  }, [cartCount]);
+
+  // Scroll progress via transform, written straight to the DOM (no re-render per scroll)
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight > 0) {
-        setScrollProgress(Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)));
+      const p = docHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / docHeight)) : 0;
+      if (progressRef.current) {
+        progressRef.current.style.transform = `scaleX(${p})`;
       }
     };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -34,41 +61,42 @@ const Header = () => {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [navigationOpen]);
 
+  const isActive = (path: string) =>
+    !path.includes("#") && pathname === path;
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-300 bg-[rgba(245,245,247,0.92)] backdrop-blur-[20px] backdrop-saturate-[1.8] border-b border-black/10">
-        <div className="container relative h-11 flex items-center justify-between gap-4">
+      <header className="fixed top-0 left-0 right-0 z-300 bg-[var(--glass)] backdrop-blur-[18px] backdrop-saturate-[1.6] border-b border-[var(--border)]">
+        <div className="container relative h-14 flex items-center justify-between gap-4">
           <Link
             href="/"
-            className="shrink-0 flex items-center min-h-[44px] text-[#1D1D1F] hover:text-[#0066CC] transition-colors"
+            className="shrink-0 flex items-center min-h-11 text-noche"
           >
-            <span className="font-brand text-[13px] tracking-[0.02em] whitespace-nowrap">
-              FUTBOL EN LA PIEL
+            <span className="fep-display text-[1.375rem] leading-none tracking-[0.01em] whitespace-nowrap">
+              Fútbol en la Piel
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav
             aria-label="Navegación principal"
             className="hidden lg:flex items-center gap-1"
           >
-            {menuData.map((item) => (
-              <div key={item.id} className="relative group">
-                <Link
-                  href={item.path}
-                  className="inline-flex items-center min-h-[36px] px-3 text-xs font-medium text-[#1D1D1F] hover:text-[#0066CC] transition-colors"
-                >
-                  {item.title}
-                </Link>
-              </div>
+            {NAV.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                aria-current={isActive(item.path) ? "page" : undefined}
+                className="relative inline-flex items-center min-h-11 px-3 text-sm font-medium text-noche/75 hover:text-noche transition-colors aria-[current=page]:text-noche after:absolute after:left-3 after:right-3 after:bottom-2 after:h-[2px] after:rounded-full after:bg-celeste after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 aria-[current=page]:after:scale-x-100"
+              >
+                {item.title}
+              </Link>
             ))}
           </nav>
 
-          {/* Right Actions */}
           <div className="flex items-center gap-2">
             <Link
               href="/wishlist"
-              className="hidden sm:inline-flex items-center min-h-[36px] px-3 text-xs font-medium text-[#424245] hover:text-[#0066CC] transition-colors"
+              className="hidden sm:inline-flex items-center min-h-11 px-3 text-sm font-medium text-noche/75 hover:text-noche transition-colors"
             >
               Favoritos
             </Link>
@@ -76,9 +104,19 @@ const Header = () => {
             <button
               type="button"
               onClick={openCartModal}
-              className="inline-flex items-center justify-center h-8 px-3.5 rounded-[980px] bg-[#0071E3] text-[#FFFFFF] font-medium text-xs hover:bg-[#0066CC] transition-colors whitespace-nowrap"
+              aria-label={`Ver mi consulta, ${cartCount} ${cartCount === 1 ? "camiseta" : "camisetas"}`}
+              className="fep-btn-dark fep-btn-sm min-h-10! gap-2!"
             >
-              Consulta ({cartItems.length})
+              Mi consulta
+              <span
+                key={bumpKey}
+                aria-hidden="true"
+                className={`inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-full bg-celeste text-noche text-xs font-bold tabular-nums ${
+                  bumpKey ? "fep-bump" : ""
+                }`}
+              >
+                {cartCount}
+              </span>
             </button>
 
             <button
@@ -87,77 +125,78 @@ const Header = () => {
               aria-expanded={navigationOpen}
               aria-controls="mobile-nav-drawer"
               onClick={() => setNavigationOpen(!navigationOpen)}
-              className="lg:hidden inline-flex items-center justify-center h-8 px-3 rounded-[980px] border border-[#0066CC] text-xs font-medium text-[#0066CC] hover:bg-[#0066CC]/8 transition-colors"
+              className="lg:hidden fep-icon-btn"
             >
-              {navigationOpen ? "Cerrar" : "Menú"}
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M2 5h14M2 13h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
             </button>
           </div>
         </div>
         <span
+          ref={progressRef}
           aria-hidden="true"
-          className="pointer-events-none block h-[2px] bg-[#0071E3] transition-[width] duration-150 ease-out"
-          style={{ width: `${scrollProgress}%` }}
+          className="pointer-events-none absolute left-0 right-0 -bottom-px h-[2px] bg-celeste origin-left"
+          style={{ transform: "scaleX(0)" }}
         />
       </header>
 
-      {/* Mobile Drawer (< 1024px) */}
       {navigationOpen && (
         <div
-          className="lg:hidden fixed inset-0 z-400 flex justify-end bg-black/35 backdrop-blur-sm"
+          className="fep-backdrop lg:hidden fixed inset-0 z-400 flex justify-end bg-noche/40 backdrop-blur-sm"
           onClick={() => setNavigationOpen(false)}
         >
           <aside
             id="mobile-nav-drawer"
             role="dialog"
             aria-modal="true"
-            aria-label="Menú móvil"
-            className="w-[min(340px,88vw)] h-full bg-[#FFFFFF] border-l border-black/10 p-6 flex flex-col justify-between"
+            aria-label="Menú"
+            className="fep-drawer w-[min(360px,88vw)] h-full bg-white p-6 flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()}
           >
             <div>
-              <div className="flex items-center justify-between pb-5 mb-5 border-b border-black/10">
-                <span className="font-brand text-sm text-[#1D1D1F]">
-                  FUTBOL EN LA PIEL
+              <div className="flex items-center justify-between pb-5 mb-4 border-b border-[var(--border)]">
+                <span className="fep-display text-xl text-noche">
+                  Fútbol en la Piel
                 </span>
                 <button
                   type="button"
                   onClick={() => setNavigationOpen(false)}
-                  className="min-h-[36px] px-3.5 rounded-[980px] border border-[#0071E3] text-xs font-medium text-[#0071E3]"
+                  aria-label="Cerrar menú"
+                  className="fep-icon-btn"
                 >
-                  Cerrar
+                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  </svg>
                 </button>
               </div>
 
-              <nav className="flex flex-col gap-2">
-                {menuData.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={item.path}
-                    onClick={() => setNavigationOpen(false)}
-                    className="min-h-[44px] px-4 rounded-none flex items-center text-base font-medium text-[#1D1D1F] hover:bg-[#F5F5F7] hover:text-[#0066CC] transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-                <Link
-                  href="/wishlist"
-                  onClick={() => setNavigationOpen(false)}
-                  className="min-h-[44px] px-4 rounded-none flex items-center text-base font-medium text-[#6E6E73] hover:bg-[#F5F5F7] hover:text-[#1D1D1F] transition-colors"
-                >
-                  Favoritos
-                </Link>
+              <nav aria-label="Navegación móvil" className="flex flex-col">
+                {[{ title: "Inicio", path: "/" }, ...NAV, { title: "Favoritos", path: "/wishlist" }].map(
+                  (item, idx) => (
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      onClick={() => setNavigationOpen(false)}
+                      aria-current={isActive(item.path) ? "page" : undefined}
+                      className="fep-rise fep-display min-h-14 flex items-center text-[2rem] text-noche/80 hover:text-noche aria-[current=page]:text-celeste-hondo border-b border-[var(--border)] transition-colors"
+                      style={{ "--i": idx + 2 } as React.CSSProperties}
+                    >
+                      {item.title}
+                    </Link>
+                  )
+                )}
               </nav>
             </div>
 
-            <div className="pt-5 border-t border-black/10 flex flex-col gap-3">
-              <Link
-                href="/checkout"
-                onClick={() => setNavigationOpen(false)}
-                className="sport-btn-primary w-full text-center"
-              >
-                Consultar por WhatsApp
-              </Link>
-            </div>
+            <a
+              href="https://wa.me/59899760998"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fep-btn w-full"
+            >
+              Escribinos por WhatsApp
+            </a>
           </aside>
         </div>
       )}

@@ -2,12 +2,7 @@
 import "../css/style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import {
-  Barlow_Condensed,
-  Archivo_Black,
-  Geist,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Big_Shoulders, Geist } from "next/font/google";
 
 import { ModalProvider } from "../context/QuickViewModalContext";
 import { CartModalProvider } from "../context/CartSidebarModalContext";
@@ -18,17 +13,10 @@ import { PreviewSliderProvider } from "../context/PreviewSliderContext";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
 import ScrollToTop from "@/components/Common/ScrollToTop";
 
-const barlowCondensed = Barlow_Condensed({
+const bigShoulders = Big_Shoulders({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  variable: "--font-barlow-condensed",
-  display: "swap",
-});
-
-const archivoBlack = Archivo_Black({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-archivo-black",
+  axes: ["opsz"],
+  variable: "--font-big-shoulders",
   display: "swap",
 });
 
@@ -39,12 +27,6 @@ const geist = Geist({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -56,7 +38,7 @@ export default function RootLayout({
       lang="es-UY"
       data-scroll-behavior="smooth"
       suppressHydrationWarning={true}
-      className={`${barlowCondensed.variable} ${archivoBlack.variable} ${geist.variable} ${jetbrainsMono.variable}`}
+      className={`site ${bigShoulders.variable} ${geist.variable}`}
     >
       <body suppressHydrationWarning={true}>
         <ReduxProvider>

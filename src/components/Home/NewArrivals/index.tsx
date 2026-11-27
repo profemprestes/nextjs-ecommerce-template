@@ -1,84 +1,109 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const versions = [
   {
-    index: "01",
+    key: "jugador",
     name: "Versión Jugador",
     price: "Desde $ 1.990",
     detail:
-      "Corte entallado (slim fit en pecho y cintura), tela técnica respirable y escudo termosellado. Si dudás entre dos talles o la preferís holgada, pedí un talle más.",
+      "Corte entallado en pecho y cintura, tela técnica respirable y escudo termosellado. Si dudás entre dos talles o la preferís holgada, pedí un talle más.",
+    img: "/catalogo/uruguay-2026_post1_02.jpg",
+    alt: "Detalle de la camiseta de Uruguay 2026, Versión Jugador",
   },
   {
-    index: "02",
+    key: "fan",
     name: "Versión Fan",
     price: "Desde $ 1.690",
     detail:
-      "Calce clásico (regular fit, igual a una remera habitual), tela resistente para uso urbano o estadio y escudo bordado.",
+      "Calce clásico, igual a una remera de todos los días. Tela resistente para la calle o la tribuna y escudo bordado.",
+    img: "/catalogo/liverpool-2026_araujo-33_version-fan_post1_01.jpg",
+    alt: "Camiseta de Liverpool 2026 de Araujo, Versión Fan",
   },
   {
-    index: "03",
+    key: "retro",
     name: "Edición Retro",
     price: "Desde $ 1.890",
     detail:
-      "Clásicos históricos (1988–2018) con etiquetas y dorsales icónicos como Cantona #7, Baggio #10 o Ronaldo #9.",
+      "Clásicos de 1988 a 2018 con etiquetas y dorsales históricos, como Cantona 7, Baggio 10 o Ronaldo 9.",
+    img: "/catalogo/penarol-1998_10_post1_01.jpg",
+    alt: "Camiseta retro de Peñarol 1998 con el 10",
   },
 ];
 
 const NewArrival = () => {
+  const [active, setActive] = useState(0);
+
   return (
-    <section className="bg-[#FFFFFF] text-[#1D1D1F] py-14 lg:py-20">
+    <section className="bg-white text-noche py-16 lg:py-24">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          <div className="lg:col-span-5 lg:sticky lg:top-20">
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[460px] rounded-none overflow-hidden bg-[#F5F5F7]">
-              <Image
-                src="/catalogo/uruguay-2026_post1_02.jpg"
-                alt="Detalle de camiseta Uruguay 2026"
-                fill
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
-              />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-24">
+            <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] rounded-[22px] overflow-hidden bg-[var(--field-deep)]">
+              {versions.map((v, idx) => (
+                <Image
+                  key={v.key}
+                  src={v.img}
+                  alt={v.alt}
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  aria-hidden={idx !== active}
+                  className={`object-cover transition-[opacity,transform] duration-700 ease-[var(--ease-out)] ${
+                    idx === active ? "opacity-100 scale-100" : "opacity-0 scale-[1.04]"
+                  }`}
+                />
+              ))}
             </div>
           </div>
 
           <div className="lg:col-span-7 min-w-0">
-            <span className="font-mono-cl text-xs uppercase text-[#6E6E73] block mb-3">
-              Confección y calce
-            </span>
-            <h2 className="sport-display text-[#1D1D1F] mb-5">
-              Versiones y confección
+            <h2 className="fep-display text-[clamp(2.5rem,5.5vw,4.5rem)] text-noche mb-4">
+              ¿Jugador, Fan o Retro?
             </h2>
-            <p className="text-[#6E6E73] mb-8 max-w-[58ch]">
-              En Versión Jugador trabajamos confecciones de calidad muy alta con
-              telas técnicas y detalles fieles. Confirmamos stock y precio final
-              por WhatsApp antes de coordinar el pago.
+            <p className="text-grada mb-8 max-w-[52ch]">
+              Cambian el corte, la tela y el escudo. Tocá cada versión para verla
+              de cerca. El precio final lo confirmamos por WhatsApp antes de que
+              pagues.
             </p>
 
-            <div className="border-t border-black/15">
-              {versions.map((v) => (
-                <div
-                  key={v.name}
-                  className="border-b border-black/10 py-6 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline"
-                >
-                  <div className="sm:col-span-8 min-w-0 flex gap-4">
-                    <span className="font-mono-cl text-xs text-[#6E6E73] pt-1.5 shrink-0">
-                      {v.index}
-                    </span>
-                    <div>
-                      <h3 className="sport-display text-[#1D1D1F] mb-2">
+            <div className="border-t border-[var(--border)]">
+              {versions.map((v, idx) => {
+                const isActive = idx === active;
+                return (
+                  <button
+                    key={v.key}
+                    type="button"
+                    aria-pressed={isActive}
+                    onClick={() => setActive(idx)}
+                    onMouseEnter={() => setActive(idx)}
+                    onFocus={() => setActive(idx)}
+                    className="group relative w-full text-left border-b border-[var(--border)] py-6 pl-5 pr-1 grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-baseline"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`absolute left-0 top-6 bottom-6 w-[3px] rounded-full bg-celeste origin-top transition-transform duration-500 ease-[var(--ease-spring)] ${
+                        isActive ? "scale-y-100" : "scale-y-0"
+                      }`}
+                    />
+                    <span className="sm:col-span-8 min-w-0">
+                      <span
+                        className={`fep-display block text-[clamp(1.75rem,3vw,2.5rem)] mb-2 transition-colors duration-300 ${
+                          isActive ? "text-noche" : "text-noche/45 group-hover:text-noche/70"
+                        }`}
+                      >
                         {v.name}
-                      </h3>
-                      <p className="text-sm text-[#6E6E73]">{v.detail}</p>
-                    </div>
-                  </div>
-                  <div className="sm:col-span-4 sm:text-right">
-                    <span className="font-mono-cl text-lg text-[#1D1D1F]">
+                      </span>
+                      <span className="block text-sm leading-relaxed text-grada max-w-[56ch]">
+                        {v.detail}
+                      </span>
+                    </span>
+                    <span className="sm:col-span-4 sm:text-right text-lg font-semibold tabular-nums text-noche">
                       {v.price}
                     </span>
-                  </div>
-                </div>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
