@@ -48,7 +48,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
       <div>
         {/* 4:3 jersey preview frame — zero text or badges overlaid */}
         <Link
-          href="/shop-details"
+          href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
           onClick={handleProductDetails}
           className="relative aspect-[4/3] w-full block rounded-lg overflow-hidden bg-[#0D203B] mb-4"
         >
@@ -80,7 +80,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
           className="font-display text-xl font-bold text-[#F5EAD6] hover:text-[#A8D6F0] transition-colors mb-2 leading-tight"
           onClick={handleProductDetails}
         >
-          <Link href="/shop-details">{item.title}</Link>
+          <Link href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}>{item.title}</Link>
         </h3>
       </div>
 

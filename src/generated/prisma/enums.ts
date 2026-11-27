@@ -9,38 +9,7 @@
 * 🟢 You can import this file directly.
 */
 
-export const ProductType = {
-  producto: 'producto',
-  anuncio: 'anuncio'
-} as const
-
-export type ProductType = (typeof ProductType)[keyof typeof ProductType]
 
 
-export const ProductCategory = {
-  actuales: 'actuales',
-  retros: 'retros',
-  uruguay: 'uruguay',
-  clubes: 'clubes'
-} as const
-
-export type ProductCategory = (typeof ProductCategory)[keyof typeof ProductCategory]
-
-
-export const ProductVersion = {
-  Jugador: 'Jugador',
-  Fan: 'Fan',
-  Retro: 'Retro',
-  a_confirmar: 'a_confirmar'
-} as const
-
-export type ProductVersion = (typeof ProductVersion)[keyof typeof ProductVersion]
-
-
-export const ProductModalidad = {
-  entrega_inmediata: 'entrega_inmediata',
-  por_encargo: 'por_encargo',
-  pendiente_verificacion: 'pendiente_verificacion'
-} as const
-
-export type ProductModalidad = (typeof ProductModalidad)[keyof typeof ProductModalidad]
+// This file is empty because there are no enums in the schema.
+export {}

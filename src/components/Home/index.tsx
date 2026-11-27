@@ -4,13 +4,18 @@ import NewArrival from "./NewArrivals";
 import BestSeller from "./BestSeller";
 import Testimonials from "./Testimonials";
 import PromoBanner from "./PromoBanner";
+import { Product } from "@/types/product";
 
-const Home = () => {
+interface HomeProps {
+  initialProducts?: Product[];
+}
+
+const Home = ({ initialProducts }: HomeProps) => {
   return (
     <main>
       <Hero />
       <NewArrival />
-      <BestSeller />
+      <BestSeller initialProducts={initialProducts} />
       <Testimonials />
       <PromoBanner />
     </main>

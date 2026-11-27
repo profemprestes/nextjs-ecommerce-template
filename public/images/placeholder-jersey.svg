@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <rect width="600" height="450" fill="#102442"/>
+  <rect x="24" y="24" width="552" height="402" rx="18" stroke="#8ECBF5" stroke-opacity="0.28" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M225 110L170 148L192 208L225 194V330H375V194L408 208L430 148L375 110H340C333 128 318 140 300 140C282 140 267 128 260 110H225Z" fill="#132C52" stroke="#A8D6F0" stroke-width="4" stroke-linejoin="round"/>
+  <text x="300" y="376" text-anchor="middle" fill="#B8C7DC" font-family="sans-serif" font-size="18" font-weight="600">Fútbol en la Piel · Foto pendiente</text>
+</svg>

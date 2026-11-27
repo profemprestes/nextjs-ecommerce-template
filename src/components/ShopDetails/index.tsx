@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
@@ -14,13 +15,27 @@ import toast from "react-hot-toast";
 
 const TALLES = ["S", "M", "L", "XL", "Otro (por encargo)"] as const;
 
-const ShopDetails = () => {
+interface ShopDetailsProps {
+  initialProduct?: Product | null;
+  relatedProducts?: Product[];
+  hasExplicitSlug?: boolean;
+  notFoundSlug?: string | null;
+}
+
+const ShopDetails = ({
+  initialProduct,
+  relatedProducts,
+  hasExplicitSlug = false,
+  notFoundSlug = null,
+}: ShopDetailsProps) => {
   const dispatch = useDispatch<AppDispatch>();
   const productFromRedux = useAppSelector(
     (state) => state.productDetailsReducer.value
   ) as Partial<Product>;
 
-  const [product, setProduct] = useState<Product>(shopData[0]);
+  const [product, setProduct] = useState<Product>(
+    initialProduct ?? shopData[0]
+  );
   const [previewImg, setPreviewImg] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string>("M");
   const [activeTab, setActiveTab] = useState<"tabOne" | "tabTwo" | "tabThree">(
@@ -28,15 +43,38 @@ const ShopDetails = () => {
   );
 
   useEffect(() => {
+    if (hasExplicitSlug) {
+      if (initialProduct) {
+        setProduct(initialProduct);
+        setPreviewImg(0);
+        localStorage.setItem("productDetails", JSON.stringify(initialProduct));
+      }
+      return;
+    }
+
     if (productFromRedux && productFromRedux.title) {
+      const pool = [
+        ...(initialProduct ? [initialProduct] : []),
+        ...(relatedProducts ?? []),
+        ...shopData,
+      ];
       const matched =
-        shopData.find((p) => p.title === productFromRedux.title) ??
-        (productFromRedux as Product);
+        pool.find(
+          (p) =>
+            (productFromRedux.slug && p.slug === productFromRedux.slug) ||
+            p.title === productFromRedux.title
+        ) ?? (productFromRedux as Product);
       setProduct(matched);
       setPreviewImg(0);
       localStorage.setItem("productDetails", JSON.stringify(matched));
       return;
     }
+
+    if (initialProduct) {
+      setProduct(initialProduct);
+      return;
+    }
+
     const stored = localStorage.getItem("productDetails");
     if (stored) {
       try {
@@ -45,10 +83,45 @@ const ShopDetails = () => {
           setProduct(parsed);
         }
       } catch {
-        // fallback to shopData[0]
+        // fallback to initialProduct / shopData[0]
       }
     }
-  }, [productFromRedux]);
+  }, [hasExplicitSlug, initialProduct, relatedProducts, productFromRedux]);
+
+  if (notFoundSlug) {
+    return (
+      <>
+        <Breadcrumb
+          title="Producto no disponible"
+          pages={["tienda", "/", "detalle"]}
+        />
+        <section className="py-16 lg:py-24 bg-[#0A1B33] text-[#F5EAD6]">
+          <div className="container">
+            <div className="max-w-xl mx-auto rounded-2xl border border-[rgba(245,234,214,0.18)] bg-[#102442] p-8 text-center">
+              <h2 className="sport-display text-2xl text-[#F5EAD6] mb-3">
+                Esta camiseta ya no está disponible
+              </h2>
+              <p className="text-sm text-[#B8C7DC] mb-6">
+                No encontramos un producto activo para{" "}
+                <span className="font-mono-cl text-[#A8D6F0]">
+                  {notFoundSlug}
+                </span>
+                . Es posible que haya sido pausado o quitado del catálogo.
+              </p>
+              <Link
+                href="/shop-with-sidebar"
+                className="sport-btn-primary inline-flex items-center justify-center"
+              >
+                Ver catálogo completo
+              </Link>
+            </div>
+          </div>
+        </section>
+        <RecentlyViewdItems products={relatedProducts} />
+        <Newsletter />
+      </>
+    );
+  }
 
   const images =
     product?.imgs?.previews?.length > 0
@@ -345,7 +418,7 @@ const ShopDetails = () => {
         </div>
       </section>
 
-      <RecentlyViewdItems />
+      <RecentlyViewdItems products={relatedProducts} />
       <Newsletter />
     </>
   );

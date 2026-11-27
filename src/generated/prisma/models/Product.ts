@@ -38,26 +38,24 @@ export type ProductMinAggregateOutputType = {
   uid: string | null
   id: string | null
   slug: string | null
-  tipo: $Enums.ProductType | null
-  activo: boolean | null
   title: string | null
-  team: string | null
-  season: string | null
-  dorsal: string | null
-  category: $Enums.ProductCategory | null
-  sport: string | null
-  version: $Enums.ProductVersion | null
-  modalidad: $Enums.ProductModalidad | null
-  price_uyu: number | null
-  cover_image: string | null
-  source_ref: string | null
   description: string | null
   availability: string | null
   condition: string | null
   price: string | null
+  price_uyu: number | null
   link: string | null
   image_link: string | null
   brand: string | null
+  team: string | null
+  season: string | null
+  player_number: string | null
+  category: string | null
+  sport: string | null
+  kit_version: string | null
+  delivery_mode: string | null
+  active: boolean | null
+  source_ref: string | null
   google_product_category: string | null
   fb_product_category: string | null
   quantity_to_sell_on_facebook: string | null
@@ -86,26 +84,24 @@ export type ProductMaxAggregateOutputType = {
   uid: string | null
   id: string | null
   slug: string | null
-  tipo: $Enums.ProductType | null
-  activo: boolean | null
   title: string | null
-  team: string | null
-  season: string | null
-  dorsal: string | null
-  category: $Enums.ProductCategory | null
-  sport: string | null
-  version: $Enums.ProductVersion | null
-  modalidad: $Enums.ProductModalidad | null
-  price_uyu: number | null
-  cover_image: string | null
-  source_ref: string | null
   description: string | null
   availability: string | null
   condition: string | null
   price: string | null
+  price_uyu: number | null
   link: string | null
   image_link: string | null
   brand: string | null
+  team: string | null
+  season: string | null
+  player_number: string | null
+  category: string | null
+  sport: string | null
+  kit_version: string | null
+  delivery_mode: string | null
+  active: boolean | null
+  source_ref: string | null
   google_product_category: string | null
   fb_product_category: string | null
   quantity_to_sell_on_facebook: string | null
@@ -134,26 +130,24 @@ export type ProductCountAggregateOutputType = {
   uid: number
   id: number
   slug: number
-  tipo: number
-  activo: number
   title: number
-  team: number
-  season: number
-  dorsal: number
-  category: number
-  sport: number
-  version: number
-  modalidad: number
-  price_uyu: number
-  cover_image: number
-  source_ref: number
   description: number
   availability: number
   condition: number
   price: number
+  price_uyu: number
   link: number
   image_link: number
   brand: number
+  team: number
+  season: number
+  player_number: number
+  category: number
+  sport: number
+  kit_version: number
+  delivery_mode: number
+  active: number
+  source_ref: number
   google_product_category: number
   fb_product_category: number
   quantity_to_sell_on_facebook: number
@@ -193,26 +187,24 @@ export type ProductMinAggregateInputType = {
   uid?: true
   id?: true
   slug?: true
-  tipo?: true
-  activo?: true
   title?: true
-  team?: true
-  season?: true
-  dorsal?: true
-  category?: true
-  sport?: true
-  version?: true
-  modalidad?: true
-  price_uyu?: true
-  cover_image?: true
-  source_ref?: true
   description?: true
   availability?: true
   condition?: true
   price?: true
+  price_uyu?: true
   link?: true
   image_link?: true
   brand?: true
+  team?: true
+  season?: true
+  player_number?: true
+  category?: true
+  sport?: true
+  kit_version?: true
+  delivery_mode?: true
+  active?: true
+  source_ref?: true
   google_product_category?: true
   fb_product_category?: true
   quantity_to_sell_on_facebook?: true
@@ -241,26 +233,24 @@ export type ProductMaxAggregateInputType = {
   uid?: true
   id?: true
   slug?: true
-  tipo?: true
-  activo?: true
   title?: true
-  team?: true
-  season?: true
-  dorsal?: true
-  category?: true
-  sport?: true
-  version?: true
-  modalidad?: true
-  price_uyu?: true
-  cover_image?: true
-  source_ref?: true
   description?: true
   availability?: true
   condition?: true
   price?: true
+  price_uyu?: true
   link?: true
   image_link?: true
   brand?: true
+  team?: true
+  season?: true
+  player_number?: true
+  category?: true
+  sport?: true
+  kit_version?: true
+  delivery_mode?: true
+  active?: true
+  source_ref?: true
   google_product_category?: true
   fb_product_category?: true
   quantity_to_sell_on_facebook?: true
@@ -289,26 +279,24 @@ export type ProductCountAggregateInputType = {
   uid?: true
   id?: true
   slug?: true
-  tipo?: true
-  activo?: true
   title?: true
-  team?: true
-  season?: true
-  dorsal?: true
-  category?: true
-  sport?: true
-  version?: true
-  modalidad?: true
-  price_uyu?: true
-  cover_image?: true
-  source_ref?: true
   description?: true
   availability?: true
   condition?: true
   price?: true
+  price_uyu?: true
   link?: true
   image_link?: true
   brand?: true
+  team?: true
+  season?: true
+  player_number?: true
+  category?: true
+  sport?: true
+  kit_version?: true
+  delivery_mode?: true
+  active?: true
+  source_ref?: true
   google_product_category?: true
   fb_product_category?: true
   quantity_to_sell_on_facebook?: true
@@ -424,27 +412,25 @@ export type ProductGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 export type ProductGroupByOutputType = {
   uid: string
   id: string
-  slug: string
-  tipo: $Enums.ProductType
-  activo: boolean
+  slug: string | null
   title: string
-  team: string
-  season: string | null
-  dorsal: string | null
-  category: $Enums.ProductCategory
-  sport: string
-  version: $Enums.ProductVersion
-  modalidad: $Enums.ProductModalidad
-  price_uyu: number | null
-  cover_image: string
-  source_ref: string
   description: string
   availability: string
   condition: string
   price: string
+  price_uyu: number | null
   link: string
   image_link: string
   brand: string
+  team: string
+  season: string
+  player_number: string
+  category: string
+  sport: string
+  kit_version: string
+  delivery_mode: string
+  active: boolean
+  source_ref: string
   google_product_category: string
   fb_product_category: string
   quantity_to_sell_on_facebook: string
@@ -496,27 +482,25 @@ export type ProductWhereInput = {
   NOT?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
   uid?: Prisma.StringFilter<"Product"> | string
   id?: Prisma.StringFilter<"Product"> | string
-  slug?: Prisma.StringFilter<"Product"> | string
-  tipo?: Prisma.EnumProductTypeFilter<"Product"> | $Enums.ProductType
-  activo?: Prisma.BoolFilter<"Product"> | boolean
+  slug?: Prisma.StringNullableFilter<"Product"> | string | null
   title?: Prisma.StringFilter<"Product"> | string
-  team?: Prisma.StringFilter<"Product"> | string
-  season?: Prisma.StringNullableFilter<"Product"> | string | null
-  dorsal?: Prisma.StringNullableFilter<"Product"> | string | null
-  category?: Prisma.EnumProductCategoryFilter<"Product"> | $Enums.ProductCategory
-  sport?: Prisma.StringFilter<"Product"> | string
-  version?: Prisma.EnumProductVersionFilter<"Product"> | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFilter<"Product"> | $Enums.ProductModalidad
-  price_uyu?: Prisma.IntNullableFilter<"Product"> | number | null
-  cover_image?: Prisma.StringFilter<"Product"> | string
-  source_ref?: Prisma.StringFilter<"Product"> | string
   description?: Prisma.StringFilter<"Product"> | string
   availability?: Prisma.StringFilter<"Product"> | string
   condition?: Prisma.StringFilter<"Product"> | string
   price?: Prisma.StringFilter<"Product"> | string
+  price_uyu?: Prisma.IntNullableFilter<"Product"> | number | null
   link?: Prisma.StringFilter<"Product"> | string
   image_link?: Prisma.StringFilter<"Product"> | string
   brand?: Prisma.StringFilter<"Product"> | string
+  team?: Prisma.StringFilter<"Product"> | string
+  season?: Prisma.StringFilter<"Product"> | string
+  player_number?: Prisma.StringFilter<"Product"> | string
+  category?: Prisma.StringFilter<"Product"> | string
+  sport?: Prisma.StringFilter<"Product"> | string
+  kit_version?: Prisma.StringFilter<"Product"> | string
+  delivery_mode?: Prisma.StringFilter<"Product"> | string
+  active?: Prisma.BoolFilter<"Product"> | boolean
+  source_ref?: Prisma.StringFilter<"Product"> | string
   google_product_category?: Prisma.StringFilter<"Product"> | string
   fb_product_category?: Prisma.StringFilter<"Product"> | string
   quantity_to_sell_on_facebook?: Prisma.StringFilter<"Product"> | string
@@ -546,27 +530,25 @@ export type ProductWhereInput = {
 export type ProductOrderByWithRelationInput = {
   uid?: Prisma.SortOrder
   id?: Prisma.SortOrder
-  slug?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  activo?: Prisma.SortOrder
+  slug?: Prisma.SortOrderInput | Prisma.SortOrder
   title?: Prisma.SortOrder
-  team?: Prisma.SortOrder
-  season?: Prisma.SortOrderInput | Prisma.SortOrder
-  dorsal?: Prisma.SortOrderInput | Prisma.SortOrder
-  category?: Prisma.SortOrder
-  sport?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  modalidad?: Prisma.SortOrder
-  price_uyu?: Prisma.SortOrderInput | Prisma.SortOrder
-  cover_image?: Prisma.SortOrder
-  source_ref?: Prisma.SortOrder
   description?: Prisma.SortOrder
   availability?: Prisma.SortOrder
   condition?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  price_uyu?: Prisma.SortOrderInput | Prisma.SortOrder
   link?: Prisma.SortOrder
   image_link?: Prisma.SortOrder
   brand?: Prisma.SortOrder
+  team?: Prisma.SortOrder
+  season?: Prisma.SortOrder
+  player_number?: Prisma.SortOrder
+  category?: Prisma.SortOrder
+  sport?: Prisma.SortOrder
+  kit_version?: Prisma.SortOrder
+  delivery_mode?: Prisma.SortOrder
+  active?: Prisma.SortOrder
+  source_ref?: Prisma.SortOrder
   google_product_category?: Prisma.SortOrder
   fb_product_category?: Prisma.SortOrder
   quantity_to_sell_on_facebook?: Prisma.SortOrder
@@ -600,26 +582,24 @@ export type ProductWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
   OR?: Prisma.ProductWhereInput[]
   NOT?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
-  tipo?: Prisma.EnumProductTypeFilter<"Product"> | $Enums.ProductType
-  activo?: Prisma.BoolFilter<"Product"> | boolean
   title?: Prisma.StringFilter<"Product"> | string
-  team?: Prisma.StringFilter<"Product"> | string
-  season?: Prisma.StringNullableFilter<"Product"> | string | null
-  dorsal?: Prisma.StringNullableFilter<"Product"> | string | null
-  category?: Prisma.EnumProductCategoryFilter<"Product"> | $Enums.ProductCategory
-  sport?: Prisma.StringFilter<"Product"> | string
-  version?: Prisma.EnumProductVersionFilter<"Product"> | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFilter<"Product"> | $Enums.ProductModalidad
-  price_uyu?: Prisma.IntNullableFilter<"Product"> | number | null
-  cover_image?: Prisma.StringFilter<"Product"> | string
-  source_ref?: Prisma.StringFilter<"Product"> | string
   description?: Prisma.StringFilter<"Product"> | string
   availability?: Prisma.StringFilter<"Product"> | string
   condition?: Prisma.StringFilter<"Product"> | string
   price?: Prisma.StringFilter<"Product"> | string
+  price_uyu?: Prisma.IntNullableFilter<"Product"> | number | null
   link?: Prisma.StringFilter<"Product"> | string
   image_link?: Prisma.StringFilter<"Product"> | string
   brand?: Prisma.StringFilter<"Product"> | string
+  team?: Prisma.StringFilter<"Product"> | string
+  season?: Prisma.StringFilter<"Product"> | string
+  player_number?: Prisma.StringFilter<"Product"> | string
+  category?: Prisma.StringFilter<"Product"> | string
+  sport?: Prisma.StringFilter<"Product"> | string
+  kit_version?: Prisma.StringFilter<"Product"> | string
+  delivery_mode?: Prisma.StringFilter<"Product"> | string
+  active?: Prisma.BoolFilter<"Product"> | boolean
+  source_ref?: Prisma.StringFilter<"Product"> | string
   google_product_category?: Prisma.StringFilter<"Product"> | string
   fb_product_category?: Prisma.StringFilter<"Product"> | string
   quantity_to_sell_on_facebook?: Prisma.StringFilter<"Product"> | string
@@ -649,27 +629,25 @@ export type ProductWhereUniqueInput = Prisma.AtLeast<{
 export type ProductOrderByWithAggregationInput = {
   uid?: Prisma.SortOrder
   id?: Prisma.SortOrder
-  slug?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  activo?: Prisma.SortOrder
+  slug?: Prisma.SortOrderInput | Prisma.SortOrder
   title?: Prisma.SortOrder
-  team?: Prisma.SortOrder
-  season?: Prisma.SortOrderInput | Prisma.SortOrder
-  dorsal?: Prisma.SortOrderInput | Prisma.SortOrder
-  category?: Prisma.SortOrder
-  sport?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  modalidad?: Prisma.SortOrder
-  price_uyu?: Prisma.SortOrderInput | Prisma.SortOrder
-  cover_image?: Prisma.SortOrder
-  source_ref?: Prisma.SortOrder
   description?: Prisma.SortOrder
   availability?: Prisma.SortOrder
   condition?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  price_uyu?: Prisma.SortOrderInput | Prisma.SortOrder
   link?: Prisma.SortOrder
   image_link?: Prisma.SortOrder
   brand?: Prisma.SortOrder
+  team?: Prisma.SortOrder
+  season?: Prisma.SortOrder
+  player_number?: Prisma.SortOrder
+  category?: Prisma.SortOrder
+  sport?: Prisma.SortOrder
+  kit_version?: Prisma.SortOrder
+  delivery_mode?: Prisma.SortOrder
+  active?: Prisma.SortOrder
+  source_ref?: Prisma.SortOrder
   google_product_category?: Prisma.SortOrder
   fb_product_category?: Prisma.SortOrder
   quantity_to_sell_on_facebook?: Prisma.SortOrder
@@ -706,27 +684,25 @@ export type ProductScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ProductScalarWhereWithAggregatesInput | Prisma.ProductScalarWhereWithAggregatesInput[]
   uid?: Prisma.StringWithAggregatesFilter<"Product"> | string
   id?: Prisma.StringWithAggregatesFilter<"Product"> | string
-  slug?: Prisma.StringWithAggregatesFilter<"Product"> | string
-  tipo?: Prisma.EnumProductTypeWithAggregatesFilter<"Product"> | $Enums.ProductType
-  activo?: Prisma.BoolWithAggregatesFilter<"Product"> | boolean
+  slug?: Prisma.StringNullableWithAggregatesFilter<"Product"> | string | null
   title?: Prisma.StringWithAggregatesFilter<"Product"> | string
-  team?: Prisma.StringWithAggregatesFilter<"Product"> | string
-  season?: Prisma.StringNullableWithAggregatesFilter<"Product"> | string | null
-  dorsal?: Prisma.StringNullableWithAggregatesFilter<"Product"> | string | null
-  category?: Prisma.EnumProductCategoryWithAggregatesFilter<"Product"> | $Enums.ProductCategory
-  sport?: Prisma.StringWithAggregatesFilter<"Product"> | string
-  version?: Prisma.EnumProductVersionWithAggregatesFilter<"Product"> | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadWithAggregatesFilter<"Product"> | $Enums.ProductModalidad
-  price_uyu?: Prisma.IntNullableWithAggregatesFilter<"Product"> | number | null
-  cover_image?: Prisma.StringWithAggregatesFilter<"Product"> | string
-  source_ref?: Prisma.StringWithAggregatesFilter<"Product"> | string
   description?: Prisma.StringWithAggregatesFilter<"Product"> | string
   availability?: Prisma.StringWithAggregatesFilter<"Product"> | string
   condition?: Prisma.StringWithAggregatesFilter<"Product"> | string
   price?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  price_uyu?: Prisma.IntNullableWithAggregatesFilter<"Product"> | number | null
   link?: Prisma.StringWithAggregatesFilter<"Product"> | string
   image_link?: Prisma.StringWithAggregatesFilter<"Product"> | string
   brand?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  team?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  season?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  player_number?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  category?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  sport?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  kit_version?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  delivery_mode?: Prisma.StringWithAggregatesFilter<"Product"> | string
+  active?: Prisma.BoolWithAggregatesFilter<"Product"> | boolean
+  source_ref?: Prisma.StringWithAggregatesFilter<"Product"> | string
   google_product_category?: Prisma.StringWithAggregatesFilter<"Product"> | string
   fb_product_category?: Prisma.StringWithAggregatesFilter<"Product"> | string
   quantity_to_sell_on_facebook?: Prisma.StringWithAggregatesFilter<"Product"> | string
@@ -755,27 +731,25 @@ export type ProductScalarWhereWithAggregatesInput = {
 export type ProductCreateInput = {
   uid?: string
   id: string
-  slug: string
-  tipo?: $Enums.ProductType
-  activo?: boolean
+  slug?: string | null
   title?: string
-  team?: string
-  season?: string | null
-  dorsal?: string | null
-  category?: $Enums.ProductCategory
-  sport?: string
-  version?: $Enums.ProductVersion
-  modalidad?: $Enums.ProductModalidad
-  price_uyu?: number | null
-  cover_image?: string
-  source_ref?: string
   description?: string
   availability?: string
   condition?: string
   price?: string
+  price_uyu?: number | null
   link?: string
   image_link?: string
   brand?: string
+  team?: string
+  season?: string
+  player_number?: string
+  category?: string
+  sport?: string
+  kit_version?: string
+  delivery_mode?: string
+  active?: boolean
+  source_ref?: string
   google_product_category?: string
   fb_product_category?: string
   quantity_to_sell_on_facebook?: string
@@ -805,27 +779,25 @@ export type ProductCreateInput = {
 export type ProductUncheckedCreateInput = {
   uid?: string
   id: string
-  slug: string
-  tipo?: $Enums.ProductType
-  activo?: boolean
+  slug?: string | null
   title?: string
-  team?: string
-  season?: string | null
-  dorsal?: string | null
-  category?: $Enums.ProductCategory
-  sport?: string
-  version?: $Enums.ProductVersion
-  modalidad?: $Enums.ProductModalidad
-  price_uyu?: number | null
-  cover_image?: string
-  source_ref?: string
   description?: string
   availability?: string
   condition?: string
   price?: string
+  price_uyu?: number | null
   link?: string
   image_link?: string
   brand?: string
+  team?: string
+  season?: string
+  player_number?: string
+  category?: string
+  sport?: string
+  kit_version?: string
+  delivery_mode?: string
+  active?: boolean
+  source_ref?: string
   google_product_category?: string
   fb_product_category?: string
   quantity_to_sell_on_facebook?: string
@@ -855,27 +827,25 @@ export type ProductUncheckedCreateInput = {
 export type ProductUpdateInput = {
   uid?: Prisma.StringFieldUpdateOperationsInput | string
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  slug?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumProductTypeFieldUpdateOperationsInput | $Enums.ProductType
-  activo?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  team?: Prisma.StringFieldUpdateOperationsInput | string
-  season?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dorsal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.EnumProductCategoryFieldUpdateOperationsInput | $Enums.ProductCategory
-  sport?: Prisma.StringFieldUpdateOperationsInput | string
-  version?: Prisma.EnumProductVersionFieldUpdateOperationsInput | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFieldUpdateOperationsInput | $Enums.ProductModalidad
-  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  cover_image?: Prisma.StringFieldUpdateOperationsInput | string
-  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   availability?: Prisma.StringFieldUpdateOperationsInput | string
   condition?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.StringFieldUpdateOperationsInput | string
+  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   link?: Prisma.StringFieldUpdateOperationsInput | string
   image_link?: Prisma.StringFieldUpdateOperationsInput | string
   brand?: Prisma.StringFieldUpdateOperationsInput | string
+  team?: Prisma.StringFieldUpdateOperationsInput | string
+  season?: Prisma.StringFieldUpdateOperationsInput | string
+  player_number?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  sport?: Prisma.StringFieldUpdateOperationsInput | string
+  kit_version?: Prisma.StringFieldUpdateOperationsInput | string
+  delivery_mode?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   google_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   fb_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_to_sell_on_facebook?: Prisma.StringFieldUpdateOperationsInput | string
@@ -905,27 +875,25 @@ export type ProductUpdateInput = {
 export type ProductUncheckedUpdateInput = {
   uid?: Prisma.StringFieldUpdateOperationsInput | string
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  slug?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumProductTypeFieldUpdateOperationsInput | $Enums.ProductType
-  activo?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  team?: Prisma.StringFieldUpdateOperationsInput | string
-  season?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dorsal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.EnumProductCategoryFieldUpdateOperationsInput | $Enums.ProductCategory
-  sport?: Prisma.StringFieldUpdateOperationsInput | string
-  version?: Prisma.EnumProductVersionFieldUpdateOperationsInput | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFieldUpdateOperationsInput | $Enums.ProductModalidad
-  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  cover_image?: Prisma.StringFieldUpdateOperationsInput | string
-  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   availability?: Prisma.StringFieldUpdateOperationsInput | string
   condition?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.StringFieldUpdateOperationsInput | string
+  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   link?: Prisma.StringFieldUpdateOperationsInput | string
   image_link?: Prisma.StringFieldUpdateOperationsInput | string
   brand?: Prisma.StringFieldUpdateOperationsInput | string
+  team?: Prisma.StringFieldUpdateOperationsInput | string
+  season?: Prisma.StringFieldUpdateOperationsInput | string
+  player_number?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  sport?: Prisma.StringFieldUpdateOperationsInput | string
+  kit_version?: Prisma.StringFieldUpdateOperationsInput | string
+  delivery_mode?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   google_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   fb_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_to_sell_on_facebook?: Prisma.StringFieldUpdateOperationsInput | string
@@ -955,27 +923,25 @@ export type ProductUncheckedUpdateInput = {
 export type ProductCreateManyInput = {
   uid?: string
   id: string
-  slug: string
-  tipo?: $Enums.ProductType
-  activo?: boolean
+  slug?: string | null
   title?: string
-  team?: string
-  season?: string | null
-  dorsal?: string | null
-  category?: $Enums.ProductCategory
-  sport?: string
-  version?: $Enums.ProductVersion
-  modalidad?: $Enums.ProductModalidad
-  price_uyu?: number | null
-  cover_image?: string
-  source_ref?: string
   description?: string
   availability?: string
   condition?: string
   price?: string
+  price_uyu?: number | null
   link?: string
   image_link?: string
   brand?: string
+  team?: string
+  season?: string
+  player_number?: string
+  category?: string
+  sport?: string
+  kit_version?: string
+  delivery_mode?: string
+  active?: boolean
+  source_ref?: string
   google_product_category?: string
   fb_product_category?: string
   quantity_to_sell_on_facebook?: string
@@ -1004,27 +970,25 @@ export type ProductCreateManyInput = {
 export type ProductUpdateManyMutationInput = {
   uid?: Prisma.StringFieldUpdateOperationsInput | string
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  slug?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumProductTypeFieldUpdateOperationsInput | $Enums.ProductType
-  activo?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  team?: Prisma.StringFieldUpdateOperationsInput | string
-  season?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dorsal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.EnumProductCategoryFieldUpdateOperationsInput | $Enums.ProductCategory
-  sport?: Prisma.StringFieldUpdateOperationsInput | string
-  version?: Prisma.EnumProductVersionFieldUpdateOperationsInput | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFieldUpdateOperationsInput | $Enums.ProductModalidad
-  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  cover_image?: Prisma.StringFieldUpdateOperationsInput | string
-  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   availability?: Prisma.StringFieldUpdateOperationsInput | string
   condition?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.StringFieldUpdateOperationsInput | string
+  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   link?: Prisma.StringFieldUpdateOperationsInput | string
   image_link?: Prisma.StringFieldUpdateOperationsInput | string
   brand?: Prisma.StringFieldUpdateOperationsInput | string
+  team?: Prisma.StringFieldUpdateOperationsInput | string
+  season?: Prisma.StringFieldUpdateOperationsInput | string
+  player_number?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  sport?: Prisma.StringFieldUpdateOperationsInput | string
+  kit_version?: Prisma.StringFieldUpdateOperationsInput | string
+  delivery_mode?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   google_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   fb_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_to_sell_on_facebook?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1053,27 +1017,25 @@ export type ProductUpdateManyMutationInput = {
 export type ProductUncheckedUpdateManyInput = {
   uid?: Prisma.StringFieldUpdateOperationsInput | string
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  slug?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumProductTypeFieldUpdateOperationsInput | $Enums.ProductType
-  activo?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  team?: Prisma.StringFieldUpdateOperationsInput | string
-  season?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dorsal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.EnumProductCategoryFieldUpdateOperationsInput | $Enums.ProductCategory
-  sport?: Prisma.StringFieldUpdateOperationsInput | string
-  version?: Prisma.EnumProductVersionFieldUpdateOperationsInput | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFieldUpdateOperationsInput | $Enums.ProductModalidad
-  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  cover_image?: Prisma.StringFieldUpdateOperationsInput | string
-  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   availability?: Prisma.StringFieldUpdateOperationsInput | string
   condition?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.StringFieldUpdateOperationsInput | string
+  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   link?: Prisma.StringFieldUpdateOperationsInput | string
   image_link?: Prisma.StringFieldUpdateOperationsInput | string
   brand?: Prisma.StringFieldUpdateOperationsInput | string
+  team?: Prisma.StringFieldUpdateOperationsInput | string
+  season?: Prisma.StringFieldUpdateOperationsInput | string
+  player_number?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  sport?: Prisma.StringFieldUpdateOperationsInput | string
+  kit_version?: Prisma.StringFieldUpdateOperationsInput | string
+  delivery_mode?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   google_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   fb_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_to_sell_on_facebook?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1111,26 +1073,24 @@ export type ProductCountOrderByAggregateInput = {
   uid?: Prisma.SortOrder
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  activo?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  team?: Prisma.SortOrder
-  season?: Prisma.SortOrder
-  dorsal?: Prisma.SortOrder
-  category?: Prisma.SortOrder
-  sport?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  modalidad?: Prisma.SortOrder
-  price_uyu?: Prisma.SortOrder
-  cover_image?: Prisma.SortOrder
-  source_ref?: Prisma.SortOrder
   description?: Prisma.SortOrder
   availability?: Prisma.SortOrder
   condition?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  price_uyu?: Prisma.SortOrder
   link?: Prisma.SortOrder
   image_link?: Prisma.SortOrder
   brand?: Prisma.SortOrder
+  team?: Prisma.SortOrder
+  season?: Prisma.SortOrder
+  player_number?: Prisma.SortOrder
+  category?: Prisma.SortOrder
+  sport?: Prisma.SortOrder
+  kit_version?: Prisma.SortOrder
+  delivery_mode?: Prisma.SortOrder
+  active?: Prisma.SortOrder
+  source_ref?: Prisma.SortOrder
   google_product_category?: Prisma.SortOrder
   fb_product_category?: Prisma.SortOrder
   quantity_to_sell_on_facebook?: Prisma.SortOrder
@@ -1164,26 +1124,24 @@ export type ProductMaxOrderByAggregateInput = {
   uid?: Prisma.SortOrder
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  activo?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  team?: Prisma.SortOrder
-  season?: Prisma.SortOrder
-  dorsal?: Prisma.SortOrder
-  category?: Prisma.SortOrder
-  sport?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  modalidad?: Prisma.SortOrder
-  price_uyu?: Prisma.SortOrder
-  cover_image?: Prisma.SortOrder
-  source_ref?: Prisma.SortOrder
   description?: Prisma.SortOrder
   availability?: Prisma.SortOrder
   condition?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  price_uyu?: Prisma.SortOrder
   link?: Prisma.SortOrder
   image_link?: Prisma.SortOrder
   brand?: Prisma.SortOrder
+  team?: Prisma.SortOrder
+  season?: Prisma.SortOrder
+  player_number?: Prisma.SortOrder
+  category?: Prisma.SortOrder
+  sport?: Prisma.SortOrder
+  kit_version?: Prisma.SortOrder
+  delivery_mode?: Prisma.SortOrder
+  active?: Prisma.SortOrder
+  source_ref?: Prisma.SortOrder
   google_product_category?: Prisma.SortOrder
   fb_product_category?: Prisma.SortOrder
   quantity_to_sell_on_facebook?: Prisma.SortOrder
@@ -1212,26 +1170,24 @@ export type ProductMinOrderByAggregateInput = {
   uid?: Prisma.SortOrder
   id?: Prisma.SortOrder
   slug?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  activo?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  team?: Prisma.SortOrder
-  season?: Prisma.SortOrder
-  dorsal?: Prisma.SortOrder
-  category?: Prisma.SortOrder
-  sport?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  modalidad?: Prisma.SortOrder
-  price_uyu?: Prisma.SortOrder
-  cover_image?: Prisma.SortOrder
-  source_ref?: Prisma.SortOrder
   description?: Prisma.SortOrder
   availability?: Prisma.SortOrder
   condition?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  price_uyu?: Prisma.SortOrder
   link?: Prisma.SortOrder
   image_link?: Prisma.SortOrder
   brand?: Prisma.SortOrder
+  team?: Prisma.SortOrder
+  season?: Prisma.SortOrder
+  player_number?: Prisma.SortOrder
+  category?: Prisma.SortOrder
+  sport?: Prisma.SortOrder
+  kit_version?: Prisma.SortOrder
+  delivery_mode?: Prisma.SortOrder
+  active?: Prisma.SortOrder
+  source_ref?: Prisma.SortOrder
   google_product_category?: Prisma.SortOrder
   fb_product_category?: Prisma.SortOrder
   quantity_to_sell_on_facebook?: Prisma.SortOrder
@@ -1273,28 +1229,8 @@ export type StringFieldUpdateOperationsInput = {
   set?: string
 }
 
-export type EnumProductTypeFieldUpdateOperationsInput = {
-  set?: $Enums.ProductType
-}
-
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
-}
-
 export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
-}
-
-export type EnumProductCategoryFieldUpdateOperationsInput = {
-  set?: $Enums.ProductCategory
-}
-
-export type EnumProductVersionFieldUpdateOperationsInput = {
-  set?: $Enums.ProductVersion
-}
-
-export type EnumProductModalidadFieldUpdateOperationsInput = {
-  set?: $Enums.ProductModalidad
 }
 
 export type NullableIntFieldUpdateOperationsInput = {
@@ -1303,6 +1239,10 @@ export type NullableIntFieldUpdateOperationsInput = {
   decrement?: number
   multiply?: number
   divide?: number
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
 }
 
 export type ProductUpdateproduct_tagsInput = {
@@ -1331,27 +1271,25 @@ export type ProductUpdateOneRequiredWithoutImagesNestedInput = {
 export type ProductCreateWithoutImagesInput = {
   uid?: string
   id: string
-  slug: string
-  tipo?: $Enums.ProductType
-  activo?: boolean
+  slug?: string | null
   title?: string
-  team?: string
-  season?: string | null
-  dorsal?: string | null
-  category?: $Enums.ProductCategory
-  sport?: string
-  version?: $Enums.ProductVersion
-  modalidad?: $Enums.ProductModalidad
-  price_uyu?: number | null
-  cover_image?: string
-  source_ref?: string
   description?: string
   availability?: string
   condition?: string
   price?: string
+  price_uyu?: number | null
   link?: string
   image_link?: string
   brand?: string
+  team?: string
+  season?: string
+  player_number?: string
+  category?: string
+  sport?: string
+  kit_version?: string
+  delivery_mode?: string
+  active?: boolean
+  source_ref?: string
   google_product_category?: string
   fb_product_category?: string
   quantity_to_sell_on_facebook?: string
@@ -1380,27 +1318,25 @@ export type ProductCreateWithoutImagesInput = {
 export type ProductUncheckedCreateWithoutImagesInput = {
   uid?: string
   id: string
-  slug: string
-  tipo?: $Enums.ProductType
-  activo?: boolean
+  slug?: string | null
   title?: string
-  team?: string
-  season?: string | null
-  dorsal?: string | null
-  category?: $Enums.ProductCategory
-  sport?: string
-  version?: $Enums.ProductVersion
-  modalidad?: $Enums.ProductModalidad
-  price_uyu?: number | null
-  cover_image?: string
-  source_ref?: string
   description?: string
   availability?: string
   condition?: string
   price?: string
+  price_uyu?: number | null
   link?: string
   image_link?: string
   brand?: string
+  team?: string
+  season?: string
+  player_number?: string
+  category?: string
+  sport?: string
+  kit_version?: string
+  delivery_mode?: string
+  active?: boolean
+  source_ref?: string
   google_product_category?: string
   fb_product_category?: string
   quantity_to_sell_on_facebook?: string
@@ -1445,27 +1381,25 @@ export type ProductUpdateToOneWithWhereWithoutImagesInput = {
 export type ProductUpdateWithoutImagesInput = {
   uid?: Prisma.StringFieldUpdateOperationsInput | string
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  slug?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumProductTypeFieldUpdateOperationsInput | $Enums.ProductType
-  activo?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  team?: Prisma.StringFieldUpdateOperationsInput | string
-  season?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dorsal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.EnumProductCategoryFieldUpdateOperationsInput | $Enums.ProductCategory
-  sport?: Prisma.StringFieldUpdateOperationsInput | string
-  version?: Prisma.EnumProductVersionFieldUpdateOperationsInput | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFieldUpdateOperationsInput | $Enums.ProductModalidad
-  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  cover_image?: Prisma.StringFieldUpdateOperationsInput | string
-  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   availability?: Prisma.StringFieldUpdateOperationsInput | string
   condition?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.StringFieldUpdateOperationsInput | string
+  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   link?: Prisma.StringFieldUpdateOperationsInput | string
   image_link?: Prisma.StringFieldUpdateOperationsInput | string
   brand?: Prisma.StringFieldUpdateOperationsInput | string
+  team?: Prisma.StringFieldUpdateOperationsInput | string
+  season?: Prisma.StringFieldUpdateOperationsInput | string
+  player_number?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  sport?: Prisma.StringFieldUpdateOperationsInput | string
+  kit_version?: Prisma.StringFieldUpdateOperationsInput | string
+  delivery_mode?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   google_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   fb_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_to_sell_on_facebook?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1494,27 +1428,25 @@ export type ProductUpdateWithoutImagesInput = {
 export type ProductUncheckedUpdateWithoutImagesInput = {
   uid?: Prisma.StringFieldUpdateOperationsInput | string
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  slug?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumProductTypeFieldUpdateOperationsInput | $Enums.ProductType
-  activo?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  team?: Prisma.StringFieldUpdateOperationsInput | string
-  season?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  dorsal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.EnumProductCategoryFieldUpdateOperationsInput | $Enums.ProductCategory
-  sport?: Prisma.StringFieldUpdateOperationsInput | string
-  version?: Prisma.EnumProductVersionFieldUpdateOperationsInput | $Enums.ProductVersion
-  modalidad?: Prisma.EnumProductModalidadFieldUpdateOperationsInput | $Enums.ProductModalidad
-  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  cover_image?: Prisma.StringFieldUpdateOperationsInput | string
-  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   availability?: Prisma.StringFieldUpdateOperationsInput | string
   condition?: Prisma.StringFieldUpdateOperationsInput | string
   price?: Prisma.StringFieldUpdateOperationsInput | string
+  price_uyu?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   link?: Prisma.StringFieldUpdateOperationsInput | string
   image_link?: Prisma.StringFieldUpdateOperationsInput | string
   brand?: Prisma.StringFieldUpdateOperationsInput | string
+  team?: Prisma.StringFieldUpdateOperationsInput | string
+  season?: Prisma.StringFieldUpdateOperationsInput | string
+  player_number?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  sport?: Prisma.StringFieldUpdateOperationsInput | string
+  kit_version?: Prisma.StringFieldUpdateOperationsInput | string
+  delivery_mode?: Prisma.StringFieldUpdateOperationsInput | string
+  active?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  source_ref?: Prisma.StringFieldUpdateOperationsInput | string
   google_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   fb_product_category?: Prisma.StringFieldUpdateOperationsInput | string
   quantity_to_sell_on_facebook?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1575,26 +1507,24 @@ export type ProductSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   uid?: boolean
   id?: boolean
   slug?: boolean
-  tipo?: boolean
-  activo?: boolean
   title?: boolean
-  team?: boolean
-  season?: boolean
-  dorsal?: boolean
-  category?: boolean
-  sport?: boolean
-  version?: boolean
-  modalidad?: boolean
-  price_uyu?: boolean
-  cover_image?: boolean
-  source_ref?: boolean
   description?: boolean
   availability?: boolean
   condition?: boolean
   price?: boolean
+  price_uyu?: boolean
   link?: boolean
   image_link?: boolean
   brand?: boolean
+  team?: boolean
+  season?: boolean
+  player_number?: boolean
+  category?: boolean
+  sport?: boolean
+  kit_version?: boolean
+  delivery_mode?: boolean
+  active?: boolean
+  source_ref?: boolean
   google_product_category?: boolean
   fb_product_category?: boolean
   quantity_to_sell_on_facebook?: boolean
@@ -1626,26 +1556,24 @@ export type ProductSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   uid?: boolean
   id?: boolean
   slug?: boolean
-  tipo?: boolean
-  activo?: boolean
   title?: boolean
-  team?: boolean
-  season?: boolean
-  dorsal?: boolean
-  category?: boolean
-  sport?: boolean
-  version?: boolean
-  modalidad?: boolean
-  price_uyu?: boolean
-  cover_image?: boolean
-  source_ref?: boolean
   description?: boolean
   availability?: boolean
   condition?: boolean
   price?: boolean
+  price_uyu?: boolean
   link?: boolean
   image_link?: boolean
   brand?: boolean
+  team?: boolean
+  season?: boolean
+  player_number?: boolean
+  category?: boolean
+  sport?: boolean
+  kit_version?: boolean
+  delivery_mode?: boolean
+  active?: boolean
+  source_ref?: boolean
   google_product_category?: boolean
   fb_product_category?: boolean
   quantity_to_sell_on_facebook?: boolean
@@ -1675,26 +1603,24 @@ export type ProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   uid?: boolean
   id?: boolean
   slug?: boolean
-  tipo?: boolean
-  activo?: boolean
   title?: boolean
-  team?: boolean
-  season?: boolean
-  dorsal?: boolean
-  category?: boolean
-  sport?: boolean
-  version?: boolean
-  modalidad?: boolean
-  price_uyu?: boolean
-  cover_image?: boolean
-  source_ref?: boolean
   description?: boolean
   availability?: boolean
   condition?: boolean
   price?: boolean
+  price_uyu?: boolean
   link?: boolean
   image_link?: boolean
   brand?: boolean
+  team?: boolean
+  season?: boolean
+  player_number?: boolean
+  category?: boolean
+  sport?: boolean
+  kit_version?: boolean
+  delivery_mode?: boolean
+  active?: boolean
+  source_ref?: boolean
   google_product_category?: boolean
   fb_product_category?: boolean
   quantity_to_sell_on_facebook?: boolean
@@ -1724,26 +1650,24 @@ export type ProductSelectScalar = {
   uid?: boolean
   id?: boolean
   slug?: boolean
-  tipo?: boolean
-  activo?: boolean
   title?: boolean
-  team?: boolean
-  season?: boolean
-  dorsal?: boolean
-  category?: boolean
-  sport?: boolean
-  version?: boolean
-  modalidad?: boolean
-  price_uyu?: boolean
-  cover_image?: boolean
-  source_ref?: boolean
   description?: boolean
   availability?: boolean
   condition?: boolean
   price?: boolean
+  price_uyu?: boolean
   link?: boolean
   image_link?: boolean
   brand?: boolean
+  team?: boolean
+  season?: boolean
+  player_number?: boolean
+  category?: boolean
+  sport?: boolean
+  kit_version?: boolean
+  delivery_mode?: boolean
+  active?: boolean
+  source_ref?: boolean
   google_product_category?: boolean
   fb_product_category?: boolean
   quantity_to_sell_on_facebook?: boolean
@@ -1769,7 +1693,7 @@ export type ProductSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"uid" | "id" | "slug" | "tipo" | "activo" | "title" | "team" | "season" | "dorsal" | "category" | "sport" | "version" | "modalidad" | "price_uyu" | "cover_image" | "source_ref" | "description" | "availability" | "condition" | "price" | "link" | "image_link" | "brand" | "google_product_category" | "fb_product_category" | "quantity_to_sell_on_facebook" | "sale_price" | "sale_price_effective_date" | "item_group_id" | "gender" | "color" | "size" | "age_group" | "material" | "pattern" | "shipping" | "shipping_weight" | "offer_disclaimer" | "offer_disclaimer_url" | "video_url" | "video_tag" | "gtin" | "product_tags" | "style" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+export type ProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"uid" | "id" | "slug" | "title" | "description" | "availability" | "condition" | "price" | "price_uyu" | "link" | "image_link" | "brand" | "team" | "season" | "player_number" | "category" | "sport" | "kit_version" | "delivery_mode" | "active" | "source_ref" | "google_product_category" | "fb_product_category" | "quantity_to_sell_on_facebook" | "sale_price" | "sale_price_effective_date" | "item_group_id" | "gender" | "color" | "size" | "age_group" | "material" | "pattern" | "shipping" | "shipping_weight" | "offer_disclaimer" | "offer_disclaimer_url" | "video_url" | "video_tag" | "gtin" | "product_tags" | "style" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
 export type ProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   images?: boolean | Prisma.Product$imagesArgs<ExtArgs>
   _count?: boolean | Prisma.ProductCountOutputTypeDefaultArgs<ExtArgs>
@@ -1785,27 +1709,25 @@ export type $ProductPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     uid: string
     id: string
-    slug: string
-    tipo: $Enums.ProductType
-    activo: boolean
+    slug: string | null
     title: string
-    team: string
-    season: string | null
-    dorsal: string | null
-    category: $Enums.ProductCategory
-    sport: string
-    version: $Enums.ProductVersion
-    modalidad: $Enums.ProductModalidad
-    price_uyu: number | null
-    cover_image: string
-    source_ref: string
     description: string
     availability: string
     condition: string
     price: string
+    price_uyu: number | null
     link: string
     image_link: string
     brand: string
+    team: string
+    season: string
+    player_number: string
+    category: string
+    sport: string
+    kit_version: string
+    delivery_mode: string
+    active: boolean
+    source_ref: string
     google_product_category: string
     fb_product_category: string
     quantity_to_sell_on_facebook: string
@@ -2256,26 +2178,24 @@ export interface ProductFieldRefs {
   readonly uid: Prisma.FieldRef<"Product", 'String'>
   readonly id: Prisma.FieldRef<"Product", 'String'>
   readonly slug: Prisma.FieldRef<"Product", 'String'>
-  readonly tipo: Prisma.FieldRef<"Product", 'ProductType'>
-  readonly activo: Prisma.FieldRef<"Product", 'Boolean'>
   readonly title: Prisma.FieldRef<"Product", 'String'>
-  readonly team: Prisma.FieldRef<"Product", 'String'>
-  readonly season: Prisma.FieldRef<"Product", 'String'>
-  readonly dorsal: Prisma.FieldRef<"Product", 'String'>
-  readonly category: Prisma.FieldRef<"Product", 'ProductCategory'>
-  readonly sport: Prisma.FieldRef<"Product", 'String'>
-  readonly version: Prisma.FieldRef<"Product", 'ProductVersion'>
-  readonly modalidad: Prisma.FieldRef<"Product", 'ProductModalidad'>
-  readonly price_uyu: Prisma.FieldRef<"Product", 'Int'>
-  readonly cover_image: Prisma.FieldRef<"Product", 'String'>
-  readonly source_ref: Prisma.FieldRef<"Product", 'String'>
   readonly description: Prisma.FieldRef<"Product", 'String'>
   readonly availability: Prisma.FieldRef<"Product", 'String'>
   readonly condition: Prisma.FieldRef<"Product", 'String'>
   readonly price: Prisma.FieldRef<"Product", 'String'>
+  readonly price_uyu: Prisma.FieldRef<"Product", 'Int'>
   readonly link: Prisma.FieldRef<"Product", 'String'>
   readonly image_link: Prisma.FieldRef<"Product", 'String'>
   readonly brand: Prisma.FieldRef<"Product", 'String'>
+  readonly team: Prisma.FieldRef<"Product", 'String'>
+  readonly season: Prisma.FieldRef<"Product", 'String'>
+  readonly player_number: Prisma.FieldRef<"Product", 'String'>
+  readonly category: Prisma.FieldRef<"Product", 'String'>
+  readonly sport: Prisma.FieldRef<"Product", 'String'>
+  readonly kit_version: Prisma.FieldRef<"Product", 'String'>
+  readonly delivery_mode: Prisma.FieldRef<"Product", 'String'>
+  readonly active: Prisma.FieldRef<"Product", 'Boolean'>
+  readonly source_ref: Prisma.FieldRef<"Product", 'String'>
   readonly google_product_category: Prisma.FieldRef<"Product", 'String'>
   readonly fb_product_category: Prisma.FieldRef<"Product", 'String'>
   readonly quantity_to_sell_on_facebook: Prisma.FieldRef<"Product", 'String'>

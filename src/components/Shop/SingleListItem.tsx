@@ -48,7 +48,7 @@ const SingleListItem = ({ item }: { item: Product }) => {
       <div className="flex flex-col sm:flex-row">
         <div className="shadow-list relative overflow-hidden flex items-center justify-center sm:max-w-[270px] w-full h-[240px] shrink-0">
           <Link
-            href="/shop-details"
+            href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
             onClick={handleProductDetails}
             className="relative w-full h-full block"
           >
@@ -111,7 +111,7 @@ const SingleListItem = ({ item }: { item: Product }) => {
               className="font-medium text-dark text-lg ease-out duration-200 hover:text-blue mb-1.5"
               onClick={handleProductDetails}
             >
-              <Link href="/shop-details">{item.title}</Link>
+              <Link href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}>{item.title}</Link>
             </h3>
 
             <p className="text-custom-sm text-body">
@@ -126,7 +126,7 @@ const SingleListItem = ({ item }: { item: Product }) => {
               {formatProductPrice(item.discountedPrice)}
             </span>
             <Link
-              href="/shop-details"
+              href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
               onClick={handleProductDetails}
               className="inline-flex text-custom-sm font-medium text-blue hover:underline"
             >

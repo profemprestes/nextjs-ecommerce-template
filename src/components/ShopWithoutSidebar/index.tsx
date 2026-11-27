@@ -4,23 +4,29 @@ import Breadcrumb from "../Common/Breadcrumb";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import shopData from "../Shop/shopData";
+import { Product } from "@/types/product";
 
 const PAGE_SIZE = 12;
 
-const ShopWithoutSidebar = () => {
+interface ShopWithoutSidebarProps {
+  initialProducts?: Product[];
+}
+
+const ShopWithoutSidebar = ({ initialProducts }: ShopWithoutSidebarProps) => {
+  const catalogProducts = initialProducts ?? shopData;
   const [productStyle, setProductStyle] = useState<"grid" | "list">("grid");
   const [sortBy, setSortBy] = useState<"default" | "az" | "za">("default");
   const [currentPage, setCurrentPage] = useState(1);
 
   const sortedProducts = useMemo(() => {
     if (sortBy === "az") {
-      return [...shopData].sort((a, b) => a.title.localeCompare(b.title, "es"));
+      return [...catalogProducts].sort((a, b) => a.title.localeCompare(b.title, "es"));
     }
     if (sortBy === "za") {
-      return [...shopData].sort((a, b) => b.title.localeCompare(a.title, "es"));
+      return [...catalogProducts].sort((a, b) => b.title.localeCompare(a.title, "es"));
     }
-    return shopData;
-  }, [sortBy]);
+    return catalogProducts;
+  }, [catalogProducts, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(sortedProducts.length / PAGE_SIZE));
   const safePage = Math.min(currentPage, totalPages);

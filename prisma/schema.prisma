@@ -10,106 +10,77 @@ datasource db {
   provider = "postgresql"
 }
 
-enum ProductType {
-  producto
-  anuncio
-}
-
-enum ProductCategory {
-  actuales
-  retros
-  uruguay
-  clubes
-}
-
-enum ProductVersion {
-  Jugador
-  Fan
-  Retro
-  a_confirmar
-}
-
-enum ProductModalidad {
-  entrega_inmediata
-  por_encargo
-  pendiente_verificacion
-}
-
 model Product {
-  uid                          String           @id @default(cuid())
-  id                           String           @unique @db.VarChar(100)
-  slug                         String           @unique @db.VarChar(160)
-  tipo                         ProductType      @default(producto)
-  activo                       Boolean          @default(true)
-
-  // Campos de dominio Fútbol en la Piel (docs/catalogo.json)
-  title                        String           @default("") @db.VarChar(200)
-  team                         String           @default("") @db.VarChar(120)
-  season                       String?          @db.VarChar(32)
-  dorsal                       String?          @db.VarChar(80)
-  category                     ProductCategory  @default(clubes)
-  sport                        String           @default("futbol") @db.VarChar(32)
-  version                      ProductVersion   @default(a_confirmar)
-  modalidad                    ProductModalidad @default(pendiente_verificacion)
+  uid                          String         @id @default(cuid())
+  id                           String         @unique @db.VarChar(100)
+  slug                         String?        @unique @db.VarChar(160)
+  title                        String         @default("") @db.VarChar(200)
+  description                  String         @default("") @db.Text
+  availability                 String         @default("") @db.VarChar(32)
+  condition                    String         @default("") @db.VarChar(32)
+  price                        String         @default("") @db.VarChar(64)
   price_uyu                    Int?
-  cover_image                  String           @default("") @db.Text
-  source_ref                   String           @default("") @db.Text
-
-  // Campos compatibles con exportación Meta / Instagram Commerce CSV
-  description                  String           @default("") @db.Text
-  availability                 String           @default("") @db.VarChar(32)
-  condition                    String           @default("new") @db.VarChar(32)
-  price                        String           @default("") @db.VarChar(64)
-  link                         String           @default("") @db.Text
-  image_link                   String           @default("") @db.Text
-  brand                        String           @default("") @db.VarChar(100)
-  google_product_category      String           @default("") @db.VarChar(255)
-  fb_product_category          String           @default("") @db.VarChar(255)
-  quantity_to_sell_on_facebook String           @default("") @db.VarChar(32)
-  sale_price                   String           @default("") @db.VarChar(64)
-  sale_price_effective_date    String           @default("") @db.VarChar(120)
-  item_group_id                String           @default("") @db.VarChar(100)
-  gender                       String           @default("unisex") @db.VarChar(32)
-  color                        String           @default("") @db.VarChar(200)
-  size                         String           @default("") @db.VarChar(200)
-  age_group                    String           @default("adult") @db.VarChar(32)
-  material                     String           @default("") @db.VarChar(200)
-  pattern                      String           @default("") @db.VarChar(100)
-  shipping                     String           @default("") @db.Text
-  shipping_weight              String           @default("") @db.VarChar(64)
-  offer_disclaimer             String           @default("") @db.Text
-  offer_disclaimer_url         String           @default("") @db.Text
-  video_url                    String           @default("") @db.Text
-  video_tag                    String           @default("") @db.VarChar(200)
-  gtin                         String           @default("") @db.VarChar(64)
-  product_tags                 String[]         @default([])
-  style                        String           @default("") @db.VarChar(120)
-
+  link                         String         @default("") @db.Text
+  image_link                   String         @default("") @db.Text
+  brand                        String         @default("") @db.VarChar(100)
+  team                         String         @default("") @db.VarChar(120)
+  season                       String         @default("") @db.VarChar(40)
+  player_number                String         @default("") @db.VarChar(100)
+  category                     String         @default("") @db.VarChar(60)
+  sport                        String         @default("futbol") @db.VarChar(60)
+  kit_version                  String         @default("") @db.VarChar(60)
+  delivery_mode                String         @default("") @db.VarChar(60)
+  active                       Boolean        @default(true)
+  source_ref                   String         @default("") @db.Text
+  google_product_category      String         @default("") @db.VarChar(255)
+  fb_product_category          String         @default("") @db.VarChar(255)
+  quantity_to_sell_on_facebook String         @default("") @db.VarChar(32)
+  sale_price                   String         @default("") @db.VarChar(64)
+  sale_price_effective_date    String         @default("") @db.VarChar(120)
+  item_group_id                String         @default("") @db.VarChar(100)
+  gender                       String         @default("") @db.VarChar(32)
+  color                        String         @default("") @db.VarChar(200)
+  size                         String         @default("") @db.VarChar(200)
+  age_group                    String         @default("") @db.VarChar(32)
+  material                     String         @default("") @db.VarChar(200)
+  pattern                      String         @default("") @db.VarChar(100)
+  shipping                     String         @default("") @db.Text
+  shipping_weight              String         @default("") @db.VarChar(64)
+  offer_disclaimer             String         @default("") @db.Text
+  offer_disclaimer_url         String         @default("") @db.Text
+  video_url                    String         @default("") @db.Text
+  video_tag                    String         @default("") @db.VarChar(200)
+  gtin                         String         @default("") @db.VarChar(64)
+  product_tags                 String[]       @default([])
+  style                        String         @default("") @db.VarChar(120)
   images                       ProductImage[]
-  createdAt                    DateTime         @default(now())
-  updatedAt                    DateTime         @updatedAt
+  createdAt                    DateTime       @default(now())
+  updatedAt                    DateTime       @updatedAt
 
-  @@index([activo, tipo, category])
-  @@index([activo, version, modalidad])
+  @@index([active, updatedAt(sort: Desc)])
+  @@index([brand, availability])
+  @@index([category, active])
   @@index([team])
-  @@index([brand])
-  @@index([availability])
   @@index([item_group_id])
+  @@index([price_uyu])
   @@map("products")
 }
 
 model ProductImage {
-  id         String   @id @default(cuid())
-  productUid String
-  url        String   @db.Text
-  position   Int      @default(0)
-  format     String   @default("jpg") @db.VarChar(10)
-  isCover    Boolean  @default(false)
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  productId String
+  url       String   @db.Text
+  fileName  String   @default("") @db.VarChar(255)
+  mimeType  String   @default("") @db.VarChar(64)
+  sizeBytes Int?
+  data      Bytes?
+  position  Int      @default(0)
+  isCover   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [uid], onDelete: Cascade)
 
-  product    Product  @relation(fields: [productUid], references: [uid], onDelete: Cascade)
-
-  @@unique([productUid, position])
-  @@index([productUid, isCover])
+  @@unique([productId, url])
+  @@index([productId, position])
+  @@index([fileName])
   @@map("product_images")
 }

@@ -4,7 +4,7 @@ import Breadcrumb from "../Common/Breadcrumb";
 import shopData from "../Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
-import { ProductCategory, ProductVersion } from "@/types/product";
+import { Product, ProductCategory, ProductVersion } from "@/types/product";
 
 const PAGE_SIZE = 12;
 
@@ -17,7 +17,12 @@ const CATEGORY_LABELS: Record<ProductCategory, string> = {
 
 const VERSIONS: ProductVersion[] = ["Jugador", "Fan", "Retro", "A confirmar"];
 
-const ShopWithSidebar = () => {
+interface ShopWithSidebarProps {
+  initialProducts?: Product[];
+}
+
+const ShopWithSidebar = ({ initialProducts }: ShopWithSidebarProps) => {
+  const catalogProducts = initialProducts ?? shopData;
   const [productStyle, setProductStyle] = useState<"grid" | "list">("grid");
   const [productSidebar, setProductSidebar] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
@@ -61,15 +66,15 @@ const ShopWithSidebar = () => {
       uruguay: 0,
       clubes: 0,
     };
-    for (const p of shopData) {
+    for (const p of catalogProducts) {
       counts[p.category] += 1;
     }
     return counts;
-  }, []);
+  }, [catalogProducts]);
 
   const filteredProducts = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
-    const list = shopData.filter((item) => {
+    const list = catalogProducts.filter((item) => {
       if (
         selectedCategories.length > 0 &&
         !selectedCategories.includes(item.category)
@@ -102,6 +107,7 @@ const ShopWithSidebar = () => {
     }
     return list;
   }, [
+    catalogProducts,
     searchTerm,
     selectedCategories,
     selectedVersions,

@@ -1,6 +1,8 @@
 allowBuilds:
   core-js: true
 permissions:
+  '@firebase/util':
+    build: true
   '@prisma/engines':
     build: true
   '@reduxjs/toolkit':
@@ -8,6 +10,8 @@ permissions:
   esbuild:
     build: true
   prisma:
+    build: true
+  protobufjs:
     build: true
 skills:
   dirs:

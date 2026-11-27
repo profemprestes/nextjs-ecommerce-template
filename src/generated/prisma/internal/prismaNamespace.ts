@@ -609,26 +609,24 @@ export const ProductScalarFieldEnum = {
   uid: 'uid',
   id: 'id',
   slug: 'slug',
-  tipo: 'tipo',
-  activo: 'activo',
   title: 'title',
-  team: 'team',
-  season: 'season',
-  dorsal: 'dorsal',
-  category: 'category',
-  sport: 'sport',
-  version: 'version',
-  modalidad: 'modalidad',
-  price_uyu: 'price_uyu',
-  cover_image: 'cover_image',
-  source_ref: 'source_ref',
   description: 'description',
   availability: 'availability',
   condition: 'condition',
   price: 'price',
+  price_uyu: 'price_uyu',
   link: 'link',
   image_link: 'image_link',
   brand: 'brand',
+  team: 'team',
+  season: 'season',
+  player_number: 'player_number',
+  category: 'category',
+  sport: 'sport',
+  kit_version: 'kit_version',
+  delivery_mode: 'delivery_mode',
+  active: 'active',
+  source_ref: 'source_ref',
   google_product_category: 'google_product_category',
   fb_product_category: 'fb_product_category',
   quantity_to_sell_on_facebook: 'quantity_to_sell_on_facebook',
@@ -659,10 +657,13 @@ export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeo
 
 export const ProductImageScalarFieldEnum = {
   id: 'id',
-  productUid: 'productUid',
+  productId: 'productId',
   url: 'url',
+  fileName: 'fileName',
+  mimeType: 'mimeType',
+  sizeBytes: 'sizeBytes',
+  data: 'data',
   position: 'position',
-  format: 'format',
   isCover: 'isCover',
   createdAt: 'createdAt'
 } as const
@@ -715,69 +716,6 @@ export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMod
 
 
 /**
- * Reference to a field of type 'ProductType'
- */
-export type EnumProductTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductType'>
-    
-
-
-/**
- * Reference to a field of type 'ProductType[]'
- */
-export type ListEnumProductTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductType[]'>
-    
-
-
-/**
- * Reference to a field of type 'Boolean'
- */
-export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-/**
- * Reference to a field of type 'ProductCategory'
- */
-export type EnumProductCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductCategory'>
-    
-
-
-/**
- * Reference to a field of type 'ProductCategory[]'
- */
-export type ListEnumProductCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductCategory[]'>
-    
-
-
-/**
- * Reference to a field of type 'ProductVersion'
- */
-export type EnumProductVersionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductVersion'>
-    
-
-
-/**
- * Reference to a field of type 'ProductVersion[]'
- */
-export type ListEnumProductVersionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductVersion[]'>
-    
-
-
-/**
- * Reference to a field of type 'ProductModalidad'
- */
-export type EnumProductModalidadFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductModalidad'>
-    
-
-
-/**
- * Reference to a field of type 'ProductModalidad[]'
- */
-export type ListEnumProductModalidadFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProductModalidad[]'>
-    
-
-
-/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -792,6 +730,13 @@ export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+/**
  * Reference to a field of type 'DateTime'
  */
 export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -802,6 +747,20 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Bytes'
+ */
+export type BytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes'>
+    
+
+
+/**
+ * Reference to a field of type 'Bytes[]'
+ */
+export type ListBytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes[]'>
     
 
 

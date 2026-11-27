@@ -1,17 +1,22 @@
 import React from "react";
 import ShopWithoutSidebar from "@/components/ShopWithoutSidebar";
-
+import { getCachedStorefrontProducts } from "@/lib/storefront-catalog";
 import { Metadata } from "next";
+
+export const revalidate = 300;
+
 export const metadata: Metadata = {
-  title: "Shop Page | NextCommerce Nextjs E-commerce template",
-  description: "This is Shop Page for NextCommerce Template",
-  // other metadata
+  title: "Catálogo completo | Fútbol en la Piel",
+  description:
+    "Catálogo completo de camisetas de fútbol actuales, retros, Uruguay y clubes internacionales en Fútbol en la Piel.",
 };
 
-const ShopWithoutSidebarPage = () => {
+const ShopWithoutSidebarPage = async () => {
+  const products = await getCachedStorefrontProducts();
+
   return (
     <main>
-      <ShopWithoutSidebar />
+      <ShopWithoutSidebar initialProducts={products} />
     </main>
   );
 };

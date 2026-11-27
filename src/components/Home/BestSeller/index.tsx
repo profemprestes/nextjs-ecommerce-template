@@ -17,17 +17,22 @@ const TABS: { key: "all" | ProductCategory; label: string }[] = [
   { key: "clubes", label: "Clubes" },
 ];
 
-const BestSeller = () => {
+interface BestSellerProps {
+  initialProducts?: Product[];
+}
+
+const BestSeller = ({ initialProducts }: BestSellerProps) => {
+  const catalogProducts = initialProducts ?? shopData;
   const dispatch = useDispatch<AppDispatch>();
   const [activeTab, setActiveTab] = useState<"all" | ProductCategory>("all");
 
   const items = useMemo(() => {
     const filtered =
       activeTab === "all"
-        ? shopData
-        : shopData.filter((item) => item.category === activeTab);
+        ? catalogProducts
+        : catalogProducts.filter((item) => item.category === activeTab);
     return filtered.slice(0, 8);
-  }, [activeTab]);
+  }, [activeTab, catalogProducts]);
 
   const handleSelect = (item: Product) => {
     dispatch(updateproductDetails({ ...item }));
@@ -49,7 +54,7 @@ const BestSeller = () => {
               Catálogo en stock
             </h2>
             <p className="text-[#B8C7DC]">
-              {shopData.length} modelos verificados con entrega inmediata o
+              {catalogProducts.length} modelos verificados con entrega inmediata o
               disponibilidad a confirmar.
             </p>
           </div>
@@ -90,7 +95,7 @@ const BestSeller = () => {
             >
               <div className="md:col-span-6 flex items-center gap-4 min-w-0">
                 <Link
-                  href="/shop-details"
+                  href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
                   onClick={() => handleSelect(item)}
                   className="relative w-20 aspect-[4/3] shrink-0 rounded-lg overflow-hidden border border-[rgba(245,234,214,0.18)] bg-[#102442]"
                 >
@@ -104,7 +109,7 @@ const BestSeller = () => {
                 </Link>
                 <div className="min-w-0">
                   <Link
-                    href="/shop-details"
+                    href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
                     onClick={() => handleSelect(item)}
                     className="font-semibold text-base text-[#F5EAD6] hover:text-[#A8D6F0] transition-colors block truncate"
                   >
@@ -132,7 +137,7 @@ const BestSeller = () => {
 
               <div className="md:col-span-2 flex md:justify-end gap-2.5">
                 <Link
-                  href="/shop-details"
+                  href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
                   onClick={() => handleSelect(item)}
                   className="inline-flex items-center justify-center min-h-[40px] px-3.5 text-xs font-medium border border-[rgba(245,234,214,0.22)] rounded-full text-[#F5EAD6] hover:border-[#A8D6F0] hover:text-[#A8D6F0] transition-colors"
                 >
@@ -152,10 +157,10 @@ const BestSeller = () => {
 
         <div className="pt-8 flex justify-between items-center flex-wrap gap-4">
           <p className="font-mono-cl text-xs uppercase text-[#B8C7DC]">
-            Mostrando {items.length} de {shopData.length} modelos disponibles
+            Mostrando {items.length} de {catalogProducts.length} modelos disponibles
           </p>
           <Link href="/shop-with-sidebar" className="sport-btn-secondary">
-            Ver las {shopData.length} camisetas
+            Ver las {catalogProducts.length} camisetas
           </Link>
         </div>
       </div>

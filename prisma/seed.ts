@@ -3,13 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
-import {
-  PrismaClient,
-  ProductCategory,
-  ProductModalidad,
-  ProductType,
-  ProductVersion,
-} from "../src/generated/prisma/client";
+import { PrismaClient } from "../src/generated/prisma/client";
 
 type CatalogoEntry = {
   id_origen: string | null;
@@ -40,7 +34,7 @@ type CatalogoEntry = {
   fuente: string;
 };
 
-function mapCategory(raw: string | null): ProductCategory {
+function mapCategory(raw: string | null): string {
   if (
     raw === "actuales" ||
     raw === "retros" ||
@@ -52,24 +46,27 @@ function mapCategory(raw: string | null): ProductCategory {
   return "clubes";
 }
 
-function mapVersion(raw: string | null): ProductVersion {
+function mapVersion(raw: string | null): string {
   if (raw === "Jugador" || raw === "Fan" || raw === "Retro") {
     return raw;
   }
-  return "a_confirmar";
+  return "A confirmar";
 }
 
-function mapModalidad(raw: string | null): ProductModalidad {
+function mapModalidad(raw: string | null): string {
   if (raw === "entrega_inmediata") return "entrega_inmediata";
   if (raw === "por_encargo") return "por_encargo";
   return "pendiente_verificacion";
 }
 
-function mapType(item: CatalogoEntry): ProductType {
-  if (item.tipo === "anuncio" || item.slug_normalizado.startsWith("sin-descripcion")) {
-    return "anuncio";
-  }
-  return "producto";
+function isRelativeCatalogPath(url: string): boolean {
+  return (
+    url.startsWith("/nuevas/") ||
+    url.startsWith("/catalogo/") ||
+    (!url.startsWith("http://") &&
+      !url.startsWith("https://") &&
+      !url.startsWith("/api/"))
+  );
 }
 
 async function main() {
@@ -93,17 +90,22 @@ async function main() {
 
     for (const item of raw.productos) {
       const slug = item.slug_normalizado;
-      const tipo = mapType(item);
-      const activo = item.activo ?? tipo === "producto";
-      const cover = item.portada ?? item.imagenes_ordenadas[0] ?? "";
+      const isAnuncio =
+        item.tipo === "anuncio" || slug.startsWith("sin-descripcion");
+      const active = item.activo ?? !isAnuncio;
+      const rawCover = item.portada ?? item.imagenes_ordenadas[0] ?? "";
+      const cover = isRelativeCatalogPath(rawCover) ? "" : rawCover;
+      const nonRelativeImages = item.imagenes_ordenadas.filter(
+        (url) => !isRelativeCatalogPath(url)
+      );
       const category = mapCategory(item.categoria);
-      const version = mapVersion(item.version);
-      const modalidad = mapModalidad(item.modalidad);
+      const kitVersion = mapVersion(item.version);
+      const deliveryMode = mapModalidad(item.modalidad);
       const priceText =
         item.price ?? (item.precio_uyu ? `${item.precio_uyu} UYU` : "");
       const salePriceText = item.sale_price ?? "";
       const availability =
-        modalidad === "entrega_inmediata" ? "in stock" : "out of stock";
+        deliveryMode === "entrega_inmediata" ? "in stock" : "out of stock";
       const fbCategory = "Sports & Outdoors > Team Sports > Soccer";
       const googleCategory = "Apparel & Accessories > Clothing > Activewear";
       const material = "Poliéster deportivo";
@@ -119,9 +121,9 @@ async function main() {
       const description =
         item.description ??
         `${item.titulo}${item.brand ? `, marca ${item.brand}` : ""}${
-          version !== "a_confirmar" ? `, versión ${version}` : ""
+          kitVersion !== "A confirmar" ? `, versión ${kitVersion}` : ""
         }. ${
-          modalidad === "entrega_inmediata"
+          deliveryMode === "entrega_inmediata"
             ? "Disponible para entrega inmediata."
             : "Disponibilidad y stock a confirmar."
         } Consultar precio y talles disponibles.`;
@@ -136,16 +138,15 @@ async function main() {
           create: {
             id: item.id_origen ?? slug,
             slug,
-            tipo,
-            activo,
+            active,
             title: item.titulo,
             team: item.equipo_o_seleccion ?? "",
-            season: item.temporada_o_anio,
-            dorsal: item.dorsal,
+            season: item.temporada_o_anio ?? "",
+            player_number: item.dorsal ?? "",
             category,
             sport: item.deporte ?? "futbol",
-            version,
-            modalidad,
+            kit_version: kitVersion,
+            delivery_mode: deliveryMode,
             price_uyu: item.precio_uyu,
             price: priceText,
             sale_price: salePriceText,
@@ -161,7 +162,6 @@ async function main() {
             fb_product_category: fbCategory,
             material,
             shipping_weight: shippingWeight,
-            cover_image: cover,
             image_link: cover,
             source_ref: item.fuente,
             availability,
@@ -172,16 +172,15 @@ async function main() {
           },
           update: {
             id: item.id_origen ?? slug,
-            tipo,
-            activo,
+            active,
             title: item.titulo,
             team: item.equipo_o_seleccion ?? "",
-            season: item.temporada_o_anio,
-            dorsal: item.dorsal,
+            season: item.temporada_o_anio ?? "",
+            player_number: item.dorsal ?? "",
             category,
             sport: item.deporte ?? "futbol",
-            version,
-            modalidad,
+            kit_version: kitVersion,
+            delivery_mode: deliveryMode,
             price_uyu: item.precio_uyu,
             price: priceText,
             sale_price: salePriceText,
@@ -197,8 +196,7 @@ async function main() {
             fb_product_category: fbCategory,
             material,
             shipping_weight: shippingWeight,
-            cover_image: cover,
-            image_link: cover,
+            ...(cover ? { image_link: cover } : {}),
             source_ref: item.fuente,
             availability,
             product_tags: productTags,
@@ -206,23 +204,29 @@ async function main() {
         });
 
         await tx.productImage.deleteMany({
-          where: { productUid: product.uid },
+          where: {
+            productId: product.uid,
+            OR: [
+              { url: { startsWith: "/nuevas/" } },
+              { url: { startsWith: "/catalogo/" } },
+            ],
+          },
         });
 
-        if (item.imagenes_ordenadas.length > 0) {
+        if (nonRelativeImages.length > 0) {
           await tx.productImage.createMany({
-            data: item.imagenes_ordenadas.map((url, index) => ({
-              productUid: product.uid,
+            data: nonRelativeImages.map((url, index) => ({
+              productId: product.uid,
               url,
               position: index,
-              format: url.endsWith(".webp") ? "webp" : "jpg",
               isCover: index === 0,
             })),
+            skipDuplicates: true,
           });
         }
 
         upsertedProducts += 1;
-        totalImages += item.imagenes_ordenadas.length;
+        totalImages += nonRelativeImages.length;
       });
     }
 
