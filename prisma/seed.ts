@@ -23,6 +23,16 @@ type CatalogoEntry = {
   version: string | null;
   modalidad: string | null;
   precio_uyu: number | null;
+  price?: string | null;
+  sale_price?: string | null;
+  brand?: string | null;
+  color?: string | null;
+  size?: string | null;
+  style?: string | null;
+  quantity_to_sell_on_facebook?: string | null;
+  item_group_id?: string | null;
+  description?: string | null;
+  product_tags?: string[];
   tipo?: "producto" | "anuncio";
   activo?: boolean;
   portada?: string | null;
@@ -89,6 +99,36 @@ async function main() {
       const category = mapCategory(item.categoria);
       const version = mapVersion(item.version);
       const modalidad = mapModalidad(item.modalidad);
+      const priceText =
+        item.price ?? (item.precio_uyu ? `${item.precio_uyu} UYU` : "");
+      const salePriceText = item.sale_price ?? "";
+      const availability =
+        modalidad === "entrega_inmediata" ? "in stock" : "out of stock";
+      const fbCategory = "Sports & Outdoors > Team Sports > Soccer";
+      const googleCategory = "Apparel & Accessories > Clothing > Activewear";
+      const material = "Poliéster deportivo";
+      const shippingWeight = "250 g";
+      const itemGroupId =
+        item.item_group_id ??
+        `GRP-${(item.equipo_o_seleccion ?? slug)
+          .toUpperCase()
+          .replace(/[^A-Z0-9]+/g, "-")
+          .replace(/^-|-$/g, "")}${
+          item.temporada_o_anio ? `-${item.temporada_o_anio}` : ""
+        }`;
+      const description =
+        item.description ??
+        `${item.titulo}${item.brand ? `, marca ${item.brand}` : ""}${
+          version !== "a_confirmar" ? `, versión ${version}` : ""
+        }. ${
+          modalidad === "entrega_inmediata"
+            ? "Disponible para entrega inmediata."
+            : "Disponibilidad y stock a confirmar."
+        } Consultar precio y talles disponibles.`;
+      const productTags =
+        item.product_tags && item.product_tags.length > 0
+          ? item.product_tags
+          : ["futbolenlapieluy1", "camiseta futbol", category];
 
       await prisma.$transaction(async (tx) => {
         const product = await tx.product.upsert({
@@ -107,17 +147,31 @@ async function main() {
             version,
             modalidad,
             price_uyu: item.precio_uyu,
+            price: priceText,
+            sale_price: salePriceText,
+            brand: item.brand ?? "",
+            color: item.color ?? "",
+            size: item.size ?? "",
+            style: item.style ?? "",
+            quantity_to_sell_on_facebook:
+              item.quantity_to_sell_on_facebook ?? "",
+            item_group_id: itemGroupId,
+            description,
+            google_product_category: googleCategory,
+            fb_product_category: fbCategory,
+            material,
+            shipping_weight: shippingWeight,
             cover_image: cover,
             image_link: cover,
             source_ref: item.fuente,
-            availability:
-              modalidad === "entrega_inmediata" ? "in stock" : "out of stock",
+            availability,
             condition: "new",
             gender: "unisex",
             age_group: "adult",
-            product_tags: ["futbolenlapieluy1", "camiseta futbol"],
+            product_tags: productTags,
           },
           update: {
+            id: item.id_origen ?? slug,
             tipo,
             activo,
             title: item.titulo,
@@ -129,11 +183,25 @@ async function main() {
             version,
             modalidad,
             price_uyu: item.precio_uyu,
+            price: priceText,
+            sale_price: salePriceText,
+            brand: item.brand ?? "",
+            color: item.color ?? "",
+            size: item.size ?? "",
+            style: item.style ?? "",
+            quantity_to_sell_on_facebook:
+              item.quantity_to_sell_on_facebook ?? "",
+            item_group_id: itemGroupId,
+            description,
+            google_product_category: googleCategory,
+            fb_product_category: fbCategory,
+            material,
+            shipping_weight: shippingWeight,
             cover_image: cover,
             image_link: cover,
             source_ref: item.fuente,
-            availability:
-              modalidad === "entrega_inmediata" ? "in stock" : "out of stock",
+            availability,
+            product_tags: productTags,
           },
         });
 

@@ -1,7 +1,7 @@
 {
   "productos": [
     {
-      "id_origen": null,
+      "id_origen": "CAM-MANCHESTER-UNITED-1993-1995-CANTONA-7",
       "slug_normalizado": "manchester-united-1993-1995-cantona-7",
       "titulo": "Camiseta Manchester United 1993-1995 Cantona #7",
       "equipo_o_seleccion": "Manchester United",
@@ -11,7 +11,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/manchester-united-1993-1995_cantona-7_post1_01.webp",
         "/nuevas/manchester-united-1993-1995_cantona-7_post1_02.webp",
@@ -25,10 +25,23 @@
       "fuente": "catalogo.csv (líneas 2-8, posts_1.html) ; catalogo.csv (línea 271, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/manchester-united-1993-1995_cantona-7_post1_01.webp"
+      "portada": "/nuevas/manchester-united-1993-1995_cantona-7_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Umbro",
+      "size": "M, L, XL",
+      "style": "Alternativa",
+      "item_group_id": "GRP-MANCHESTER-UNITED-RETRO",
+      "description": "Camiseta Manchester United 1993-1995 Cantona #7, marca Umbro, edición retro de colección, con dorsal Cantona #7. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "manchester united",
+        "1993-1995",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-NORUEGA-2026-BRAUT-HAALAND-9",
       "slug_normalizado": "noruega-2026-braut-haaland-9",
       "titulo": "Camiseta Noruega 2026 Braut Haaland #9",
       "equipo_o_seleccion": "Noruega",
@@ -38,7 +51,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/noruega-2026_braut-haaland-9_post1_01.webp",
         "/nuevas/noruega-2026_braut-haaland-9_post1_02.webp",
@@ -58,10 +71,24 @@
       "fuente": "catalogo.csv (líneas 9-14, posts_1.html) ; catalogo.csv (línea 272, posts.html) ; catalogo.csv (líneas 328-334, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/noruega-2026_braut-haaland-9_post1_01.webp"
+      "portada": "/nuevas/noruega-2026_braut-haaland-9_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Nike",
+      "size": "M, L, XL",
+      "style": "Jugador",
+      "item_group_id": "GRP-NORUEGA-2026",
+      "description": "Camiseta Noruega 2026 Braut Haaland #9, marca Nike, versión Jugador, con dorsal Braut Haaland #9. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "noruega",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-COMO-2026",
       "slug_normalizado": "como-2026",
       "titulo": "Camiseta Como 2026",
       "equipo_o_seleccion": "Como",
@@ -71,7 +98,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/como-2026_entrega-inmediaga_post1_01.webp",
         "/nuevas/como-2026_entrega-inmediaga_post1_02.webp",
@@ -82,10 +109,24 @@
       "fuente": "catalogo.csv (líneas 15-18, posts_1.html) ; catalogo.csv (línea 273, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/como-2026_entrega-inmediaga_post1_01.webp"
+      "portada": "/nuevas/como-2026_entrega-inmediaga_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "item_group_id": "GRP-COMO-2026",
+      "description": "Camiseta Como 2026, marca Adidas, versión Jugador. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "como",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-MANCHESTER-UNITED-1996-CANTONA-7",
       "slug_normalizado": "manchester-united-1996-cantona-7",
       "titulo": "Camiseta Manchester United 1996 Cantona #7",
       "equipo_o_seleccion": "Manchester United",
@@ -95,7 +136,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/manchester-united-1996_cantona-7_post1_01.webp",
         "/nuevas/manchester-united-1996_cantona-7_post1_02.webp",
@@ -108,10 +149,23 @@
       "fuente": "catalogo.csv (líneas 19-24, posts_1.html) ; catalogo.csv (línea 274, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/manchester-united-1996_cantona-7_post1_01.webp"
+      "portada": "/nuevas/manchester-united-1996_cantona-7_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Umbro",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "item_group_id": "GRP-MANCHESTER-UNITED-RETRO",
+      "description": "Camiseta Manchester United 1996 Cantona #7, marca Umbro, edición retro de colección, con dorsal Cantona #7. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "manchester united",
+        "1996",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-URUGUAY-2026",
       "slug_normalizado": "uruguay-2026",
       "titulo": "Camiseta Uruguay 2026",
       "equipo_o_seleccion": "Uruguay",
@@ -121,7 +175,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/uruguay-2026_post1_01.webp",
         "/nuevas/uruguay-2026_post1_02.webp",
@@ -133,10 +187,23 @@
       "fuente": "catalogo.csv (líneas 25-29, posts_1.html) ; catalogo.csv (línea 275, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/uruguay-2026_post1_01.webp"
+      "portada": "/nuevas/uruguay-2026_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Nike",
+      "size": "M, XL",
+      "style": "Alternativa",
+      "item_group_id": "GRP-URUGUAY-2026",
+      "description": "Camiseta Uruguay 2026, marca Nike, versión Jugador. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "uruguay",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ESPANA-1996-LUIS-ENRIQUE-21",
       "slug_normalizado": "espana-1996-luis-enrique-21",
       "titulo": "Camiseta España 1996 Luis Enrique #21",
       "equipo_o_seleccion": "España",
@@ -146,7 +213,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/espana-1996_luis-enrique-21_post1_01.webp",
         "/nuevas/espana-1996_luis-enrique-21_post1_02.webp",
@@ -162,10 +229,24 @@
       "fuente": "catalogo.csv (líneas 30-38, posts_1.html) ; catalogo.csv (línea 276, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/espana-1996_luis-enrique-21_post1_01.webp"
+      "portada": "/nuevas/espana-1996_luis-enrique-21_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-ESPANA-RETRO",
+      "description": "Camiseta España 1996 Luis Enrique #21, marca Adidas, edición retro de colección, con dorsal Luis Enrique #21. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "españa",
+        "1996",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-MANCHESTER-UNITED-2002-REVERSIBLE-CENTENARIO-1902-2002-BECKHAM-7",
       "slug_normalizado": "manchester-united-2002-reversible-centenario-1902-2002-beckham-7",
       "titulo": "Camiseta Manchester United 2002 Reversible centenario 1902 - 2002 Beckham #7",
       "equipo_o_seleccion": "Manchester United",
@@ -175,7 +256,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/manchester-united-2002_reversible-centenario-1902-2002_beckham-7_post1_01.webp",
         "/nuevas/manchester-united-2002_reversible-centenario-1902-2002_beckham-7_post1_02.webp",
@@ -190,10 +271,23 @@
       "fuente": "catalogo.csv (líneas 39-46, posts_1.html) ; catalogo.csv (línea 277, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/manchester-united-2002_reversible-centenario-1902-2002_beckham-7_post1_01.webp"
+      "portada": "/nuevas/manchester-united-2002_reversible-centenario-1902-2002_beckham-7_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Umbro",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "item_group_id": "GRP-MANCHESTER-UNITED-RETRO",
+      "description": "Camiseta Manchester United 2002 Reversible centenario 1902 - 2002 Beckham #7, marca Umbro, edición retro de colección, con dorsal Beckham #7. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "manchester united",
+        "2002",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-LIVERPOOL-1995-MCMANAMAN-17",
       "slug_normalizado": "liverpool-1995-mcmanaman-17",
       "titulo": "Camiseta Liverpool 1995 McManaman #17",
       "equipo_o_seleccion": "Liverpool",
@@ -223,10 +317,22 @@
       "fuente": "catalogo.csv (líneas 47-52, posts_1.html) ; catalogo.csv (línea 278, posts.html) ; catalogo.csv (líneas 321-327, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/catalogo/liverpool-1995_mcmanaman-17_post1_01.jpg"
+      "portada": "/catalogo/liverpool-1995_mcmanaman-17_post1_01.jpg",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "item_group_id": "GRP-LIVERPOOL-RETRO",
+      "description": "Camiseta Liverpool 1995 McManaman #17, marca Adidas, edición retro de colección, con dorsal McManaman #17. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "liverpool",
+        "1995",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-MANCHESTER-UNITED-1988",
       "slug_normalizado": "manchester-united-1988",
       "titulo": "Camiseta Manchester United 1988",
       "equipo_o_seleccion": "Manchester United",
@@ -236,7 +342,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/manchester-united-1988_post1_01.webp",
         "/nuevas/manchester-united-1988_post1_02.webp",
@@ -248,10 +354,23 @@
       "fuente": "catalogo.csv (líneas 53-57, posts_1.html) ; catalogo.csv (línea 279, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/manchester-united-1988_post1_01.webp"
+      "portada": "/nuevas/manchester-united-1988_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Alternativa",
+      "item_group_id": "GRP-MANCHESTER-UNITED-RETRO",
+      "description": "Camiseta Manchester United 1988, marca Adidas, edición retro de colección. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "manchester united",
+        "1988",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ARSENAL-1993",
       "slug_normalizado": "arsenal-1993",
       "titulo": "Camiseta Arsenal 1993",
       "equipo_o_seleccion": "Arsenal",
@@ -261,7 +380,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/arsenal-1993_post1_01.webp",
         "/nuevas/arsenal-1993_post1_02.webp",
@@ -272,10 +391,24 @@
       "fuente": "catalogo.csv (líneas 58-61, posts_1.html) ; catalogo.csv (línea 280, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/arsenal-1993_post1_01.webp"
+      "portada": "/nuevas/arsenal-1993_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-ARSENAL-RETRO",
+      "description": "Camiseta Arsenal 1993, marca Adidas, edición retro de colección. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "arsenal",
+        "1993",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-BOCA",
       "slug_normalizado": "boca",
       "titulo": "Camiseta Boca",
       "equipo_o_seleccion": "Boca",
@@ -285,7 +418,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/boca_post1_01.webp",
         "/nuevas/boca_post1_02.webp",
@@ -307,7 +440,20 @@
       "fuente": "catalogo.csv (líneas 62-68, posts_1.html) ; catalogo.csv (línea 281, posts.html) ; catalogo.csv (líneas 335-342, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/boca_post1_01.webp"
+      "portada": "/nuevas/boca_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-BOCA",
+      "description": "Camiseta Boca, marca Adidas. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "boca",
+        "entrega inmediata"
+      ]
     },
     {
       "id_origen": null,
@@ -343,7 +489,7 @@
       "portada": "/nuevas/boca_post2_01.webp"
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-PENAROL-CURCC-2026-ANIVERSARIO-1891",
       "slug_normalizado": "penarol-curcc-2026-aniversario-1891",
       "titulo": "Camiseta Peñarol (CURCC) 2026 Aniversario 1891",
       "equipo_o_seleccion": "Peñarol (CURCC)",
@@ -353,7 +499,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/penarol-2026-curcc_aniversario-1891_post1_01.webp",
         "/nuevas/penarol-2026-curcc_aniversario-1891_post1_02.webp",
@@ -365,10 +511,24 @@
       "fuente": "catalogo.csv (líneas 75-79, posts_1.html) ; catalogo.csv (línea 283, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/penarol-2026-curcc_aniversario-1891_post1_01.webp"
+      "portada": "/nuevas/penarol-2026-curcc_aniversario-1891_post1_01.webp",
+      "price": "2100 UYU",
+      "brand": "Puma",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-PENAROL-2026",
+      "description": "Camiseta Peñarol (CURCC) 2026 Aniversario 1891, marca Puma. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "uruguay",
+        "peñarol (curcc)",
+        "2026",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-PENAROL-1998-10",
       "slug_normalizado": "penarol-1998-10",
       "titulo": "Camiseta Peñarol 1998 #10",
       "equipo_o_seleccion": "Peñarol",
@@ -391,10 +551,21 @@
       "fuente": "catalogo.csv (líneas 80-85, posts_1.html) ; catalogo.csv (línea 284, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/penarol-1998_10_post1_01.webp"
+      "portada": "/nuevas/penarol-1998_10_post1_01.webp",
+      "brand": "Umbro",
+      "style": "Titular",
+      "item_group_id": "GRP-PENAROL-1998",
+      "description": "Camiseta Peñarol 1998 #10, marca Umbro, con dorsal #10. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "uruguay",
+        "peñarol",
+        "1998",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ALEMANIA-2024-KROOS-8",
       "slug_normalizado": "alemania-2024-kroos-8",
       "titulo": "Camiseta Alemania 2024 Kroos #8",
       "equipo_o_seleccion": "Alemania",
@@ -404,7 +575,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/alemania-2024_kroos-8_post1_01.webp",
         "/nuevas/alemania-2024_kroos-8_post1_02.webp",
@@ -415,10 +586,23 @@
       "fuente": "catalogo.csv (líneas 86-89, posts_1.html) ; catalogo.csv (línea 285, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/alemania-2024_kroos-8_post1_01.webp"
+      "portada": "/nuevas/alemania-2024_kroos-8_post1_01.webp",
+      "price": "2100 UYU",
+      "brand": "Adidas",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "4",
+      "item_group_id": "GRP-ALEMANIA-2024",
+      "description": "Camiseta Alemania 2024 Kroos #8, marca Adidas, con dorsal Kroos #8. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "alemania",
+        "2024",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-MANCHESTER-UNITED-2026-UGARTE-25",
       "slug_normalizado": "manchester-united-2026-ugarte-25",
       "titulo": "Camiseta Manchester United 2026 Ugarte #25",
       "equipo_o_seleccion": "Manchester United",
@@ -428,7 +612,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/manchestar-united-2026_ugarte-25_post1_01.webp",
         "/nuevas/manchestar-united-2026_ugarte-25_post1_03.webp",
@@ -443,7 +627,21 @@
       "fuente": "catalogo.csv (líneas 90-97, posts_1.html) ; catalogo.csv (línea 286, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/manchestar-united-2026_ugarte-25_post1_01.webp"
+      "portada": "/nuevas/manchestar-united-2026_ugarte-25_post1_01.webp",
+      "price": "2100 UYU",
+      "brand": "Adidas",
+      "size": "L, XL",
+      "style": "Alternativa",
+      "item_group_id": "GRP-MANCHESTER-UNITED-2026",
+      "description": "Camiseta Manchester United 2026 Ugarte #25, marca Adidas, versión Jugador, con dorsal Ugarte #25. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "manchester united",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
       "id_origen": null,
@@ -471,7 +669,7 @@
       "portada": "/nuevas/noruega-2026_braut-haaland-9_post2_01.webp"
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-NORUEGA-2026-ODEGAARD-10",
       "slug_normalizado": "noruega-2026-odegaard-10",
       "titulo": "Camiseta Noruega 2026 Odegaard #10",
       "equipo_o_seleccion": "Noruega",
@@ -481,7 +679,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/noruega-2026_odegaard-10_ultima-talle-m_post1_01.webp",
         "/nuevas/noruega-2026_odegaard-10_ultima-talle-m_post1_04.webp",
@@ -495,10 +693,25 @@
       "fuente": "catalogo.csv (líneas 103-109, posts_1.html) ; catalogo.csv (línea 288, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/noruega-2026_odegaard-10_ultima-talle-m_post1_01.webp"
+      "portada": "/nuevas/noruega-2026_odegaard-10_ultima-talle-m_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Nike",
+      "size": "M",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "1",
+      "item_group_id": "GRP-NORUEGA-2026",
+      "description": "Camiseta Noruega 2026 Odegaard #10, marca Nike, versión Jugador, con dorsal Odegaard #10, última unidad en talle M. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "noruega",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-NACIONAL-2026",
       "slug_normalizado": "nacional-2026",
       "titulo": "Camiseta Nacional 2026",
       "equipo_o_seleccion": "Nacional",
@@ -508,7 +721,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/nacional-2026_post1_01.webp",
         "/nuevas/nacional-2026_post1_02.webp",
@@ -520,10 +733,23 @@
       "fuente": "catalogo.csv (líneas 110-114, posts_1.html) ; catalogo.csv (línea 289, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/nacional-2026_post1_01.webp"
+      "portada": "/nuevas/nacional-2026_post1_01.webp",
+      "price": "2100 UYU",
+      "brand": "Umbro",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "1",
+      "item_group_id": "GRP-NACIONAL-2026",
+      "description": "Camiseta Nacional 2026, marca Umbro. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "uruguay",
+        "nacional",
+        "2026",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ITALIA-1994-R-BAGGIO-10",
       "slug_normalizado": "italia-1994-r-baggio-10",
       "titulo": "Camiseta Italia 1994 R.Baggio #10",
       "equipo_o_seleccion": "Italia",
@@ -533,7 +759,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/catalogo/italia-1994_r-baggio-10_post1_01.jpg",
         "/catalogo/italia-1994_r-baggio-10_post1_02.jpg",
@@ -544,10 +770,24 @@
       "fuente": "catalogo.csv (líneas 115-118, posts_1.html) ; catalogo.csv (línea 290, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/catalogo/italia-1994_r-baggio-10_post1_01.jpg"
+      "portada": "/catalogo/italia-1994_r-baggio-10_post1_01.jpg",
+      "price": "2200 UYU",
+      "brand": "Diadora",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-ITALIA-RETRO",
+      "description": "Camiseta Italia 1994 R.Baggio #10, marca Diadora, edición retro de colección, con dorsal R.Baggio #10. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "italia",
+        "1994",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-COLOMBIA-1990-VALDERRAMA-10",
       "slug_normalizado": "colombia-1990-valderrama-10",
       "titulo": "Camiseta Colombia 1990 Valderrama #10",
       "equipo_o_seleccion": "Colombia",
@@ -557,7 +797,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/colombia-1990_valderrama-10_post1_01.webp",
         "/nuevas/colombia-1990_valderrama-10_post1_02.webp",
@@ -570,10 +810,24 @@
       "fuente": "catalogo.csv (líneas 119-124, posts_1.html) ; catalogo.csv (línea 291, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/colombia-1990_valderrama-10_post1_01.webp"
+      "portada": "/nuevas/colombia-1990_valderrama-10_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-COLOMBIA-RETRO",
+      "description": "Camiseta Colombia 1990 Valderrama #10, marca Adidas, edición retro de colección, con dorsal Valderrama #10. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "colombia",
+        "1990",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-REAL-MADRID-2026-VALVERDE-8",
       "slug_normalizado": "real-madrid-2026-valverde-8",
       "titulo": "Camiseta Real Madrid 2026 Valverde #8",
       "equipo_o_seleccion": "Real Madrid",
@@ -583,7 +837,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/real-madrid-2026_valverde-8_post1_01.webp",
         "/nuevas/real-madrid-2026_valverde-8_post1_02.webp",
@@ -595,10 +849,26 @@
       "fuente": "catalogo.csv (líneas 125-129, posts_1.html) ; catalogo.csv (línea 292, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/real-madrid-2026_valverde-8_post1_01.webp"
+      "portada": "/nuevas/real-madrid-2026_valverde-8_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "color": "Rosada",
+      "size": "S, M, L",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-REAL-MADRID-2026",
+      "description": "Camiseta Real Madrid 2026 Valverde #8, marca Adidas, versión Jugador, con dorsal Valverde #8. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "real madrid",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ARGENTINA-2026-MESSI-10",
       "slug_normalizado": "argentina-2026-messi-10",
       "titulo": "Camiseta Argentina 2026 Messi #10",
       "equipo_o_seleccion": "Argentina",
@@ -608,7 +878,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/argentina-2026_messi-10_post1_01.webp",
         "/nuevas/argentina-2026_messi-10_post1_02.webp",
@@ -632,10 +902,25 @@
       "fuente": "catalogo.csv (líneas 130-137, posts_1.html) ; catalogo.csv (línea 293, posts.html) ; catalogo.csv (líneas 372-380, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/argentina-2026_messi-10_post1_01.webp"
+      "portada": "/nuevas/argentina-2026_messi-10_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-ARGENTINA-2026",
+      "description": "Camiseta Argentina 2026 Messi #10, marca Adidas, versión Jugador, con dorsal Messi #10. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "argentina",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-BRASIL-1994-ROMARIO-11",
       "slug_normalizado": "brasil-1994-romario-11",
       "titulo": "Camiseta Brasil 1994 Romário #11",
       "equipo_o_seleccion": "Brasil",
@@ -645,7 +930,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/brasil-1994_romario-11_post1_01.webp",
         "/nuevas/brasil-1994_romario-11_post1_02.webp",
@@ -656,7 +941,21 @@
       "fuente": "catalogo.csv (líneas 138-141, posts_1.html) ; catalogo.csv (línea 294, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/brasil-1994_romario-11_post1_01.webp"
+      "portada": "/nuevas/brasil-1994_romario-11_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Umbro",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-BRASIL-RETRO",
+      "description": "Camiseta Brasil 1994 Romário #11, marca Umbro, edición retro de colección, con dorsal Romário #11. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "brasil",
+        "1994",
+        "entrega inmediata"
+      ]
     },
     {
       "id_origen": null,
@@ -690,7 +989,7 @@
       "portada": "/nuevas/mancester-united-1988_post1_01.webp"
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ARGENTINA-2006-MESSI-19",
       "slug_normalizado": "argentina-2006-messi-19",
       "titulo": "Camiseta Argentina 2006 Messi #19",
       "equipo_o_seleccion": "Argentina",
@@ -700,7 +999,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/argentina-2006_messi-19_post1_01.webp",
         "/nuevas/argentina-2006_messi-19_post1_02.webp",
@@ -712,10 +1011,24 @@
       "fuente": "catalogo.csv (líneas 147-151, posts_1.html) ; catalogo.csv (línea 296, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/argentina-2006_messi-19_post1_01.webp"
+      "portada": "/nuevas/argentina-2006_messi-19_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Adidas",
+      "size": "L",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "1",
+      "item_group_id": "GRP-ARGENTINA-RETRO",
+      "description": "Camiseta Argentina 2006 Messi #19, marca Adidas, edición retro de colección, con dorsal Messi #19. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "argentina",
+        "2006",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-BARCELONA-1991",
       "slug_normalizado": "barcelona-1991",
       "titulo": "Camiseta Barcelona 1991",
       "equipo_o_seleccion": "Barcelona",
@@ -725,7 +1038,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/barcelona-1991_entrega-inmediaga_post1_01.webp",
         "/nuevas/barcelona-1991_entrega-inmediaga_post1_02.webp",
@@ -737,10 +1050,24 @@
       "fuente": "catalogo.csv (líneas 152-156, posts_1.html) ; catalogo.csv (línea 297, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/barcelona-1991_entrega-inmediaga_post1_01.webp"
+      "portada": "/nuevas/barcelona-1991_entrega-inmediaga_post1_01.webp",
+      "price": "2100 UYU",
+      "brand": "Meyba",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-BARCELONA-RETRO",
+      "description": "Camiseta Barcelona 1991, marca Meyba, edición retro de colección. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "barcelona",
+        "1991",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-CAMERUN-1998-ETO-O-11",
       "slug_normalizado": "camerun-1998-eto-o-11",
       "titulo": "Camiseta Camerún 1998 Eto'o #11",
       "equipo_o_seleccion": "Camerún",
@@ -750,7 +1077,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/camerun-1998_eto-o-11_post1_01.webp",
         "/nuevas/camerun-1998_eto-o-11_post1_02.webp",
@@ -762,10 +1089,24 @@
       "fuente": "catalogo.csv (líneas 157-161, posts_1.html) ; catalogo.csv (línea 298, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/camerun-1998_eto-o-11_post1_01.webp"
+      "portada": "/nuevas/camerun-1998_eto-o-11_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Puma",
+      "size": "M, L",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "2",
+      "item_group_id": "GRP-CAMERUN-RETRO",
+      "description": "Camiseta Camerún 1998 Eto'o #11, marca Puma, edición retro de colección, con dorsal Eto'o #11. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "camerún",
+        "1998",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ALEMANIA-2026",
       "slug_normalizado": "alemania-2026",
       "titulo": "Camiseta Alemania 2026",
       "equipo_o_seleccion": "Alemania",
@@ -775,7 +1116,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/alemania-2026_post1_01.webp",
         "/nuevas/alemania-2026_post1_02.webp",
@@ -787,10 +1128,25 @@
       "fuente": "catalogo.csv (líneas 162-166, posts_1.html) ; catalogo.csv (línea 299, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/alemania-2026_post1_01.webp"
+      "portada": "/nuevas/alemania-2026_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Adidas",
+      "size": "L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "2",
+      "item_group_id": "GRP-ALEMANIA-2026",
+      "description": "Camiseta Alemania 2026, marca Adidas, versión Jugador. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "alemania",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-PENAROL-2026",
       "slug_normalizado": "penarol-2026",
       "titulo": "Camiseta Peñarol 2026",
       "equipo_o_seleccion": "Peñarol",
@@ -800,7 +1156,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/penarol-2026_entrga-inmediata_post1_01.webp",
         "/nuevas/penarol-2026_entrga-inmediata_post1_02.webp",
@@ -812,10 +1168,25 @@
       "fuente": "catalogo.csv (líneas 167-171, posts_1.html) ; catalogo.csv (línea 300, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/penarol-2026_entrga-inmediata_post1_01.webp"
+      "portada": "/nuevas/penarol-2026_entrga-inmediata_post1_01.webp",
+      "price": "2100 UYU",
+      "sale_price": "2100 UYU",
+      "brand": "Puma",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-PENAROL-2026",
+      "description": "Camiseta Peñarol 2026, marca Puma. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "uruguay",
+        "peñarol",
+        "2026",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-MANCHESTER-UNITED-1999",
       "slug_normalizado": "manchester-united-1999",
       "titulo": "Camiseta Manchester United 1999",
       "equipo_o_seleccion": "Manchester United",
@@ -845,10 +1216,23 @@
       "fuente": "catalogo.csv (líneas 172-177, posts_1.html) ; catalogo.csv (línea 301, posts.html) ; catalogo.csv (líneas 381-387, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/manchester-united-1999_post1_01.webp"
+      "portada": "/nuevas/manchester-united-1999_post1_01.webp",
+      "brand": "Umbro",
+      "size": "M, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "2",
+      "item_group_id": "GRP-MANCHESTER-UNITED-RETRO",
+      "description": "Camiseta Manchester United 1999, marca Umbro, edición retro de colección. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "manchester united",
+        "1999",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-REAL-MADRID-2003-RONALDO-9",
       "slug_normalizado": "real-madrid-2003-ronaldo-9",
       "titulo": "Camiseta Real Madrid 2003 Ronaldo #9",
       "equipo_o_seleccion": "Real Madrid",
@@ -858,7 +1242,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/real-madrid-2003_ronaldo-9_post1_01.webp",
         "/nuevas/real-madrid-2003_ronaldo-9_post1_02.webp",
@@ -870,10 +1254,24 @@
       "fuente": "catalogo.csv (líneas 178-182, posts_1.html) ; catalogo.csv (línea 302, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/real-madrid-2003_ronaldo-9_post1_01.webp"
+      "portada": "/nuevas/real-madrid-2003_ronaldo-9_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-REAL-MADRID-RETRO",
+      "description": "Camiseta Real Madrid 2003 Ronaldo #9, marca Adidas, edición retro de colección, con dorsal Ronaldo #9. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "real madrid",
+        "2003",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-LIVERPOOL-2026-ARAUJO-33",
       "slug_normalizado": "liverpool-2026-araujo-33",
       "titulo": "Camiseta Liverpool 2026 Araujo #33",
       "equipo_o_seleccion": "Liverpool",
@@ -883,7 +1281,7 @@
       "deporte": "futbol",
       "version": "Fan",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 1900,
       "imagenes_ordenadas": [
         "/nuevas/liverpool-2026_araujo-33_version-fan_post1_01.webp",
         "/nuevas/liverpool-2026_araujo-33_version-fan_post1_02.webp",
@@ -895,10 +1293,24 @@
       "fuente": "catalogo.csv (líneas 183-187, posts_1.html) ; catalogo.csv (línea 303, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/liverpool-2026_araujo-33_version-fan_post1_01.webp"
+      "portada": "/nuevas/liverpool-2026_araujo-33_version-fan_post1_01.webp",
+      "price": "1900 UYU",
+      "size": "M, L, XL",
+      "style": "Fan",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-LIVERPOOL-2026",
+      "description": "Camiseta Liverpool 2026 Araujo #33, versión Fan, con dorsal Araujo #33. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "liverpool",
+        "2026",
+        "version fan",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-BARCELONA-2009-A-INIESTA-8",
       "slug_normalizado": "barcelona-2009-a-iniesta-8",
       "titulo": "Camiseta Barcelona 2009 A.Iniesta #8",
       "equipo_o_seleccion": "Barcelona",
@@ -908,7 +1320,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/barcelona-2009_a-iniesta-8_post1_01.webp",
         "/nuevas/barcelona-2009_a-iniesta-8_post1_02.webp",
@@ -921,10 +1333,24 @@
       "fuente": "catalogo.csv (líneas 188-193, posts_1.html) ; catalogo.csv (línea 304, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/barcelona-2009_a-iniesta-8_post1_01.webp"
+      "portada": "/nuevas/barcelona-2009_a-iniesta-8_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Nike",
+      "size": "M, L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-BARCELONA-RETRO",
+      "description": "Camiseta Barcelona 2009 A.Iniesta #8, marca Nike, edición retro de colección, con dorsal A.Iniesta #8. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "barcelona",
+        "2009",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-BARCELONA-2011-MESSI-10",
       "slug_normalizado": "barcelona-2011-messi-10",
       "titulo": "Camiseta Barcelona 2011 Messi #10",
       "equipo_o_seleccion": "Barcelona",
@@ -934,7 +1360,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2200,
       "imagenes_ordenadas": [
         "/nuevas/barcelona-2011_messi-10_entrega-ibmediata_post1_01.webp",
         "/nuevas/barcelona-2011_messi-10_entrega-ibmediata_post1_02.webp",
@@ -947,10 +1373,24 @@
       "fuente": "catalogo.csv (líneas 194-199, posts_1.html) ; catalogo.csv (línea 305, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/barcelona-2011_messi-10_entrega-ibmediata_post1_01.webp"
+      "portada": "/nuevas/barcelona-2011_messi-10_entrega-ibmediata_post1_01.webp",
+      "price": "2200 UYU",
+      "brand": "Nike",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-BARCELONA-RETRO",
+      "description": "Camiseta Barcelona 2011 Messi #10, marca Nike, edición retro de colección, con dorsal Messi #10. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "barcelona",
+        "2011",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ESPANA-2026-LAMINE-YAMAL-19",
       "slug_normalizado": "espana-2026-lamine-yamal-19",
       "titulo": "Camiseta España 2026 Lamine Yamal #19",
       "equipo_o_seleccion": "España",
@@ -960,7 +1400,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/espana-2026_lamine-yamal-19_post3_04.webp",
         "/nuevas/espana-2026_lamine-yamal-19_post1_01.webp",
@@ -982,10 +1422,26 @@
       "fuente": "catalogo.csv (líneas 200-206, posts_1.html) ; catalogo.csv (línea 307, posts.html) ; catalogo.csv (líneas 350-357, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/espana-2026_lamine-yamal-19_post3_04.webp"
+      "portada": "/nuevas/espana-2026_lamine-yamal-19_post3_04.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "color": "Blanca",
+      "size": "S, M, L, XL",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "4",
+      "item_group_id": "GRP-ESPANA-2026",
+      "description": "Camiseta España 2026 Lamine Yamal #19, marca Adidas, versión Jugador, con dorsal Lamine Yamal #19. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "españa",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-CABO-VERDE-2026-LOPES-CABRAL-13",
       "slug_normalizado": "cabo-verde-2026-lopes-cabral-13",
       "titulo": "Camiseta Cabo Verde 2026 Lopes Cabral #13",
       "equipo_o_seleccion": "Cabo Verde",
@@ -1007,10 +1463,23 @@
       "fuente": "catalogo.csv (líneas 207-211, posts_1.html) ; catalogo.csv (línea 308, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/cabo-verde-2026_lopes-cabral-13_post1_01.webp"
+      "portada": "/nuevas/cabo-verde-2026_lopes-cabral-13_post1_01.webp",
+      "size": "L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "2",
+      "item_group_id": "GRP-CABO-VERDE-2026",
+      "description": "Camiseta Cabo Verde 2026 Lopes Cabral #13, versión Jugador, con dorsal Lopes Cabral #13. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "cabo verde",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-NACIONAL-2026-GOLERO",
       "slug_normalizado": "nacional-2026-golero",
       "titulo": "Camiseta Nacional 2026 Golero",
       "equipo_o_seleccion": "Nacional",
@@ -1032,10 +1501,21 @@
       "fuente": "catalogo.csv (líneas 212-216, posts_1.html) ; catalogo.csv (línea 309, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/nacional-2026_golero_post1_01.webp"
+      "portada": "/nuevas/nacional-2026_golero_post1_01.webp",
+      "brand": "Umbro",
+      "style": "Golero",
+      "item_group_id": "GRP-NACIONAL-2026",
+      "description": "Camiseta Nacional 2026 Golero, marca Umbro. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "uruguay",
+        "nacional",
+        "2026",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ESCOCIA-2026",
       "slug_normalizado": "escocia-2026",
       "titulo": "Camiseta Escocia 2026",
       "equipo_o_seleccion": "Escocia",
@@ -1045,7 +1525,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/escocia-2026_post1_01.webp",
         "/nuevas/escocia-2026_post1_04.webp",
@@ -1056,7 +1536,22 @@
       "fuente": "catalogo.csv (líneas 217-220, posts_1.html) ; catalogo.csv (línea 310, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/escocia-2026_post1_01.webp"
+      "portada": "/nuevas/escocia-2026_post1_01.webp",
+      "price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-ESCOCIA-2026",
+      "description": "Camiseta Escocia 2026, marca Adidas, versión Jugador. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "escocia",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
       "id_origen": null,
@@ -1085,7 +1580,7 @@
       "portada": "/nuevas/real-madrid-2026_valverde-8_entrefa-inmediata_post1_01.webp"
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-ESPANA-2026-PEDRO-PORRO-12",
       "slug_normalizado": "espana-2026-pedro-porro-12",
       "titulo": "Camiseta España 2026 Pedro Porro #12",
       "equipo_o_seleccion": "España",
@@ -1095,7 +1590,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "PENDIENTE_VERIFICACION",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/catalogo/espana-2026_pedro-porro-12_post1_01.jpg",
         "/catalogo/espana-2026_pedro-porro-12_post1_02.jpg",
@@ -1107,10 +1602,25 @@
       "fuente": "catalogo.csv (líneas 227-231, posts_1.html) ; catalogo.csv (línea 312, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/catalogo/espana-2026_pedro-porro-12_post1_01.jpg"
+      "portada": "/catalogo/espana-2026_pedro-porro-12_post1_01.jpg",
+      "price": "2300 UYU",
+      "sale_price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-ESPANA-2026",
+      "description": "Camiseta España 2026 Pedro Porro #12, marca Adidas, versión Jugador, con dorsal Pedro Porro #12. Disponibilidad y stock a confirmar. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "españa",
+        "2026",
+        "version jugador"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-MARRUECOS-2026-HAKIMI-2",
       "slug_normalizado": "marruecos-2026-hakimi-2",
       "titulo": "Camiseta Marruecos 2026 Hakimi #2",
       "equipo_o_seleccion": "Marruecos",
@@ -1120,7 +1630,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/marruecos-2026_hakimi-2_post1_01.webp",
         "/nuevas/marruecos-2026_hakimi-2_post1_02.webp",
@@ -1132,10 +1642,27 @@
       "fuente": "catalogo.csv (líneas 232-236, posts_1.html) ; catalogo.csv (línea 313, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/marruecos-2026_hakimi-2_post1_01.webp"
+      "portada": "/nuevas/marruecos-2026_hakimi-2_post1_01.webp",
+      "price": "2300 UYU",
+      "sale_price": "2300 UYU",
+      "brand": "Puma",
+      "color": "Roja",
+      "size": "M, L, XL",
+      "style": "Titular",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-MARRUECOS-2026",
+      "description": "Camiseta Marruecos 2026 Hakimi #2, marca Puma, versión Jugador, con dorsal Hakimi #2. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "marruecos",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-REAL-MADRID-2017-RONALDO-7",
       "slug_normalizado": "real-madrid-2017-ronaldo-7",
       "titulo": "Camiseta Real Madrid 2017 Ronaldo #7",
       "equipo_o_seleccion": "Real Madrid",
@@ -1145,7 +1672,7 @@
       "deporte": "futbol",
       "version": "Retro",
       "modalidad": "PENDIENTE_VERIFICACION",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/real-madris-2017_ronaldo-7_version-retro_post1_01.webp",
         "/nuevas/real-madris-2017_ronaldo-7_version-retro_post1_02.webp",
@@ -1167,10 +1694,25 @@
       "fuente": "catalogo.csv (líneas 237-243, posts_1.html) ; catalogo.csv (línea 314, posts.html) ; catalogo.csv (líneas 393-400, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/real-madris-2017_ronaldo-7_version-retro_post1_01.webp"
+      "portada": "/nuevas/real-madris-2017_ronaldo-7_version-retro_post1_01.webp",
+      "price": "2300 UYU",
+      "sale_price": "2300 UYU",
+      "brand": "Adidas",
+      "size": "M, L, XL",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-REAL-MADRID-RETRO",
+      "description": "Camiseta Real Madrid 2017 Ronaldo #7, marca Adidas, versión Retro, con dorsal Ronaldo #7. Disponibilidad y stock a confirmar. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "retros",
+        "real madrid",
+        "2017",
+        "version retro"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-INTER-MIAMI-2026-SUAREZ-9",
       "slug_normalizado": "inter-miami-2026-suarez-9",
       "titulo": "Camiseta Inter Miami 2026 Suárez #9",
       "equipo_o_seleccion": "Inter Miami",
@@ -1180,7 +1722,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/catalogo/inter-miami-2026_suares-9_post1_01.jpg",
         "/catalogo/inter-miami-2026_suares-9_post1_02.jpg",
@@ -1202,10 +1744,27 @@
       "fuente": "catalogo.csv (líneas 244-250, posts_1.html) ; catalogo.csv (línea 315, posts.html) ; catalogo.csv (líneas 358-365, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/catalogo/inter-miami-2026_suares-9_post1_01.jpg"
+      "portada": "/catalogo/inter-miami-2026_suares-9_post1_01.jpg",
+      "price": "2300 UYU",
+      "sale_price": "2300 UYU",
+      "brand": "Adidas",
+      "color": "Negra",
+      "size": "M, L, XL",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "3",
+      "item_group_id": "GRP-INTER-MIAMI-2026",
+      "description": "Camiseta Inter Miami 2026 Suárez #9, marca Adidas, versión Jugador, con dorsal Suárez #9. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "inter miami",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-LIVERPOOL-EDICION-ESPECIAL",
       "slug_normalizado": "liverpool-edicion-especial",
       "titulo": "Camiseta Liverpool Edicion especial",
       "equipo_o_seleccion": "Liverpool",
@@ -1215,7 +1774,7 @@
       "deporte": "futbol",
       "version": "A confirmar",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2300,
       "imagenes_ordenadas": [
         "/nuevas/liverpool_edicion-especial_post1_01.webp",
         "/nuevas/liverpool_edicion-especial_post1_02.webp",
@@ -1226,10 +1785,25 @@
       "fuente": "catalogo.csv (líneas 251-254, posts_1.html) ; catalogo.csv (línea 316, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/liverpool_edicion-especial_post1_01.webp"
+      "portada": "/nuevas/liverpool_edicion-especial_post1_01.webp",
+      "price": "2300 UYU",
+      "sale_price": "2300 UYU",
+      "brand": "Adidas",
+      "color": "Negra",
+      "size": "L, XL",
+      "style": "Retro",
+      "quantity_to_sell_on_facebook": "2",
+      "item_group_id": "GRP-LIVERPOOL",
+      "description": "Camiseta Liverpool Edición especial, marca Adidas. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "liverpool",
+        "entrega inmediata"
+      ]
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-PORTUGAL-2026-RONALDO-7",
       "slug_normalizado": "portugal-2026-ronaldo-7",
       "titulo": "Camiseta Portugal 2026 Ronaldo #7",
       "equipo_o_seleccion": "Portugal",
@@ -1239,7 +1813,7 @@
       "deporte": "futbol",
       "version": "Jugador",
       "modalidad": "entrega_inmediata",
-      "precio_uyu": null,
+      "precio_uyu": 2100,
       "imagenes_ordenadas": [
         "/nuevas/portugal-2026_ronaldo-7_post1_01.webp",
         "/nuevas/portugal-2026_ronaldo-7_post1_02.webp",
@@ -1253,7 +1827,24 @@
       "fuente": "catalogo.csv (líneas 255-261, posts_1.html) ; catalogo.csv (línea 317, posts.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/portugal-2026_ronaldo-7_post1_01.webp"
+      "portada": "/nuevas/portugal-2026_ronaldo-7_post1_01.webp",
+      "price": "2100 UYU",
+      "sale_price": "2100 UYU",
+      "brand": "Puma",
+      "color": "Negra",
+      "size": "S, XL",
+      "style": "Alternativa",
+      "quantity_to_sell_on_facebook": "2",
+      "item_group_id": "GRP-PORTUGAL-2026",
+      "description": "Camiseta Portugal 2026 Ronaldo #7, marca Puma, versión Jugador, con dorsal Ronaldo #7. Disponible para entrega inmediata. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "actuales",
+        "portugal",
+        "2026",
+        "version jugador",
+        "entrega inmediata"
+      ]
     },
     {
       "id_origen": null,
@@ -1283,7 +1874,7 @@
       "portada": "/nuevas/liverpool_edicion-especial_post2_01.webp"
     },
     {
-      "id_origen": null,
+      "id_origen": "CAM-BOCA-2026-PAREDES-5",
       "slug_normalizado": "boca-2026-paredes-5",
       "titulo": "Camiseta Boca 2026 Paredes #5",
       "equipo_o_seleccion": "Boca",
@@ -1313,7 +1904,18 @@
       "fuente": "catalogo.csv (líneas 265-270, posts_1.html) ; catalogo.csv (línea 319, posts.html) ; catalogo.csv (líneas 401-407, other_content.html)",
       "tipo": "producto",
       "activo": true,
-      "portada": "/nuevas/boca-2026_paredes-5_post1_01.webp"
+      "portada": "/nuevas/boca-2026_paredes-5_post1_01.webp",
+      "brand": "Adidas",
+      "style": "Jugador",
+      "item_group_id": "GRP-BOCA-2026",
+      "description": "Camiseta Boca 2026 Paredes #5, marca Adidas, versión Jugador, con dorsal Paredes #5. Disponibilidad y stock a confirmar. Consultar precio y talles disponibles.",
+      "product_tags": [
+        "camiseta futbol",
+        "clubes",
+        "boca",
+        "2026",
+        "version jugador"
+      ]
     },
     {
       "id_origen": null,
