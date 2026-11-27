@@ -1,5 +1,5 @@
 @import './tokens.css';
-@import './base.css';
+@import './base.css' layer(base);
 @import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
@@ -32,37 +32,37 @@
   --color-focus: var(--color-focus);
   --color-danger: var(--color-error);
   --color-ok: var(--color-success);
-  --color-white: #102442;
-  --color-body: #B8C7DC;
+  --color-white: #FFFFFF;
+  --color-body: #6E6E73;
 
-  --color-meta-2: #F5EAD6;
-  --color-meta-3: #B8C7DC;
-  --color-meta-4: #8ECBF5;
-  --color-meta-5: rgba(245, 234, 214, 0.18);
-  --color-meta: #102442;
+  --color-meta-2: #1D1D1F;
+  --color-meta-3: #6E6E73;
+  --color-meta-4: #0071E3;
+  --color-meta-5: rgba(29, 29, 31, 0.12);
+  --color-meta: #FFFFFF;
 
-  --color-dark-2: #F5EAD6;
-  --color-dark-3: #B8C7DC;
-  --color-dark-4: #8ECBF5;
-  --color-dark-5: #1E5AA8;
-  --color-dark: #F5EAD6;
+  --color-dark-2: #1D1D1F;
+  --color-dark-3: #424245;
+  --color-dark-4: #6E6E73;
+  --color-dark-5: #86868B;
+  --color-dark: #1D1D1F;
 
-  --color-gray-1: #0D203B;
-  --color-gray-2: #102442;
-  --color-gray-3: rgba(245, 234, 214, 0.18);
-  --color-gray-4: #8ECBF5;
-  --color-gray-5: #B8C7DC;
-  --color-gray-6: #D5E0EE;
-  --color-gray-7: #F5EAD6;
-  --color-gray: #102442;
+  --color-gray-1: #F5F5F7;
+  --color-gray-2: #FFFFFF;
+  --color-gray-3: rgba(29, 29, 31, 0.12);
+  --color-gray-4: #86868B;
+  --color-gray-5: #6E6E73;
+  --color-gray-6: #D2D2D7;
+  --color-gray-7: #1D1D1F;
+  --color-gray: #FFFFFF;
 
-  --color-blue: #A8D6F0;
-  --color-blue-dark: #8ECBF5;
-  --color-blue-light: #8ECBF5;
-  --color-blue-light-2: #1E5AA8;
-  --color-blue-light-3: rgba(142, 203, 245, 0.45);
-  --color-blue-light-4: #132C52;
-  --color-blue-light-5: #0D203B;
+  --color-blue: #0071E3;
+  --color-blue-dark: #0076DF;
+  --color-blue-light: #2997FF;
+  --color-blue-light-2: #0066CC;
+  --color-blue-light-3: rgba(0, 113, 227, 0.28);
+  --color-blue-light-4: #EAEAEF;
+  --color-blue-light-5: #F5F5F7;
 
   --color-red: #DC2626;
   --color-red-dark: #B91C1C;
@@ -73,28 +73,28 @@
   --color-red-light-5: rgba(220, 38, 38, 0.15);
   --color-red-light-6: rgba(220, 38, 38, 0.1);
 
-  --color-green: #22C55E;
-  --color-green-dark: #A8D6F0;
-  --color-green-light: #4ADE80;
+  --color-green: #16A34A;
+  --color-green-dark: #15803D;
+  --color-green-light: #22C55E;
   --color-green-light-2: #86EFAC;
   --color-green-light-3: #BBF7D0;
-  --color-green-light-4: rgba(168, 214, 240, 0.2);
-  --color-green-light-5: rgba(168, 214, 240, 0.15);
-  --color-green-light-6: #132C52;
+  --color-green-light-4: #DCFCE7;
+  --color-green-light-5: #F0FDF4;
+  --color-green-light-6: #DCFCE7;
 
-  --color-yellow: #A8D6F0;
-  --color-yellow-dark: #8ECBF5;
-  --color-yellow-dark-2: #1E5AA8;
-  --color-yellow-light: #A8D6F0;
-  --color-yellow-light-1: #8ECBF5;
-  --color-yellow-light-2: #132C52;
-  --color-yellow-light-4: #0D203B;
+  --color-yellow: #0071E3;
+  --color-yellow-dark: #0076DF;
+  --color-yellow-dark-2: #0066CC;
+  --color-yellow-light: #2997FF;
+  --color-yellow-light-1: #EAEAEF;
+  --color-yellow-light-2: #F5F5F7;
+  --color-yellow-light-4: #FFFFFF;
 
-  --color-teal: #8ECBF5;
-  --color-teal-dark: #1E5AA8;
+  --color-teal: #0071E3;
+  --color-teal-dark: #0066CC;
 
-  --color-orange: #A8D6F0;
-  --color-orange-dark: #8ECBF5;
+  --color-orange: #0071E3;
+  --color-orange-dark: #0076DF;
 
   --breakpoint-*: initial;
   --breakpoint-xsm: 375px;
@@ -139,15 +139,15 @@
   --text-custom-3: 2.1875rem;
   --text-custom-3--line-height: 1.15;
 
-  --shadow-1: 0 12px 32px -18px rgba(7, 15, 28, 0.65);
-  --shadow-2: 0 24px 48px -24px rgba(7, 15, 28, 0.78);
-  --shadow-3: 0 30px 70px -35px rgba(7, 15, 28, 0.82);
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-3: none;
   --shadow-testimonial: none;
-  --shadow-breadcrumb: 0px 1px 0px 0px rgba(245, 234, 214, 0.18), 0px -1px 0px 0px rgba(245, 234, 214, 0.18);
+  --shadow-breadcrumb: none;
   --shadow-range: none;
-  --shadow-filter: 0px 1px 0px 0px rgba(245, 234, 214, 0.18);
-  --shadow-list: 1px 0px 0px 0px rgba(245, 234, 214, 0.18);
-  --shadow-input: inset 0 0 0 2px #A8D6F0;
+  --shadow-filter: none;
+  --shadow-list: none;
+  --shadow-input: inset 0 0 0 2px #0071E3;
 }
 
 @layer base {
@@ -187,14 +187,13 @@
 
 .glass-panel {
   background: var(--glass);
-  backdrop-filter: blur(20px) saturate(1.35);
-  -webkit-backdrop-filter: blur(20px) saturate(1.35);
-  border: 1px solid var(--input-border);
-  box-shadow: inset 0 1px 0 0 rgba(245, 234, 214, 0.14), 0 24px 56px -28px rgba(7, 15, 28, 0.85);
+  backdrop-filter: saturate(1.8) blur(20px);
+  -webkit-backdrop-filter: saturate(1.8) blur(20px);
+  border: 1px solid var(--border);
 }
 
 .sport-rule-bar {
-  border-top: var(--rule-bar) solid rgba(142, 203, 245, 0.4);
+  border-top: var(--rule-bar) solid var(--border);
 }
 
 .sport-rule-hair {
@@ -206,22 +205,20 @@
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 12px 24px;
+  padding: 11px 21px;
   background: var(--primary);
   color: var(--on-primary);
-  border: 1px solid var(--primary);
+  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 500;
   font-size: var(--text-sm);
   letter-spacing: 0.01em;
-  transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+  transition: background-color 0.22s ease, border-color 0.22s ease;
 }
 
 .sport-btn-primary:hover {
   background: var(--peri);
-  border-color: var(--peri);
-  transform: translateY(-1px);
 }
 
 .sport-btn-primary:active,
@@ -234,22 +231,20 @@
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 12px 24px;
-  background: var(--field-hi);
-  color: var(--parchment);
-  border: 1px solid var(--input-border);
+  padding: 11px 21px;
+  background: transparent;
+  color: var(--azul);
+  border: 1px solid var(--azul);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 500;
   font-size: var(--text-sm);
   letter-spacing: 0.01em;
-  transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+  transition: background-color 0.22s ease, color 0.22s ease;
 }
 
 .sport-btn-secondary:hover {
-  background: rgba(168, 214, 240, 0.14);
-  border-color: var(--primary);
-  transform: translateY(-1px);
+  background: rgba(0, 102, 204, 0.08);
 }
 
 .sport-photo {
@@ -259,9 +254,9 @@
 }
 
 @utility dropdown {
-  @apply flex-col gap-0 min-w-max xl:w-[220px] mt-2 lg:mt-0 bg-[#102442] text-[#F5EAD6] py-2.5 rounded-xl border border-[rgba(245,234,214,0.18)] left-0 hidden
+  @apply flex-col gap-0 min-w-max xl:w-[220px] mt-2 lg:mt-0 bg-[#FFFFFF] text-[#1D1D1F] py-2.5 rounded-none border border-[rgba(29,29,31,0.12)] left-0 hidden
     xl:translate-y-4 xl:opacity-0 xl:invisible xl:absolute xl:flex
-    xl:group-hover:opacity-100 xl:group-hover:visible shadow-2;
+    xl:group-hover:opacity-100 xl:group-hover:visible;
 }
 
 @utility no-scrollbar {

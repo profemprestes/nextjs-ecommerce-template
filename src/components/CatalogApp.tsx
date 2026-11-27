@@ -1244,7 +1244,7 @@ export function CatalogApp() {
 
               {/* Barra de acciones masivas */}
               {selectedUids.size > 0 && (
-                <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-paper-2 text-ink rounded-xl">
+                <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-paper-2 border border-rule text-ink rounded-xl">
                   <div className="flex items-center gap-3 text-xs">
                     <span className="font-medium">
                       <span className="font-mono tabular-nums">{selectedUids.size}</span>{' '}
@@ -1262,21 +1262,21 @@ export function CatalogApp() {
                     <button
                       type="button"
                       onClick={() => handleBulkAvailability('in stock')}
-                      className="px-3 py-1.5 text-xs font-medium bg-paper-2/10 hover:bg-paper-2/20 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
+                      className="px-3 py-1.5 text-xs font-medium bg-paper border border-rule hover:bg-paper-3 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
                     >
                       Marcar en stock
                     </button>
                     <button
                       type="button"
                       onClick={() => handleBulkAvailability('out of stock')}
-                      className="px-3 py-1.5 text-xs font-medium bg-paper-2/10 hover:bg-paper-2/20 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
+                      className="px-3 py-1.5 text-xs font-medium bg-paper border border-rule hover:bg-paper-3 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
                     >
                       Marcar sin stock
                     </button>
                     <button
                       type="button"
                       onClick={handleExportSelectedCsv}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-paper-2/10 hover:bg-paper-2/20 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-paper border border-rule hover:bg-paper-3 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
                     >
                       <Download size={13} />
                       Exportar CSV
@@ -1286,7 +1286,7 @@ export function CatalogApp() {
                       onClick={() =>
                         setDeleteTarget({ uids: Array.from(selectedUids) })
                       }
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-danger hover:bg-danger/90 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-danger text-white hover:bg-danger/90 rounded-md transition-colors active:translate-y-px whitespace-nowrap shrink-0"
                     >
                       <Trash2 size={13} />
                       Eliminar

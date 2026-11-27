@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* Spacing & Layout */
   --space-3xs: 2px;
@@ -53,29 +53,29 @@
   --z-toast: 500;
   --z-tooltip: 600;
 
-  /* Matchday-Night Editorial Palette */
-  --field: #0A1B33;
-  --field-deep: #070F1C;
-  --field-low: #0D203B;
-  --field-hi: #132C52;
-  --card: #102442;
-  --parchment: #F5EAD6;
-  --ink: #0A1B33;
-  --ice: #F5EAD6;
-  --muted-foreground: #B8C7DC;
-  --ember: #A8D6F0;
-  --primary: #A8D6F0;
-  --on-primary: #0A1B33;
-  --peri: #8ECBF5;
-  --azul: #1E5AA8;
-  --border: rgba(245, 234, 214, 0.18);
-  --input-border: rgba(245, 234, 214, 0.22);
-  --glass: rgba(10, 27, 51, 0.72);
+  /* Product-Tile Whiteout Light Palette */
+  --field: #F5F5F7;
+  --field-deep: #E8E8ED;
+  --field-low: #F5F5F7;
+  --field-hi: #EAEAEF;
+  --card: #FFFFFF;
+  --parchment: #1D1D1F;
+  --ink: #1D1D1F;
+  --ice: #FFFFFF;
+  --muted-foreground: #5C5C61;
+  --ember: #0066CC;
+  --primary: #0066CC;
+  --on-primary: #FFFFFF;
+  --peri: #0055B3;
+  --azul: #0066CC;
+  --border: rgba(29, 29, 31, 0.14);
+  --input-border: rgba(29, 29, 31, 0.48);
+  --glass: rgba(245, 245, 247, 0.92);
 
-  --color-error: #DC2626;
-  --color-success: #22C55E;
+  --color-error: #B91C1C;
+  --color-success: #15803D;
 
-  /* Semantic Aliases (preserves compatibility across secondary routes) */
+  /* Semantic Aliases (preserves compatibility across secondary routes & /admin) */
   --color-paper: var(--field);
   --color-paper-2: var(--card);
   --color-paper-3: var(--field-hi);
@@ -83,11 +83,11 @@
   --color-ink-2: var(--muted-foreground);
   --color-muted: var(--muted-foreground);
   --color-rule: var(--border);
-  --color-rule-2: rgba(142, 203, 245, 0.4);
+  --color-rule-2: rgba(0, 113, 227, 0.35);
   --color-accent: var(--primary);
   --color-accent-ink: var(--on-primary);
   --color-accent-deep: var(--peri);
-  --color-focus: var(--peri);
+  --color-focus: var(--primary);
   --color-slot: var(--field-hi);
 
   /* Typography Families */
@@ -97,16 +97,16 @@
   --font-outlier: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
 
   /* Radii & Rules */
-  --radius-sm: 0.375rem;
-  --radius-card: 0.75rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.375rem;
-  --radius-xl: 1.625rem;
-  --radius-pill: 9999px;
+  --radius-sm: 0.25rem;
+  --radius-card: 0px;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-pill: 980px;
   --rule-hair: 1px;
-  --rule-bar: 2px;
+  --rule-bar: 1px;
 
-  --shadow-card: 0 30px 70px -35px rgba(7, 15, 28, 0.78);
+  --shadow-card: none;
   --tracking-display: -0.025em;
-  --display-weight: 800;
+  --display-weight: 700;
 }

@@ -95,15 +95,15 @@ const ShopDetails = ({
           title="Producto no disponible"
           pages={["tienda", "/", "detalle"]}
         />
-        <section className="py-16 lg:py-24 bg-[#0A1B33] text-[#F5EAD6]">
+        <section className="py-16 lg:py-24 bg-[#F5F5F7] text-[#1D1D1F]">
           <div className="container">
-            <div className="max-w-xl mx-auto rounded-2xl border border-[rgba(245,234,214,0.18)] bg-[#102442] p-8 text-center">
-              <h2 className="sport-display text-2xl text-[#F5EAD6] mb-3">
+            <div className="max-w-xl mx-auto rounded-none border border-black/10 bg-[#FFFFFF] p-8 text-center">
+              <h2 className="sport-display text-2xl text-[#1D1D1F] mb-3">
                 Esta camiseta ya no está disponible
               </h2>
-              <p className="text-sm text-[#B8C7DC] mb-6">
+              <p className="text-sm text-[#6E6E73] mb-6">
                 No encontramos un producto activo para{" "}
-                <span className="font-mono-cl text-[#A8D6F0]">
+                <span className="font-mono-cl text-[#1D1D1F]">
                   {notFoundSlug}
                 </span>
                 . Es posible que haya sido pausado o quitado del catálogo.

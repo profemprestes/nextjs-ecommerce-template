@@ -8,13 +8,12 @@ html, body {
 
 html {
   scrollbar-color: var(--muted-foreground) var(--field);
-  scroll-padding-top: 88px;
+  scroll-padding-top: 64px;
 }
 
 body {
   margin: 0;
   background-color: var(--field);
-  background-image: radial-gradient(ellipse 90% 55% at 50% 0%, rgba(19, 44, 82, 0.55) 0%, transparent 70%);
   color: var(--parchment);
   font-family: var(--font-body);
   font-size: var(--text-md);

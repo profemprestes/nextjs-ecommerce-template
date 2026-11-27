@@ -9,56 +9,56 @@ const sizeGuide = [
 
 const Testimonials = () => {
   return (
-    <section id="talles" className="bg-[#F5EAD6] text-[#0A1B33] py-16 lg:py-24">
+    <section id="talles" className="bg-[#FFFFFF] text-[#1D1D1F] py-14 lg:py-20">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10 items-end">
           <div className="lg:col-span-7 min-w-0">
-            <span className="font-mono-cl text-xs uppercase text-[#1E5AA8] block mb-2">
+            <span className="font-mono-cl text-xs uppercase text-[#6E6E73] block mb-2">
               Guía de medidas
             </span>
-            <h2 className="sport-display text-[#0A1B33]">
+            <h2 className="sport-display text-[#1D1D1F]">
               Tabla de talles S a XL
             </h2>
           </div>
           <div className="lg:col-span-5">
-            <p className="text-sm text-[#0A1B33]/80">
+            <p className="text-sm text-[#6E6E73]">
               Medidas aproximadas en plano. Por encargo trabajamos todos los
               talles y te pasamos medidas exactas por WhatsApp.
             </p>
           </div>
         </div>
 
-        <div className="overflow-x-auto border-t-2 border-[#0A1B33]/30">
+        <div className="overflow-x-auto border-t border-black/20">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="font-mono-cl text-xs uppercase text-[#0A1B33]/70">
-                <th className="py-4 px-4 border-b border-[#0A1B33]/20">
+              <tr className="font-mono-cl text-xs uppercase text-[#6E6E73]">
+                <th className="py-4 px-4 border-b border-black/15">
                   Talle
                 </th>
-                <th className="py-4 px-4 border-b border-[#0A1B33]/20">
+                <th className="py-4 px-4 border-b border-black/15">
                   Ancho (axila a axila)
                 </th>
-                <th className="py-4 px-4 border-b border-[#0A1B33]/20">
+                <th className="py-4 px-4 border-b border-black/15">
                   Largo aproximado
                 </th>
-                <th className="py-4 px-4 border-b border-[#0A1B33]/20">
+                <th className="py-4 px-4 border-b border-black/15">
                   Altura orientativa
                 </th>
               </tr>
             </thead>
             <tbody>
               {sizeGuide.map((row) => (
-                <tr key={row.size} className="text-[#0A1B33]">
-                  <td className="py-4 px-4 border-b border-[#0A1B33]/15 font-mono-cl text-sm">
+                <tr key={row.size} className="text-[#1D1D1F]">
+                  <td className="py-4 px-4 border-b border-black/10 font-mono-cl text-sm">
                     {row.size}
                   </td>
-                  <td className="py-4 px-4 border-b border-[#0A1B33]/15 font-mono-cl text-sm">
+                  <td className="py-4 px-4 border-b border-black/10 font-mono-cl text-sm">
                     {row.width}
                   </td>
-                  <td className="py-4 px-4 border-b border-[#0A1B33]/15 font-mono-cl text-sm">
+                  <td className="py-4 px-4 border-b border-black/10 font-mono-cl text-sm">
                     {row.length}
                   </td>
-                  <td className="py-4 px-4 border-b border-[#0A1B33]/15 font-mono-cl text-sm">
+                  <td className="py-4 px-4 border-b border-black/10 font-mono-cl text-sm">
                     {row.height}
                   </td>
                 </tr>

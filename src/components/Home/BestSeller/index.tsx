@@ -43,24 +43,24 @@ const BestSeller = ({ initialProducts }: BestSellerProps) => {
   };
 
   return (
-    <section className="bg-[#0A1B33] text-[#F5EAD6] py-16 lg:py-24">
+    <section className="bg-[#F5F5F7] text-[#1D1D1F] py-14 lg:py-20">
       <div className="container">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div className="min-w-0">
-            <span className="font-mono-cl text-xs uppercase text-[#A8D6F0] block mb-2">
+            <span className="font-mono-cl text-xs uppercase text-[#6E6E73] block mb-2">
               Colección verificada
             </span>
-            <h2 className="sport-display text-[#F5EAD6] mb-2">
+            <h2 className="sport-display text-[#1D1D1F] mb-2">
               Catálogo en stock
             </h2>
-            <p className="text-[#B8C7DC]">
+            <p className="text-[#6E6E73]">
               {catalogProducts.length} modelos verificados con entrega inmediata o
               disponibilidad a confirmar.
             </p>
           </div>
 
           <div
-            role="tablist"
+            role="group"
             aria-label="Filtrar colección"
             className="flex flex-wrap gap-2"
           >
@@ -70,13 +70,12 @@ const BestSeller = ({ initialProducts }: BestSellerProps) => {
                 <button
                   key={tab.key}
                   type="button"
-                  role="tab"
-                  aria-selected={active}
+                  aria-pressed={active}
                   onClick={() => setActiveTab(tab.key)}
-                  className={`min-h-[44px] px-4 rounded-full border text-sm font-medium transition-colors ${
+                  className={`h-9 px-4 rounded-[980px] border text-xs font-medium transition-colors ${
                     active
-                      ? "bg-[#A8D6F0] border-[#A8D6F0] text-[#0A1B33] font-semibold"
-                      : "bg-[#102442] border-[rgba(245,234,214,0.18)] text-[#F5EAD6] hover:border-[#A8D6F0]"
+                      ? "bg-[#0071E3] border-[#0071E3] text-[#FFFFFF]"
+                      : "bg-[#FFFFFF] border-black/15 text-[#1D1D1F] hover:border-[#0071E3] hover:text-[#0066CC]"
                   }`}
                 >
                   {tab.label}
@@ -87,17 +86,17 @@ const BestSeller = ({ initialProducts }: BestSellerProps) => {
         </div>
 
         {/* Hairline catalog list */}
-        <div className="border-t border-[rgba(142,203,245,0.4)]">
+        <div className="border-t border-black/15">
           {items.map((item) => (
             <div
               key={item.slug ?? item.id}
-              className="border-b border-[rgba(245,234,214,0.18)] py-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
+              className="border-b border-black/10 py-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-center"
             >
               <div className="md:col-span-6 flex items-center gap-4 min-w-0">
                 <Link
                   href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
                   onClick={() => handleSelect(item)}
-                  className="relative w-20 aspect-[4/3] shrink-0 rounded-lg overflow-hidden border border-[rgba(245,234,214,0.18)] bg-[#102442]"
+                  className="relative w-20 aspect-[4/3] shrink-0 rounded-none overflow-hidden border border-black/10 bg-[#FFFFFF]"
                 >
                   <Image
                     src={item.imgs?.previews[0] ?? "/camisetas/noruega.jpeg"}
@@ -111,11 +110,11 @@ const BestSeller = ({ initialProducts }: BestSellerProps) => {
                   <Link
                     href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
                     onClick={() => handleSelect(item)}
-                    className="font-semibold text-base text-[#F5EAD6] hover:text-[#A8D6F0] transition-colors block truncate"
+                    className="font-semibold text-base text-[#1D1D1F] hover:text-[#0066CC] transition-colors block truncate"
                   >
                     {item.title}
                   </Link>
-                  <span className="font-mono-cl text-xs text-[#B8C7DC]">
+                  <span className="font-mono-cl text-xs text-[#6E6E73]">
                     {item.version === "Retro"
                       ? "Edición Retro"
                       : item.version === "A confirmar"
@@ -125,28 +124,28 @@ const BestSeller = ({ initialProducts }: BestSellerProps) => {
                 </div>
               </div>
 
-              <div className="md:col-span-2 font-mono-cl text-xs uppercase text-[#B8C7DC]">
+              <div className="md:col-span-2 font-mono-cl text-xs uppercase text-[#6E6E73]">
                 {item.modalidad === "entrega_inmediata"
                   ? "Entrega inmediata"
                   : "A confirmar"}
               </div>
 
-              <div className="md:col-span-2 font-mono-cl text-base text-[#A8D6F0]">
+              <div className="md:col-span-2 font-mono-cl text-base text-[#1D1D1F]">
                 {formatProductPrice(item.discountedPrice)}
               </div>
 
-              <div className="md:col-span-2 flex md:justify-end gap-2.5">
+              <div className="md:col-span-2 flex md:justify-end items-center gap-3">
                 <Link
                   href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
                   onClick={() => handleSelect(item)}
-                  className="inline-flex items-center justify-center min-h-[40px] px-3.5 text-xs font-medium border border-[rgba(245,234,214,0.22)] rounded-full text-[#F5EAD6] hover:border-[#A8D6F0] hover:text-[#A8D6F0] transition-colors"
+                  className="text-xs font-medium text-[#0066CC] hover:underline whitespace-nowrap"
                 >
                   Ver ficha
                 </Link>
                 <button
                   type="button"
                   onClick={() => handleAdd(item)}
-                  className="inline-flex items-center justify-center min-h-[40px] px-4 text-xs font-semibold bg-[#A8D6F0] text-[#0A1B33] rounded-full hover:bg-[#8ECBF5] transition-colors"
+                  className="inline-flex items-center justify-center h-9 px-4 text-xs font-medium bg-[#0071E3] text-[#FFFFFF] rounded-[980px] hover:bg-[#0076DF] transition-colors"
                 >
                   Sumar
                 </button>
@@ -156,7 +155,7 @@ const BestSeller = ({ initialProducts }: BestSellerProps) => {
         </div>
 
         <div className="pt-8 flex justify-between items-center flex-wrap gap-4">
-          <p className="font-mono-cl text-xs uppercase text-[#B8C7DC]">
+          <p className="font-mono-cl text-xs uppercase text-[#6E6E73]">
             Mostrando {items.length} de {catalogProducts.length} modelos disponibles
           </p>
           <Link href="/shop-with-sidebar" className="sport-btn-secondary">

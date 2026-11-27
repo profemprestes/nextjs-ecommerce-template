@@ -44,13 +44,13 @@ const SingleGridItem = ({ item }: { item: Product }) => {
   };
 
   return (
-    <article className="group bg-[#102442] border border-[rgba(245,234,214,0.18)] rounded-xl p-4 flex flex-col justify-between transition-colors hover:border-[#A8D6F0]/60">
+    <article className="group bg-[#FFFFFF] border border-black/10 rounded-none p-4 flex flex-col justify-between transition-colors hover:border-black/25">
       <div>
         {/* 4:3 jersey preview frame — zero text or badges overlaid */}
         <Link
           href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
           onClick={handleProductDetails}
-          className="relative aspect-[4/3] w-full block rounded-lg overflow-hidden bg-[#0D203B] mb-4"
+          className="relative aspect-[4/3] w-full block rounded-none overflow-hidden bg-[#F5F5F7] mb-4"
         >
           <Image
             src={item.imgs.previews[0]}
@@ -62,30 +62,32 @@ const SingleGridItem = ({ item }: { item: Product }) => {
         </Link>
 
         <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="font-mono-cl text-[11px] uppercase text-[#B8C7DC]">
+          <span className="font-mono-cl text-[11px] uppercase text-[#6E6E73]">
             {item.version === "Retro"
               ? "Edición Retro"
               : item.version === "A confirmar"
               ? "A confirmar"
               : `Versión ${item.version}`}
           </span>
-          <span className="font-mono-cl text-[11px] uppercase text-[#A8D6F0]">
+          <span className="font-mono-cl text-[11px] uppercase text-[#1D1D1F]">
             {item.modalidad === "entrega_inmediata"
               ? "En stock"
               : "Por encargo"}
           </span>
         </div>
 
-        <h3
-          className="font-display text-xl font-bold text-[#F5EAD6] hover:text-[#A8D6F0] transition-colors mb-2 leading-tight"
-          onClick={handleProductDetails}
-        >
-          <Link href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}>{item.title}</Link>
+        <h3 className="font-display text-xl font-bold text-[#1D1D1F] hover:text-[#0066CC] transition-colors mb-2 leading-tight">
+          <Link
+            href={item.slug ? `/shop-details?slug=${encodeURIComponent(item.slug)}` : "/shop-details"}
+            onClick={handleProductDetails}
+          >
+            {item.title}
+          </Link>
         </h3>
       </div>
 
-      <div className="pt-3 mt-2 border-t border-[rgba(245,234,214,0.12)] flex flex-col gap-3">
-        <span className="font-mono-cl text-lg text-[#A8D6F0]">
+      <div className="pt-3 mt-2 border-t border-black/10 flex flex-col gap-3">
+        <span className="font-mono-cl text-lg text-[#1D1D1F]">
           {formatProductPrice(item.discountedPrice)}
         </span>
 
@@ -93,7 +95,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
           <button
             type="button"
             onClick={handleAddToCart}
-            className="flex-1 inline-flex items-center justify-center min-h-[40px] px-3 rounded-full bg-[#A8D6F0] text-[#0A1B33] text-xs font-semibold hover:bg-[#8ECBF5] transition-colors"
+            className="flex-1 inline-flex items-center justify-center h-9 px-3.5 rounded-[980px] bg-[#0071E3] text-[#FFFFFF] text-xs font-medium hover:bg-[#0076DF] transition-colors"
           >
             Sumar a consulta
           </button>
@@ -104,10 +106,11 @@ const SingleGridItem = ({ item }: { item: Product }) => {
               openModal();
               handleQuickViewUpdate();
             }}
-            aria-label="Vista rápida"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[rgba(245,234,214,0.22)] text-[#F5EAD6] hover:border-[#A8D6F0] hover:text-[#A8D6F0] transition-colors"
+            aria-label={`Vista rápida: ${item.title}`}
+            className="inline-flex items-center justify-center w-9 h-9 rounded-[980px] border border-black/15 text-[#1D1D1F] hover:border-[#0071E3] hover:text-[#0071E3] transition-colors"
           >
             <svg
+              aria-hidden="true"
               className="fill-current"
               width="16"
               height="16"
@@ -131,10 +134,11 @@ const SingleGridItem = ({ item }: { item: Product }) => {
           <button
             type="button"
             onClick={handleItemToWishList}
-            aria-label="Agregar a favoritos"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[rgba(245,234,214,0.22)] text-[#F5EAD6] hover:border-[#A8D6F0] hover:text-[#A8D6F0] transition-colors"
+            aria-label={`Agregar ${item.title} a favoritos`}
+            className="inline-flex items-center justify-center w-9 h-9 rounded-[980px] border border-black/15 text-[#1D1D1F] hover:border-[#0071E3] hover:text-[#0071E3] transition-colors"
           >
             <svg
+              aria-hidden="true"
               className="fill-current"
               width="16"
               height="16"
