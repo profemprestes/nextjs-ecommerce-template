@@ -296,7 +296,7 @@ export function ProductAiAssistantPanel({
       const appliedSet = new Set(keysToApply);
       setSelectedKeys((prev) => {
         const next = new Set<AutofillFieldKey>();
-        for (const k of prev) {
+        for (const k of Array.from(prev)) {
           if (!appliedSet.has(k)) next.add(k);
         }
         return next;
