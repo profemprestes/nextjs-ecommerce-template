@@ -9,6 +9,7 @@ import {
 } from '@/lib/prisma';
 import {
   MAX_FILES_PER_BATCH,
+  MAX_IMAGES_PER_PRODUCT,
   type ValidatedBinaryImage,
   buildBinaryImageUrl,
   validateUploadedImage,
@@ -95,6 +96,21 @@ export async function POST(req: NextRequest, context: RouteContext) {
     if (validated.length === 0) {
       return NextResponse.json(
         { error: errors[0] || 'Ningún archivo era una imagen válida.', errors },
+        { status: 400 }
+      );
+    }
+
+    const existingNames = new Set(
+      existingImages.map((img) => img.fileName.toLowerCase())
+    );
+    const netNewCount = validated.filter(
+      (img) => !existingNames.has(img.fileName.toLowerCase())
+    ).length;
+    if (existingImages.length + netNewCount > MAX_IMAGES_PER_PRODUCT) {
+      return NextResponse.json(
+        {
+          error: `Cada producto admite hasta ${MAX_IMAGES_PER_PRODUCT} imágenes en total.`,
+        },
         { status: 400 }
       );
     }

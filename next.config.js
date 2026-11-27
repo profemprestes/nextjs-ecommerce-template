@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
   serverExternalPackages: [
     "genkit",
     "@genkit-ai/google-genai",
@@ -13,12 +14,23 @@ const nextConfig = {
       { pathname: "/images/**" },
       { pathname: "/camisetas/**" },
     ],
-    remotePatterns: [
+    remotePatterns: [],
+  },
+  async headers() {
+    return [
       {
-        protocol: "https",
-        hostname: "**",
+        source: "/(.*)",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors 'none'; object-src 'none';",
+          },
+        ],
       },
-    ],
+    ];
   },
 };
 
