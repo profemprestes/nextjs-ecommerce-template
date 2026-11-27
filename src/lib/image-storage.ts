@@ -1,5 +1,6 @@
 export const MAX_IMAGE_BYTES = 5 * 1024 * 1024; // 5 MB por archivo
 export const MAX_FILES_PER_BATCH = 25;
+export const MAX_IMAGES_PER_PRODUCT = 60;
 
 export const ALLOWED_IMAGE_MIME_TYPES = new Set([
   'image/webp',

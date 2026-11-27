@@ -123,12 +123,15 @@ export type ValidatedProductInput = z.infer<typeof productInputSchema>;
 
 function parseNumericPriceUyu(priceRaw: string, explicitUyu?: number | null): number | null {
   if (typeof explicitUyu === 'number' && Number.isFinite(explicitUyu)) {
-    return Math.round(explicitUyu);
+    const rounded = Math.round(explicitUyu);
+    return rounded >= 0 && rounded <= 100_000_000 ? rounded : null;
   }
   const match = priceRaw.trim().match(/^(\d+(?:\.\d{1,2})?)\s*UYU$/i);
   if (!match) return null;
   const parsed = Number(match[1]);
-  return Number.isFinite(parsed) ? Math.round(parsed) : null;
+  if (!Number.isFinite(parsed)) return null;
+  const rounded = Math.round(parsed);
+  return rounded >= 0 && rounded <= 100_000_000 ? rounded : null;
 }
 
 export function normalizeImageList(imageLink: string, images?: string[]): string[] {

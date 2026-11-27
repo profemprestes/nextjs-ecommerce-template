@@ -66,10 +66,11 @@ function parseCsvRows(text: string): string[][] {
 
 function escapeCsvCell(value: string): string {
   const str = value ?? '';
-  if (/[",\r\n]/.test(str)) {
-    return `"${str.replace(/"/g, '""')}"`;
+  const safe = /^[\t\r ]*[=+\-@\t\r]/.test(str) ? `'${str}` : str;
+  if (/[",\r\n]/.test(safe)) {
+    return `"${safe.replace(/"/g, '""')}"`;
   }
-  return str;
+  return safe;
 }
 
 function normalizeAvailability(val: string): AvailabilityValue {

@@ -93,10 +93,6 @@ export async function POST(req: NextRequest) {
     }
 
     if (payload.action === 'import') {
-      let added = 0;
-      let updated = 0;
-      let skipped = 0;
-
       const existingRows = await prisma.product.findMany({
         select: { uid: true, id: true },
       });
@@ -105,42 +101,50 @@ export async function POST(req: NextRequest) {
         existingBySku.set(row.id.trim().toLowerCase(), row.uid)
       );
 
-      for (const rawItem of payload.products) {
-        const { productData, imageUrls } = normalizeProductForDb(rawItem);
-        const key = productData.id.toLowerCase();
-        const existingUid = existingBySku.get(key);
+      const { added, updated, skipped } = await prisma.$transaction(async (tx) => {
+        let txAdded = 0;
+        let txUpdated = 0;
+        let txSkipped = 0;
 
-        if (existingUid) {
-          if (payload.strategy === 'merge') {
-            await prisma.product.update({
-              where: { uid: existingUid },
+        for (const rawItem of payload.products) {
+          const { productData, imageUrls } = normalizeProductForDb(rawItem);
+          const key = productData.id.toLowerCase();
+          const existingUid = existingBySku.get(key);
+
+          if (existingUid) {
+            if (payload.strategy === 'merge') {
+              await tx.product.update({
+                where: { uid: existingUid },
+                data: {
+                  ...productData,
+                  images: {
+                    deleteMany: {},
+                    ...(imageUrls.length > 0
+                      ? { create: buildImageCreatePayload(imageUrls) }
+                      : {}),
+                  },
+                },
+              });
+              txUpdated++;
+            } else {
+              txSkipped++;
+            }
+          } else {
+            const created = await tx.product.create({
               data: {
                 ...productData,
-                images: {
-                  deleteMany: {},
-                  ...(imageUrls.length > 0
-                    ? { create: buildImageCreatePayload(imageUrls) }
-                    : {}),
-                },
+                ...(imageUrls.length > 0
+                  ? { images: { create: buildImageCreatePayload(imageUrls) } }
+                  : {}),
               },
             });
-            updated++;
-          } else {
-            skipped++;
+            existingBySku.set(key, created.uid);
+            txAdded++;
           }
-        } else {
-          const created = await prisma.product.create({
-            data: {
-              ...productData,
-              ...(imageUrls.length > 0
-                ? { images: { create: buildImageCreatePayload(imageUrls) } }
-                : {}),
-            },
-          });
-          existingBySku.set(key, created.uid);
-          added++;
         }
-      }
+
+        return { added: txAdded, updated: txUpdated, skipped: txSkipped };
+      });
 
       const allRows = await prisma.product.findMany({
         where: { active: true },
